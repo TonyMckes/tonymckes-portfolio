@@ -1,7 +1,9 @@
 import project from "./project-elements.js";
+import { skills } from "./skills-list.js";
 const API_URL = `http://127.0.0.1:3001/api`;
 
 (async () => {
+  // Projects carousel
   const btnLeft = document.querySelector(".carousel__btn--left");
   const carouselSlider = document.querySelector(".carousel__slider");
   const btnRight = document.querySelector(".carousel__btn--right");
@@ -52,4 +54,24 @@ const API_URL = `http://127.0.0.1:3001/api`;
   } catch (error) {
     console.log(error);
   }
+
+  // Skills
+  const skillsList = document.querySelector(".skills__list");
+
+  skills.forEach(([title, skillName]) => {
+    const li = document.createElement("li");
+    const img = document.createElement("img");
+    const h4 = document.createElement("h4");
+
+    li.className = "skill__item";
+    img.src = `./images/Logos${skillName}.svg`;
+    img.alt = title;
+    img.className = "skill__logo";
+    h4.textContent = title;
+    h4.className = "skill__title";
+
+    li.append(img, h4);
+
+    skillsList.appendChild(li);
+  });
 })();
