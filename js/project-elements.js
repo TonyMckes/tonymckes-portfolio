@@ -3,10 +3,12 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
     return `<li class="project__tech-list-item">${name}</li>`;
   };
 
+  const title = name.replace(/-/g, " ");
+
   return `
   <li class="carousel__item project">
     <div class="project__content">
-      <h3 class="project__title title">${name}</h3>
+      <h3 class="project__title title">${title}</h3>
       <div class="project__description">
         <p>
         ${description}
