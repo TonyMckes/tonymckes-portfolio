@@ -6,10 +6,12 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
   return `
   <li class="carousel__item project">
     <div class="project__content">
-      <h3 class="project__title">${name}</h3>
-      <p class="project__description">
+      <h3 class="project__title title">${name}</h3>
+      <div class="project__description">
+        <p>
         ${description}
-      </p>
+        </p>
+      </div>
       <ul class="project__tech-list">
         ${repositoryTopics.nodes.map(techListItem).join("")}
       </ul>
