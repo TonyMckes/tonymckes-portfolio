@@ -2,6 +2,32 @@ import project from "./project-elements.js";
 import { skills } from "./skills-list.js";
 const API_URL = `http://127.0.0.1:3001/api`;
 
+// Header
+const header = document.querySelector(".header");
+const sidebar = document.querySelector(".header__sidebar");
+const sidebarButton = document.querySelector(".header__button");
+let lastScrollY = window.pageYOffset;
+
+sidebarButton.addEventListener("click", (e) => {
+  sidebar.classList.toggle("header__sidebar--open");
+});
+
+document.addEventListener("scroll", (e) => {
+  if (lastScrollY < window.pageYOffset && lastScrollY > 150) {
+    header.classList.add("header--hidden");
+  } else {
+    header.classList.remove("header--hidden");
+  }
+
+  if (lastScrollY > 25) {
+    header.classList.add("header--scrolled");
+  } else {
+    header.classList.remove("header--scrolled");
+  }
+
+  lastScrollY = window.pageYOffset;
+});
+
 (async () => {
   // Projects carousel
   const btnLeft = document.querySelector(".carousel__btn--left");
