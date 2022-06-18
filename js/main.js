@@ -80,24 +80,28 @@ document.addEventListener("scroll", (e) => {
   } catch (error) {
     console.log(error);
   }
-
-  // Skills
-  const skillsList = document.querySelector(".skills__list");
-
-  skills.forEach(([title, skillName]) => {
-    const li = document.createElement("li");
-    const img = document.createElement("img");
-    const h4 = document.createElement("h4");
-
-    li.className = "skill__item";
-    img.src = `./images/Logos${skillName}.svg`;
-    img.alt = title;
-    img.className = "skill__logo";
-    h4.textContent = title;
-    h4.className = "skill__title";
-
-    li.append(img, h4);
-
-    skillsList.appendChild(li);
-  });
 })();
+
+// Skills
+const skillsList = document.querySelector(".skills__list");
+
+skills.forEach(([title, skillName]) => {
+  const skillItem = document.createElement("li");
+  const logoFg = document.createElement("img");
+  const logoBg = document.createElement("img");
+  const skillTitle = document.createElement("span");
+
+  skillItem.className = "skill__item";
+  logoFg.src = `./images/Logos${skillName}.svg`;
+  logoFg.alt = title;
+  logoFg.className = "skill__logo";
+  logoBg.src = `./images/Logos${skillName}.svg`;
+  logoBg.alt = title;
+  logoBg.className = "skill__logo--blured";
+  skillTitle.textContent = title;
+  skillTitle.className = "skill__title";
+
+  skillItem.append(logoFg, logoBg, skillTitle);
+
+  skillsList.appendChild(skillItem);
+});

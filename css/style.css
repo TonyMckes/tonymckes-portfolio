@@ -262,20 +262,35 @@ body {
   display: grid;
   list-style: none;
   grid-template-columns: repeat(4, 1fr);
-  gap: 2.5rem 1rem;
+  gap: 1.5rem 1rem;
   margin: 1rem;
 }
 
 .skill__item {
-  text-align: center;
+  position: relative;
+  display: grid;
+  justify-items: center;
 }
 .skill__logo {
-  width: 3rem;
+  aspect-ratio: 1/1;
+  height: 3.5rem;
+  position: relative;
+  z-index: 2;
+  background-color: #ffffff40;
+  padding: 0.5rem;
+  border-radius: 0.25rem;
+}
+.skill__logo--background {
+  aspect-ratio: 1/1;
   height: 3rem;
+  position: absolute;
+  z-index: 1;
+  transform: scale(1.2);
+  filter: blur(24px);
 }
 .skill__title {
   white-space: nowrap;
-  font-size: var(--text-sm);
+  font-size: var(--text-xs);
   font-weight: 600;
   margin: 0;
   margin-top: 0.5rem;
