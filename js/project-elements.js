@@ -8,7 +8,7 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
   return `
   <li class="projects__item project">
       <h3 class="project__title title">${title}</h3>
-      <video class="project__media" loop>
+      <video class="project__media" loop muted>
         <source src="images/bg/${name}.webm" type="video/webm">
         Your browser does not support the videos.
       </video>
