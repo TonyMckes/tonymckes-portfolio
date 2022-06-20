@@ -39,6 +39,24 @@ document.addEventListener("scroll", (e) => {
 
     if (pinnedRepositories.length > 0) {
       projectsList.innerHTML = pinnedRepositories.map(project).join("");
+
+      const projectMedia = document.querySelectorAll(".project__media");
+
+      projectMedia.forEach((video) => {
+        video.children[0].onerror = () => (video.style.display = "none");
+
+        const callback = (entries) => {
+          if (!video.duration) return;
+
+          entries.forEach(({ isIntersecting }) => {
+            isIntersecting ? video.play() : video.pause();
+          });
+        };
+
+        const observer = new IntersectionObserver(callback, { threshold: 1 });
+
+        observer.observe(video);
+      });
     }
   } catch (error) {
     console.log(error);
