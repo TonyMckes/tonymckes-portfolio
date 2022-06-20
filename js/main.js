@@ -14,6 +14,7 @@ sidebarButton.addEventListener("click", (e) => {
 
 document.addEventListener("scroll", (e) => {
   if (lastScrollY < window.pageYOffset && lastScrollY > 150) {
+    if (sidebar.classList.contains("header__sidebar--open")) return;
     header.classList.add("header--hidden");
   } else {
     header.classList.remove("header--hidden");
