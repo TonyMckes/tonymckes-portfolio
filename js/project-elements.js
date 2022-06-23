@@ -21,8 +21,24 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
         ${repositoryTopics.nodes.map(techListItem).join("")}
       </ul>
       <div class="project__links">
-        <a class="project__link--source-code" href="${url}">Code base</a>
-        <a class="project__link--website" href="${homepageUrl}">Website</a>
+        <a 
+          alt="${title} source code"
+          class="project__link--source-code" 
+          href="${url}"
+          rel="noopener"
+          target="_blank"
+          >
+          Source Code
+        </a>
+        <a 
+          alt="${title} website"
+          class="project__link--website" 
+          href="${homepageUrl}"
+          rel="noopener"
+          target="_blank"
+          >
+          Website
+        </a>
       </div>
   </li>`;
 }
