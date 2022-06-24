@@ -164,13 +164,8 @@ ul {
   background-color: var(--neutral-100);
   position: fixed;
   width: 100%;
-  left: 0;
-  top: 0;
   z-index: 5;
   transition: box-shadow, transform 250ms ease-in-out;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
 
 .header--scrolled {
@@ -180,6 +175,11 @@ ul {
   transform: translateY(-100%);
 }
 
+.header__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
 .header__list {
   display: inline-block;
   margin-right: 4rem;
