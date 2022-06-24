@@ -237,6 +237,7 @@ ul {
   margin-top: 2rem;
 }
 .header__nav-link {
+  border-radius: var(--rounded);
   font-size: var(--fz-xl);
   font-weight: 600;
   padding: 0.5rem;
@@ -348,6 +349,7 @@ ul {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem 1rem;
+  margin: 4rem 0 0 0;
 }
 .skill__item {
   position: relative;
@@ -377,6 +379,65 @@ ul {
   font-weight: 600;
   margin: 0.25rem 0 0 0;
   white-space: nowrap;
+}
+
+.contact {
+  display: grid;
+  justify-items: center;
+}
+.contact__title {
+}
+
+.contact__email {
+  font-size: var(--fz-2xl);
+  font-weight: 600;
+  transform: translateX(-0.75rem);
+  text-decoration: underline solid var(--bright-turquoise-600);
+  text-underline-offset: 0.35rem;
+}
+.contact__at {
+  opacity: 0.05;
+  transition: opacity 0.25s ease-in-out;
+  user-select: none;
+}
+.contact__at--visible {
+  opacity: 1;
+  user-select: auto;
+}
+.contact__username {
+}
+.contact__email-domain {
+  opacity: 1;
+  transition: opacity 0.25s ease-in-out;
+}
+.contact__email-domain--invisible {
+  opacity: 0.05;
+}
+
+.contact__list {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  margin: 1.5rem 0 0 0;
+  gap: 1rem;
+}
+.contact__list > li {
+  text-align: center;
+  width: 100%;
+}
+.contact__link {
+  border-radius: var(--rounded);
+  display: inline-flex;
+  flex-direction: column;
+  font-size: var(--fz-base);
+  font-weight: 800;
+  padding: 0.5rem;
+  width: 100%;
+}
+.contact__link > img {
+  height: 1.5rem;
+}
+.contact__link:hover {
+  background-color: var(--neutral-50);
 }
 
 .back-to-top__container {

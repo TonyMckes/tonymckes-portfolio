@@ -1,6 +1,10 @@
 import project from "./project-elements.js";
 import { skills } from "./skills-list.js";
-const API_URL = `http://127.0.0.1:3001/api`;
+
+// Shorthands
+const $ = document.querySelector.bind(document);
+const $$ = document.querySelectorAll.bind(document);
+
 
 // Header
 const header = document.querySelector(".header");
@@ -86,3 +90,35 @@ skills.forEach(([title, skillName]) => {
 
   skillsList.appendChild(skillItem);
 });
+
+// Contact
+const at = $(".contact__at");
+const emailDomain = $(".contact__email-domain");
+
+if (isMobile) {
+  $$(".contact__link").forEach((node) => {
+    node.target = "_self";
+  });
+}
+
+$$(".contact__link--at-username").forEach((node) => {
+  node.addEventListener("mouseover", (e) => {
+    emailDomain.classList.add("contact__email-domain--invisible");
+    at.classList.add("contact__at--visible");
+  });
+  node.addEventListener("mouseout", (e) => {
+    emailDomain.classList.remove("contact__email-domain--invisible");
+    at.classList.remove("contact__at--visible");
+  });
+});
+
+$$(".contact__link--username").forEach((node) => {
+  node.addEventListener("mouseover", (e) => {
+    emailDomain.classList.add("contact__email-domain--invisible");
+  });
+  node.addEventListener("mouseout", (e) => {
+    emailDomain.classList.remove("contact__email-domain--invisible");
+  });
+});
+
+// Footer
