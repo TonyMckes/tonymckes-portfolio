@@ -147,7 +147,10 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+.section__container {
+  padding: 0 1rem;
+  scroll-margin-top: 5rem;
+}
 .section__title {
   font-size: var(--fz-3xl);
   text-align: center;
@@ -269,8 +272,6 @@ ul {
 }
 
 .projects {
-  padding: 0 1rem;
-  scroll-margin-top: 5rem;
 }
 .projects__title {
 }
@@ -338,8 +339,6 @@ ul {
 }
 
 .skills {
-  padding: 0 1rem;
-  scroll-margin-top: 5rem;
 }
 .skills__title {
 }
