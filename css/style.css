@@ -347,10 +347,8 @@ ul {
 }
 .skills__list {
   display: grid;
-  list-style: none;
   grid-template-columns: repeat(3, 1fr);
   gap: 1.5rem 1rem;
-  padding: 1rem 0;
 }
 .skill__item {
   position: relative;
