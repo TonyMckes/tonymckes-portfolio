@@ -470,25 +470,3 @@ footer {
     transform: translateY(0);
   }
 }
-
-  grid-template-columns: repeat(2, 1fr);
-  justify-content: space-around;
-  justify-items: center;
-  padding: 2rem;
-  gap: 1rem 2rem;
-  font-weight: 800;
-}
-
-@keyframes up-arrow {
-  0% {
-    transform: translateY(0);
-  }
-  50% {
-    transform: translateY(-0.5rem);
-  }
-  100% {
-    transform: translateY(0);
-  }
-}
-
-}
