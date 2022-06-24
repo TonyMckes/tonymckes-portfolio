@@ -5,6 +5,8 @@ import { skills } from "./skills-list.js";
 const $ = document.querySelector.bind(document);
 const $$ = document.querySelectorAll.bind(document);
 
+// Mobile
+const isMobile = navigator.userAgent.match(/Mobi/i);
 
 // Header
 const header = document.querySelector(".header");
