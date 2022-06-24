@@ -22,8 +22,8 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
       </ul>
       <div class="project__links">
         <a 
-          alt="${title} source code"
-          class="project__link--source-code" 
+          alt="Source Code"
+          class="project__link"
           href="${url}"
           rel="noopener"
           target="_blank"
@@ -31,8 +31,8 @@ function project({ description, homepageUrl, repositoryTopics, name, url }) {
           Source Code
         </a>
         <a 
-          alt="${title} website"
-          class="project__link--website" 
+          alt="Website"
+          class="project__link"
           href="${homepageUrl}"
           rel="noopener"
           target="_blank"
