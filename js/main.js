@@ -9,12 +9,11 @@ const $$ = document.querySelectorAll.bind(document);
 const isMobile = navigator.userAgent.match(/Mobi/i);
 
 // Header
-const header = document.querySelector(".header");
-const sidebar = document.querySelector(".header__sidebar");
-const sidebarButton = document.querySelector(".header__button");
+const header = $(".header");
+const sidebar = $(".header__sidebar");
 let lastScrollY = window.pageYOffset;
 
-sidebarButton.addEventListener("click", (e) => {
+$(".header__button").addEventListener("click", (e) => {
   sidebar.classList.toggle("header__sidebar--open");
 });
 
@@ -37,7 +36,7 @@ document.addEventListener("scroll", (e) => {
 
 (async () => {
   // Projects
-  const projectsList = document.querySelector(".projects__list");
+  const projectsList = $(".projects__list");
 
   try {
     const response = await fetch(API_URL);
@@ -46,10 +45,12 @@ document.addEventListener("scroll", (e) => {
     if (pinnedRepositories.length > 0) {
       projectsList.innerHTML = pinnedRepositories.map(project).join("");
 
-      const projectMedia = document.querySelectorAll(".project__media");
-
-      projectMedia.forEach((video) => {
-        video.children[0].onerror = () => (video.style.display = "none");
+      $$(".project__media").forEach((video) => {
+        video.children[0].onerror = () => {
+          video.style.display = "none";
+          video.parentElement.style.gridTemplateColumns = "1fr";
+          video.parentElement.style.gap = "0";
+        };
 
         const callback = (entries) => {
           if (!video.duration) return;
@@ -84,13 +85,13 @@ skills.forEach(([title, skillName]) => {
   logoFg.className = "skill__logo";
   logoBg.src = `./images/Logos${skillName}.svg`;
   logoBg.alt = title;
-  logoBg.className = "skill__logo--blured";
+  logoBg.className = "skill__logo--background";
   skillTitle.textContent = title;
   skillTitle.className = "skill__title";
 
   skillItem.append(logoFg, logoBg, skillTitle);
 
-  skillsList.appendChild(skillItem);
+  $(".skills__list").appendChild(skillItem);
 });
 
 // Contact
