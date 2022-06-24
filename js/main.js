@@ -125,3 +125,6 @@ $$(".contact__link--username").forEach((node) => {
 });
 
 // Footer
+$(".back-to-top__link").addEventListener("click", () =>
+  window.scrollTo({ top: 0 }),
+);
