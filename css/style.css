@@ -219,6 +219,7 @@ ul {
 .header__link > svg,
 .header__button > svg,
 .header__toggler > svg {
+  color: var(--neutral-900);
   height: 1.6rem;
 }
 .header__link > span {
@@ -647,8 +648,9 @@ html.dark {
 .dark .header--scrolled {
   box-shadow: 0 0.75rem 2rem -1rem var(--slate-700);
 }
-.dark .header__button,
-.dark .header__toggler {
+.dark .header__link > svg,
+.dark .header__button > svg,
+.dark .header__toggler > svg {
   color: var(--neutral-100);
 }
 .dark .header__link:hover,
