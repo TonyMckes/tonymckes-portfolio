@@ -8,6 +8,15 @@ const $$ = document.querySelectorAll.bind(document);
 // Mobile
 const isMobile = navigator.userAgent.match(/Mobi/i);
 
+// Theme toggler
+$(".header__toggler").addEventListener("click", () => {
+  document.documentElement.classList.toggle("dark");
+  localStorage.setItem(
+    "theme-color",
+    document.documentElement.classList.contains("dark") ? "dark" : "light",
+  );
+});
+
 // Header
 const header = $(".header");
 const sidebar = $(".header__sidebar");
@@ -71,8 +80,6 @@ document.addEventListener("scroll", (e) => {
 })();
 
 // Skills
-const skillsList = document.querySelector(".skills__list");
-
 skills.forEach(([title, skillName]) => {
   const skillItem = document.createElement("li");
   const logoFg = document.createElement("img");
