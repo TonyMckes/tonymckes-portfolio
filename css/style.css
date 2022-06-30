@@ -295,12 +295,6 @@ ul {
   margin: 2rem;
 }
 
-.projects {
-}
-.projects__title {
-}
-.projects__subtitle {
-}
 .projects__list {
   display: grid;
   gap: 2rem;
@@ -365,12 +359,6 @@ ul {
   background-color: var(--neutral-100);
 }
 
-.skills {
-}
-.skills__title {
-}
-.skills__subtitle {
-}
 .skills__list {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -411,8 +399,6 @@ ul {
   display: grid;
   justify-items: center;
 }
-.contact__title {
-}
 
 .contact__email {
   font-size: var(--fz-2xl);
@@ -429,8 +415,6 @@ ul {
 .contact__at--visible {
   opacity: 1;
   user-select: auto;
-}
-.contact__username {
 }
 .contact__email-domain {
   opacity: 1;
@@ -466,8 +450,6 @@ ul {
   background-color: var(--neutral-50);
 }
 
-footer {
-}
 .back-to-top__container {
   display: grid;
   justify-items: center;
@@ -635,8 +617,6 @@ html.dark {
 }
 .dark .svg-logo--linkedin > path {
   fill: var(--neutral-100);
-}
-.dark .section__title {
 }
 .dark .section__subtitle {
   color: var(--slate-400);
