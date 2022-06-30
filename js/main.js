@@ -1,5 +1,6 @@
 import project from "./project-elements.js";
 import { skills } from "./skills-list.js";
+const API_URL = `http://127.0.0.1:8000/api`;
 
 // Shorthands
 const $ = document.querySelector.bind(document);
