@@ -34,7 +34,7 @@ document.addEventListener("scroll", (e) => {
     header.classList.remove("header--hidden");
   }
 
-  if (lastScrollY > 25) {
+  if (window.pageYOffset > 25) {
     header.classList.add("header--scrolled");
   } else {
     header.classList.remove("header--scrolled");
