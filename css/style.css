@@ -224,6 +224,12 @@ ul {
   color: var(--neutral-900);
   height: 1.6rem;
 }
+.header__container > .header__link {
+  padding: 0.25rem 0.5rem;
+}
+.header__link > .header__logo {
+  height: 2rem;
+}
 .header__link > span {
   border-width: 0;
   clip: rect(0, 0, 0, 0);
@@ -524,6 +530,9 @@ ul {
   .header__button > svg,
   .header__toggler > svg {
     height: 1.25rem;
+  }
+  .header__container > .header__link {
+    padding: 0.125rem 0.5rem;
   }
   .header__nav-link {
     font-size: var(--fz-sm);
