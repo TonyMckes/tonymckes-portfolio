@@ -529,9 +529,28 @@ ul {
     font-size: var(--fz-sm);
     font-weight: 600;
     padding: 0.5rem 0.5rem;
+    position: relative;
+    transition: 300ms;
   }
   .header__nav-link:hover {
-    background-color: var(--neutral-50);
+    color: var(--slate-400);
+  }
+  .header__nav-link:after {
+    content: "";
+    width: 0;
+    height: 0.15rem;
+    position: absolute;
+    top: 90%;
+    left: 0;
+    background: var(--slate-400);
+    transition: 300ms;
+  }
+  .header__nav-link:hover:after {
+    width: 100%;
+  }
+  .header__nav-link:not(:hover):after {
+    right: 0;
+    left: auto;
   }
 
   .projects__list {
@@ -687,8 +706,5 @@ html.dark {
   }
   .dark .header__nav-list {
     border-right: 1px solid var(--slate-700);
-  }
-  .dark .header__nav-link:hover {
-    background-color: var(--slate-700);
   }
 }
