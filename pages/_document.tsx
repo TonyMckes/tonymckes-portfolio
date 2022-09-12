@@ -6,7 +6,7 @@ function Document() {
     <Html>
       <Head>
         <meta charSet="UTF-8" />
-        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta name="description" content="Portfolio's" />
         <link
           rel="apple-touch-icon"
