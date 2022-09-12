@@ -42,9 +42,9 @@ function Icon({ alt, name, size, ...props }: IconImageProps) {
   return (
     <Image
       alt={alt || name}
-      height={size || 24}
+      height={size || 64}
       src={iconsCollection[name]}
-      width={size || 24}
+      width={size || 64}
       {...props}
     />
   );
