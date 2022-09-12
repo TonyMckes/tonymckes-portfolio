@@ -1,5 +1,8 @@
-import { Repository, Topics } from "./projects-res-types";
+import type { Repository, Topic } from "./projects-res-types";
 
-export interface Projects extends Omit<Repository, "repositoryTopics"> {
-  topics: Topics[];
+export interface Projects {
+  projects: ProjectData[];
+}
+export interface ProjectData extends Omit<Repository, "repositoryTopics"> {
+  topics: Topic[];
 }

@@ -28,11 +28,11 @@ interface RepositoryTopics {
   totalCount: number;
 }
 
-export interface Topics {
+interface Topics {
   topic: Topic;
 }
 
-interface Topic {
+export interface Topic {
   id: string;
   name: string;
 }

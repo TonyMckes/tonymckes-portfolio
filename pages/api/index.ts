@@ -1,6 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
 import { getProjects } from "services/getProjects";
-import { Projects } from "types/projects-types";
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,7 +9,7 @@ export default async function handler(
 
   try {
     if (method === "GET") {
-      const projects = await getProjects();
+      const { projects } = await getProjects();
 
       res.status(200).json(projects);
     }
