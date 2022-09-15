@@ -1,0 +1,24 @@
+.navLink {
+  border-radius: var(--rounded);
+  font-size: var(--fz-xl);
+  font-weight: 600;
+  padding: 0.5rem;
+}
+.navLink > svg,
+.navLink > img {
+  color: var(--neutral-900);
+  height: 1.6rem;
+  width: auto;
+}
+@media (min-width: 768px) {
+  .navLink {
+    font-size: var(--fz-sm);
+    font-weight: 600;
+    padding: 0.5rem 0.5rem;
+    position: relative;
+    transition: 300ms;
+  }
+  .navLink:hover {
+    color: var(--slate-400);
+  }
+}

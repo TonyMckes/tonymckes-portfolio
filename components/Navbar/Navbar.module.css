@@ -1,0 +1,154 @@
+.header {
+  background-color: var(--neutral-100);
+  position: fixed;
+  transition: box-shadow 250ms ease-in-out, transform 250ms ease-in-out;
+  width: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.scrolled {
+  box-shadow: 0 0.75rem 2rem -1rem var(--neutral-300);
+}
+.hidden {
+  box-shadow: none;
+  transform: translateY(-100%);
+}
+.list {
+  display: inline-block;
+  margin-right: 4rem;
+}
+.list > li {
+  display: inline-block;
+  margin: 0.35rem 0;
+}
+
+.link,
+.button,
+.toggler {
+  padding: 0.5rem;
+  margin: 0 0.25rem;
+  display: inline-flex;
+  border-radius: var(--rounded);
+}
+.button {
+  position: absolute;
+  margin: 0.35rem;
+  right: 0%;
+  top: 0%;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  z-index: 10;
+}
+.toggler {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.link > svg,
+.button > svg,
+.toggler > svg,
+.link > img,
+.button > img,
+.toggler > img {
+  color: var(--neutral-900);
+  height: 1.6rem;
+  width: auto;
+}
+.container > .link {
+  padding: 0.25rem 0.5rem;
+}
+.link > .logo {
+  height: 2rem;
+  width: auto;
+}
+.link > span {
+  border-width: 0;
+  clip: rect(0, 0, 0, 0);
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  white-space: nowrap;
+  width: 1px;
+}
+.link:hover,
+.button:hover,
+.toggler:hover {
+  background-color: var(--neutral-50);
+}
+.sidebar {
+  background-color: var(--neutral-200);
+  box-shadow: 0 0 2rem -1rem var(--neutral-500);
+  height: 100%;
+  position: fixed;
+  right: 0;
+  top: 0;
+  transform: translateX(100%);
+  transition-property: transform, visibility;
+  transition-duration: 150ms;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  width: 75%;
+  visibility: hidden;
+}
+.sidebarOpen {
+  transform: translateX(0);
+  visibility: visible;
+}
+.navList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  padding: 3rem;
+  margin-top: 2rem;
+}
+
+@media (min-width: 768px) {
+  .socials {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: flex-end;
+  }
+  .list {
+    margin: 0;
+  }
+  .button {
+    display: none;
+  }
+  .sidebar {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    box-shadow: none;
+    height: auto;
+    position: static;
+    transform: translateX(0);
+    width: auto;
+    visibility: visible;
+  }
+  .navList {
+    border-right: 1px solid var(--neutral-200);
+    flex-direction: row;
+    gap: 1rem;
+    margin: 0;
+    padding: 0 0.15rem 0 0;
+  }
+  .link > svg,
+  .button > svg,
+  .toggler > svg,
+  .link > img,
+  .button > img,
+  .toggler > img {
+    height: 1.25rem;
+    width: auto;
+  }
+  .container > .link {
+    padding: 0.125rem 0.5rem;
+  }
+}
