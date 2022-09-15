@@ -3,6 +3,15 @@
   font-size: var(--fz-xl);
   font-weight: 600;
   padding: 0.5rem;
+  margin: 0;
+  position: relative;
+  display: inline-flex;
+}
+
+.navLink:hover,
+.button:hover,
+.toggler:hover {
+  background-color: var(--neutral-50);
 }
 .navLink > svg,
 .navLink > img {
@@ -10,15 +19,20 @@
   height: 1.6rem;
   width: auto;
 }
+
 @media (min-width: 768px) {
   .navLink {
     font-size: var(--fz-sm);
-    font-weight: 600;
-    padding: 0.5rem 0.5rem;
-    position: relative;
     transition: 300ms;
   }
+
   .navLink:hover {
     color: var(--slate-400);
+  }
+
+  .navLink > svg,
+  .navLink > img {
+    height: 1.25rem;
+    width: auto;
   }
 }
