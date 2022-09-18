@@ -1,0 +1,31 @@
+.container {
+  display: grid;
+  justify-items: center;
+  margin: 8rem 0 2rem 0;
+}
+.link {
+  composes: container;
+  margin: 0;
+  cursor: pointer;
+}
+.link > svg,
+.link > img {
+  animation-name: up-arrow;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+  animation-timing-function: cubic-bezier(0.22, 0.61, 0.36, 1);
+  height: 2rem;
+  width: auto;
+}
+
+@keyframes up-arrow {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-0.5rem);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
