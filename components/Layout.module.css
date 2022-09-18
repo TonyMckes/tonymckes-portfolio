@@ -1,0 +1,27 @@
+.container {
+  position: relative;
+  padding: 0 1rem;
+  scroll-margin-top: 5rem;
+  margin: 0 auto;
+  width: 100%;
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 48rem;
+  }
+}
+@media (min-width: 1024px) {
+  .container {
+    max-width: 64rem;
+  }
+}
+@media (min-width: 1280px) {
+  .container {
+    max-width: 80rem;
+  }
+}
+@media (min-width: 1536px) {
+  .container {
+    max-width: 96rem;
+  }
+}
