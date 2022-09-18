@@ -1,0 +1,17 @@
+.container {
+  scroll-margin-top: 5rem;
+  margin-top: 8rem;
+}
+
+.title {
+  font-size: var(--fz-3xl);
+  text-align: center;
+}
+
+.subtitle {
+  color: var(--neutral-600);
+  font-size: var(--fz-xl);
+  font-weight: 400;
+  margin-bottom: 2rem;
+  text-align: center;
+}
