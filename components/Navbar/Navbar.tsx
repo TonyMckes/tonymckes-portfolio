@@ -5,7 +5,7 @@ import styles from "./Navbar.module.css";
 import NavLink from "./NavLink";
 
 function Navbar() {
-  const [isScrolled, setIsScrolled] = useState<boolean>(true);
+  const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
   const [showNavbar, setShowNavbar] = useState<boolean>(true);
@@ -29,14 +29,13 @@ function Navbar() {
   };
 
   useEffect(() => {
-    if (typeof window !== "undefined") {
-      window.addEventListener("scroll", controlNavbar);
+    if (typeof window === "undefined") return;
 
-      return () => {
-        window.removeEventListener("scroll", controlNavbar);
-      };
-    }
-  }, [lastScrollY]);
+    window.addEventListener("scroll", controlNavbar);
+    return () => {
+      window.removeEventListener("scroll", controlNavbar);
+    };
+  });
 
   const handleClick = () => {
     setMenuOpen(!menuOpen);
