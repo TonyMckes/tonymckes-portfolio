@@ -1,15 +1,28 @@
-import Icon, { IconsCollection } from "components/Icon";
-import Link from "next/link";
+import Icon from "components/Icon";
+import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styles from "./Navbar.module.css";
-import NavLink from "./NavLink";
+import NavItem, { AnchorProps } from "./NavItem";
+
+const ThemeToggler = dynamic(() => import("./ThemeToggler"), { ssr: false });
+
+const socials: Pick<AnchorProps, "name" | "href">[] = [
+  { name: "Github", href: "https://github.com/TonyMckes" },
+  { name: "LinkedIn", href: "https://www.linkedin.com/in/TonyMckes" },
+];
+
+const listItems: Pick<AnchorProps, "text" | "href">[] = [
+  { text: "Home", href: "#" },
+  { text: "Projects", href: "#projects" },
+  { text: "Skills", href: "#skills" },
+  { text: "Contact me", href: "#contact" },
+];
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
   const [lastScrollY, setLastScrollY] = useState<number>(0);
   const [menuOpen, setMenuOpen] = useState<boolean>(false);
-  const [showNavbar, setShowNavbar] = useState<boolean>(true);
-  const [themeColor, setThemeColor] = useState<string>("");
+  const [showNavbar, setShowNavbar] = useState<boolean>(false);
 
   const controlNavbar = () => {
     if (typeof window === "undefined") return;
@@ -49,46 +62,47 @@ function Navbar() {
 
   return (
     <header className={`${styles.header} ${headerStyles}`}>
-      <Link href="#">
-        <a className={styles.link}>
-          <Icon name="TonyMckes" width={68} />
-        </a>
-      </Link>
-
+      <NavItem icon href="#" name="TonyMckes" />
       <div className={styles.listsContainer}>
-        <button
+        <NavItem
+          icon
+          as="button"
+          text={menuOpen ? "Close sidebar" : "Open sidebar"}
+          aria-label={menuOpen ? "Close sidebar" : "Open sidebar"}
           onClick={handleClick}
           className={styles.button}
-          aria-label={menuOpen ? "Close sidebar" : "Open sidebar"}
         >
           {menuOpen ? <Icon name="Close" /> : <Icon name="Menu" />}
-        </button>
-
+        </NavItem>
         <div
           className={`${styles.sidebar} ${menuOpen ? styles.sidebarOpen : ""}`}
         >
           <nav>
             <ul className={styles.navList}>
-              {listItems.map((item) => (
-                <li>
-                  <NavLink key={item.label} {...item} />
+              {listItems.map(({ href, text }) => (
+                <li key={text}>
+                  <NavItem
+                    href={href}
+                    text={text}
+                    className="underlineEffect"
+                  />
                 </li>
               ))}
             </ul>
           </nav>
-          <nav className={styles.socials}>
-            <button className={styles.toggler} aria-label="Toggle Dark Mode">
-              {themeColor ? <Icon name="Dark" /> : <Icon name="Light" />}
-            </button>
-
-            <ul className={styles.list}>
-              {socials.map(({ name, href }) => (
+          <nav className={styles.socialsNavList}>
+            <ThemeToggler />
+            <ul className={styles.socialsNavList}>
+              {socials.map(({ href, name }) => (
                 <li key={name}>
-                  <Link href={href}>
-                    <a className={styles.link} target="_blank" rel="noreferrer">
-                      <Icon name={name} />
-                    </a>
-                  </Link>
+                  <NavItem
+                    rel="noreferrer"
+                    target="_blank"
+                    icon
+                    href={href}
+                    name={name}
+                    className="underlineEffect"
+                  />
                 </li>
               ))}
             </ul>
