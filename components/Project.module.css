@@ -1,0 +1,116 @@
+.item {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(5, 0fr);
+  box-shadow: 0 0.75rem 2rem -1rem var(--neutral-500);
+  padding: 0 0.75rem;
+  border-radius: var(--rounded);
+  background-color: white;
+}
+html[data-theme="dark"] .item {
+  box-shadow: 0 0.75rem 2rem -1rem var(--slate-900);
+  background-color: var(--slate-800);
+}
+.title {
+  font-size: var(--fz-lg);
+  font-weight: 600;
+  margin: 0.5rem 0;
+  text-transform: capitalize;
+}
+.media {
+  place-self: center;
+  border-radius: var(--rounded);
+  width: 100%;
+}
+.description {
+  font-weight: 300;
+  margin: 0.5rem 0;
+}
+html[data-theme="dark"] .description {
+  color: var(--slate-300);
+}
+.techList {
+  display: flex;
+  font-weight: 500;
+  gap: 0.35rem;
+  height: min-content;
+  overflow-x: auto;
+  padding: 0.25rem 0.05rem 0.75rem 0.05rem;
+}
+.links {
+  margin: 0.5rem 0;
+  place-self: end;
+}
+.link {
+  border-radius: var(--rounded);
+  padding: 0.5rem;
+  display: inline-flex;
+  margin: 0.1rem 0.25rem;
+  color: inherit;
+}
+.link:first-child {
+  box-shadow: 0 0 0 1px var(--neutral-300);
+}
+.link:last-child {
+  box-shadow: 0 0 0 1px var(--neutral-300);
+  background-color: var(--bright-turquoise-100);
+}
+.link:hover {
+  background-color: var(--neutral-100);
+}
+html[data-theme="dark"] .link:first-child {
+  box-shadow: 0 0 0 1px var(--neutral-300);
+}
+html[data-theme="dark"] .link:first-child {
+  box-shadow: 0 0 0 1px var(--slate-500);
+}
+html[data-theme="dark"] .link:last-child {
+  box-shadow: 0 0 0 1px var(--slate-500);
+  background-color: var(--bright-turquoise-800);
+}
+html[data-theme="dark"] .link:hover {
+  background-color: var(--slate-700);
+}
+
+@media (min-width: 768px) {
+  .item {
+    gap: 0 1rem;
+    grid-template-rows: 0fr 1fr 0fr 0fr;
+    padding: 0.5rem 1rem;
+  }
+  .item:nth-child(odd) {
+    grid-template-columns: 1fr 45%;
+    grid-template-areas:
+      "image title"
+      "image description"
+      "image tech-list"
+      "image links";
+  }
+  .item:nth-child(even) {
+    grid-template-columns: 45% 1fr;
+    grid-template-areas:
+      "title image"
+      "description image"
+      "tech-list image"
+      "links image";
+  }
+  .item:nth-child(even) .project__links {
+    place-self: start;
+  }
+  .title {
+    grid-area: title;
+  }
+  .media {
+    grid-area: image;
+  }
+  .description {
+    grid-area: description;
+  }
+  .techList {
+    grid-area: tech-list;
+    flex-wrap: wrap;
+  }
+  .links {
+    grid-area: links;
+  }
+}
