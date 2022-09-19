@@ -235,6 +235,8 @@ ul {
 }
 
 .contact__email {
+  display: flex;
+  justify-content: center;
   font-size: var(--fz-2xl);
   font-weight: 600;
   transform: translateX(-0.75rem);
@@ -259,13 +261,9 @@ ul {
 }
 
 .contact__list {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
   margin: 1.5rem 0 0 0;
-}
-.contact__list > li {
-  text-align: center;
-  width: 100%;
+  justify-content: center;
 }
 
 @media (min-width: 768px) {

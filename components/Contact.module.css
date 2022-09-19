@@ -1,0 +1,27 @@
+.link {
+  text-align: center;
+  font-weight: 600;
+  border-radius: var(--rounded);
+  padding: 0.5rem;
+  width: 6rem;
+  height: auto;
+}
+.link > svg,
+.link > img {
+  height: 1.5rem;
+  width: auto;
+}
+.link:hover {
+  background-color: var(--neutral-50);
+}
+
+@media (min-width: 768px) {
+  .link > svg,
+  .link > img {
+    height: 2.5rem;
+    width: auto;
+  }
+}
+html[data-theme="dark"] .link:hover {
+  background-color: var(--slate-700);
+}

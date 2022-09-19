@@ -7,7 +7,29 @@ function Document() {
       <Head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link
+          rel="preconnect"
+          href="https://fonts.gstatic.com"
+          crossOrigin="true"
+        />
+
+        <link
+          href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@300;400;500;600;700&display=swap"
+          rel="stylesheet"
+        />
         <meta name="description" content="Portfolio's" />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: light)"
+          content="#f5f5f5"
+        />
+        <meta
+          name="theme-color"
+          media="(prefers-color-scheme: dark)"
+          content="#0f1116"
+        />
+
         <link
           rel="apple-touch-icon"
           sizes="180x180"
@@ -26,6 +48,7 @@ function Document() {
           href="/favicon-32x32.png"
         />
         <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#94a3b8" />
+        <link rel="manifest" href="manifest.json" />
       </Head>
       <body>
         <Main />
