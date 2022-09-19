@@ -6,11 +6,10 @@
   margin: 0;
   position: relative;
   display: inline-flex;
+  background-color: transparent;
+  border: none;
 }
-
-.navLink:hover,
-.button:hover,
-.toggler:hover {
+.navLink:hover {
   background-color: var(--neutral-50);
 }
 .navLink > svg,
@@ -19,17 +18,21 @@
   height: 1.6rem;
   width: auto;
 }
-
+html[data-theme="dark"] .navLink > svg,
+html[data-theme="dark"] .navLink > img {
+  color: var(--neutral-100);
+}
+html[data-theme="dark"] .navLink:hover {
+  background-color: var(--slate-700);
+}
 @media (min-width: 768px) {
   .navLink {
     font-size: var(--fz-sm);
     transition: 300ms;
   }
-
   .navLink:hover {
     color: var(--slate-400);
   }
-
   .navLink > svg,
   .navLink > img {
     height: 1.25rem;
