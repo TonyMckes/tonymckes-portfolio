@@ -1,4 +1,3 @@
-import Contact from "components/Contact";
 import { IconsCollection } from "components/Icon";
 import { Project } from "components/Project";
 import Section from "components/Section";
