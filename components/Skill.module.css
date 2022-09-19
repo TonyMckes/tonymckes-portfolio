@@ -1,0 +1,49 @@
+.item {
+  position: relative;
+  display: grid;
+  justify-items: center;
+}
+.logoBase {
+  aspect-ratio: 1/1;
+  padding: 0.5rem;
+}
+.logoSizeMd {
+  height: 4.5rem;
+  width: auto;
+}
+.logo {
+  composes: logoBase logoSizeMd;
+  position: relative;
+  border-radius: var(--rounded);
+  background-color: #ffffff80;
+  user-select: none;
+  z-index: 2;
+}
+html[data-theme="dark"] .logo {
+  background-color: #ffffff1a;
+}
+.logoBackground {
+  composes: logoBase logoSizeMd;
+  position: absolute;
+  transform: scale(1.2);
+  filter: blur(24px);
+}
+.title {
+  font-size: var(--fz-sm);
+  font-weight: 600;
+  margin: 0.25rem 0 0 0;
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .logoSizeLg {
+    height: 5rem;
+    width: auto;
+  }
+  .logo {
+    composes: logoSizeLg;
+  }
+  .logoBackground {
+    composes: logoSizeLg;
+  }
+}
