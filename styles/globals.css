@@ -328,33 +328,6 @@ html[data-theme="dark"] .contact__email {
   text-decoration: underline solid var(--bright-turquoise-600);
 }
 
-@media (min-width: 768px) {
-  body {
-    font-size: var(--fz-lg);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    font-size: var(--fz-xl);
-  }
-}
-@media (min-width: 1366px) {
-  body {
-    font-size: var(--fz-2xl);
-  }
-}
-@media (min-width: 1920px) {
-  body {
-    font-size: var(--fz-3xl);
-  }
-}
-@media (min-width: 2560px) {
-  body {
-    font-size: var(--fz-4xl);
-  }
-}
-
 .sr-only {
   position: absolute;
   width: 1px;
