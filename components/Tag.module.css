@@ -1,0 +1,10 @@
+.techListItem {
+  padding: 0.1rem 0.5rem;
+  border-radius: var(--rounded-xl);
+  box-shadow: 0 0 0 1px var(--neutral-200);
+  font-size: var(--fz-xs);
+}
+html[data-theme="dark"] .techListItem {
+  box-shadow: 0 0 0 1px var(--slate-700);
+  color: var(--slate-400);
+}
