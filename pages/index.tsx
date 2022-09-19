@@ -34,7 +34,6 @@ const socials: Socials[] = [
 
 export const getServerSideProps: GetServerSideProps = async () => {
   try {
-const Home: NextPage = (props) => {
     const { projects } = await getProjects();
 
     return { props: { projects } };
