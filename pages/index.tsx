@@ -32,13 +32,9 @@ const socials: Socials[] = [
 ];
 
 export const getServerSideProps: GetServerSideProps = async () => {
-  try {
-    const { projects } = await getProjects();
+  const { projects } = await getProjects();
 
-    return { props: { projects } };
-  } catch (error) {
-    console.log(error);
-  }
+  return { props: { projects } };
 };
 
 function Home({ projects }: Projects) {
@@ -69,7 +65,6 @@ function Home({ projects }: Projects) {
           ))}
         </ul>
       </Section>
-
     </>
   );
 }
