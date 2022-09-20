@@ -1,52 +1,74 @@
-import Image, { ImageProps } from "next/future/image";
+import CSS from "public/logos/Css3.svg";
+import Firebase from "public/logos/Firebase.svg";
+import Github from "public/logos/Github.svg";
+import HTML from "public/logos/Html5.svg";
+import Javascript from "public/logos/Javascript.svg";
+import LinkedIn from "public/logos/Linkedin.svg";
+import MariaDB from "public/logos/Mariadb.svg";
+import Nextjs from "public/logos/Nextjs.svg";
+import Nodejs from "public/logos/Nodejs.svg";
+import PostgreSQL from "public/logos/Postgresql.svg";
+import Reactjs from "public/logos/React.svg";
+import Sequelize from "public/logos/Sequelize.svg";
+import TailwindCSS from "public/logos/Tailwindcss.svg";
+import Telegram from "public/logos/Telegram.svg";
+import TonyMckes from "public/logos/TonyMckes.svg";
+import Twitter from "public/logos/Twitter.svg";
+import Typescript from "public/logos/Typescript.svg";
+
+import Menu from "public/icons/HeroiconsSolidMenuAlt3.svg";
+import OpenInNew from "public/icons/IcBaselineOpenInNew.svg";
+import Close from "public/icons/IonIosCloseCircleOutline.svg";
+import Dark from "public/icons/MaterialSymbolsDarkModeOutlineRounded.svg";
+import Up from "public/icons/MaterialSymbolsKeyboardArrowUpRounded.svg";
+import Light from "public/icons/MaterialSymbolsLightModeOutline.svg";
+import Web from "public/icons/MdiWeb.svg";
+import Code from "public/icons/PhCodeBold.svg";
+import { SVGProps } from "react";
 
 const iconsCollection = {
-  CSS: "/logos/Css3.svg",
-  Firebase: "/logos/Firebase.svg",
-  Github: "/logos/Github.svg",
-  HTML: "/logos/Html5.svg",
-  Javascript: "/logos/Javascript.svg",
-  LinkedIn: "/logos/Linkedin.svg",
-  MariaDB: "/logos/Mariadb.svg",
-  "Next.js": "/logos/Nextjs.svg",
-  "Node.js": "/logos/Nodejs.svg",
-  PostgreSQL: "/logos/Postgresql.svg",
-  React: "/logos/React.svg",
-  Sequelize: "/logos/Sequelize.svg",
-  "Tailwind CSS": "/logos/Tailwindcss.svg",
-  Telegram: "/logos/Telegram.svg",
-  TonyMckes: "/logos/TonyMckes.svg",
-  Twitter: "/logos/Twitter.svg",
-  Typescript: "/logos/Typescript.svg",
+  CSS: CSS,
+  Firebase: Firebase,
+  Github: Github,
+  HTML: HTML,
+  Javascript: Javascript,
+  LinkedIn: LinkedIn,
+  MariaDB: MariaDB,
+  "Next.js": Nextjs,
+  "Node.js": Nodejs,
+  PostgreSQL: PostgreSQL,
+  React: Reactjs,
+  Sequelize: Sequelize,
+  "Tailwind CSS": TailwindCSS,
+  Telegram: Telegram,
+  TonyMckes: TonyMckes,
+  Twitter: Twitter,
+  Typescript: Typescript,
 
-  Menu: "/icons/HeroiconsSolidMenuAlt3.svg",
-  "Open in new": "/icons/IcBaselineOpenInNew.svg",
-  Close: "/icons/IonIosCloseCircleOutline.svg",
-  Dark: "/icons/MaterialSymbolsDarkModeOutlineRounded.svg",
-  Up: "/icons/MaterialSymbolsKeyboardArrowUpRounded.svg",
-  Light: "/icons/MaterialSymbolsLightModeOutline.svg",
-  Web: "/icons/MdiWeb.svg",
-  Code: "/icons/PhCodeBold.svg",
+  Menu: Menu,
+  "Open in New": OpenInNew,
+  Close: Close,
+  Dark: Dark,
+  Up: Up,
+  Light: Light,
+  Web: Web,
+  Code: Code,
 } as const;
 
 export interface IconsCollection {
   name: keyof typeof iconsCollection;
 }
-interface IconImageProps extends Omit<ImageProps, "src" | "alt"> {
-  name: keyof typeof iconsCollection;
-  size?: number;
-  alt?: string;
+interface IconImageProps
+  extends Omit<SVGProps<SVGSVGElement>, "name">,
+    IconsCollection {
+  size?: string | number;
 }
 
-function Icon({ alt, name, size, ...props }: IconImageProps) {
+function Icon({ name, size, ...props }: IconImageProps) {
+  const DynamicIcon = iconsCollection[name];
+
   return (
-    <Image
-      alt={alt || name}
-      height={size || 64}
-      src={iconsCollection[name]}
-      width={size || 64}
-      {...props}
-    />
+    <DynamicIcon height={size || "2 rem"} width={size || "2rem"} {...props} />
   );
 }
 
