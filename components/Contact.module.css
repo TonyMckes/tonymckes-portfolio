@@ -1,5 +1,7 @@
 .link {
-  text-align: center;
+  display: inline-grid;
+  justify-items: center;
+  gap: 0.25rem;
   font-weight: 600;
   border-radius: var(--rounded);
   padding: 0.5rem;
