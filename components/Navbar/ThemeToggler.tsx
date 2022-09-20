@@ -5,10 +5,15 @@ import NavItem from "./NavItem";
 const initialThemeColor = () => {
   if (window === undefined) return "light";
 
-  const savedTheme = localStorage.getItem("theme-color") ?? "light";
-  document.documentElement.dataset.theme = savedTheme;
+  const THEME_COLOR = localStorage.getItem("theme-color");
+  const OS_COLOR_SCHEME = window.matchMedia("(prefers-color-scheme: dark)");
 
-  return savedTheme;
+  if (THEME_COLOR === "dark" || (!THEME_COLOR && OS_COLOR_SCHEME.matches)) {
+    document.documentElement.dataset.theme = "dark";
+    return "dark";
+  }
+
+  return "light";
 };
 
 function ThemeToggler() {
