@@ -243,6 +243,9 @@ ul {
   text-decoration: underline solid var(--bright-turquoise-600);
   text-underline-offset: 0.35rem;
 }
+.contact__email > a {
+  text-decoration: inherit;
+}
 .contact__at {
   opacity: 0.05;
   transition: opacity 0.25s ease-in-out;
@@ -264,6 +267,20 @@ ul {
   display: flex;
   margin: 1.5rem 0 0 0;
   justify-content: center;
+}
+.contact__list:has([href*="twitter.com"]:hover, [href*="t.me"]:hover)
+  ~ p
+  .contact__at {
+  opacity: 1;
+  user-select: auto;
+}
+
+.contact__list:has(a:hover) ~ .para {
+  opacity: 0;
+  visibility: hidden;
+}
+.contact__list:has(a:hover) ~ .contact__email .contact__email-domain {
+  opacity: 0.05;
 }
 
 @media (min-width: 768px) {

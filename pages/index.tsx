@@ -81,16 +81,18 @@ function Home({ projects }: Projects) {
         <Section.Subtitle>
           You can leave me a message in any of the following platforms
         </Section.Subtitle>
-        <p className="contact__email">
-          <span className="contact__at">@</span>
-          <span className="contact__username">tonymckes</span>
-          <span className="contact__email-domain">@gmail.com</span>
-        </p>
         <ul className="contact__list">
           {socials.map(({ name, href }) => (
             <Contact key={name} name={name} href={href} />
           ))}
         </ul>
+        <p className="contact__email">
+          <span className="contact__at">@</span>
+          <a href="mailto:tonymckes@gmail.com">
+          <span className="contact__username">tonymckes</span>
+          <span className="contact__email-domain">@gmail.com</span>
+          </a>
+        </p>
       </Section>
     </>
   );
