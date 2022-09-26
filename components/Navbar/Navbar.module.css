@@ -1,3 +1,8 @@
+.logo > img,
+.logo > svg {
+  height: 1.6rem !important;
+}
+
 .button {
   position: absolute;
   right: 0%;
@@ -14,6 +19,7 @@
   top: 0;
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 html[data-theme="dark"] .header {
   background-color: var(--slate-900);

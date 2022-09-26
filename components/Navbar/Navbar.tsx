@@ -62,7 +62,7 @@ function Navbar() {
 
   return (
     <header className={`${styles.header} ${headerStyles}`}>
-      <NavItem icon href="#" name="TonyMckes" />
+      <NavItem className={styles.logo} icon href="#" name="TonyMckes" />
       <div className={styles.listsContainer}>
         <NavItem
           icon

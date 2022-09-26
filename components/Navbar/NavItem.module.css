@@ -15,8 +15,6 @@
 .navLink > svg,
 .navLink > img {
   color: var(--neutral-900);
-  height: 1.6rem;
-  width: auto;
 }
 html[data-theme="dark"] .navLink > svg,
 html[data-theme="dark"] .navLink > img {

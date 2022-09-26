@@ -5,7 +5,7 @@ import Icon from "./Icon";
 function Footer() {
   return (
     <footer className={styles.container}>
-      <Link href="#">
+      <Link href="#home">
         <a className={styles.link}>
           <Icon aria-hidden name="Up" />
           Back to top

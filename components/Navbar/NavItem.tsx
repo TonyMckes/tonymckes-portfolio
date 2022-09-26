@@ -43,7 +43,7 @@ function NavItem({
 
   const NavItemComponent = (
     <AsComponent
-      className={`${styles.navLink} ${styles.toggler} ${className || ""}`}
+      className={`${styles.navLink} ${className || ""}`}
       rel={rel}
       target={target}
       {...props}

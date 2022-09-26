@@ -68,7 +68,7 @@ function Icon({ name, size, ...props }: IconImageProps) {
   const DynamicIcon = iconsCollection[name];
 
   return (
-    <DynamicIcon height={size || "2rem"} width={size || "2rem"} {...props} />
+    <DynamicIcon height={size || "2rem"} width={size || "auto"} {...props} />
   );
 }
 
