@@ -3,7 +3,7 @@
   font-size: var(--fz-xl);
   font-weight: 600;
   padding: 0.5rem;
-  margin: 0;
+  margin: 0.25rem 0;
   position: relative;
   display: inline-flex;
   background-color: transparent;
