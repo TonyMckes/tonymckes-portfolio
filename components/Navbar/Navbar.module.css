@@ -1,6 +1,7 @@
 .logo > img,
 .logo > svg {
   height: 1.6rem !important;
+  width: 4rem !important;
 }
 
 .button {
