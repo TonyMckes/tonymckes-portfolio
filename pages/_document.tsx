@@ -3,7 +3,7 @@ import Script from "next/script";
 
 function Document() {
   return (
-    <Html>
+    <Html lang="en">
       <Head>
         <meta charSet="UTF-8" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
