@@ -1,7 +1,6 @@
 /* CSS Variables */
 :root {
   color-scheme: light dark;
-  --font-sans: "Open Sans", sans-serif;
 
   --fz-xs: 0.75rem;
   --fz-sm: 0.875rem;
@@ -110,7 +109,7 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--neutral-100);
   color: var(--neutral-900);
-  font-family: var(--font-sans);
+  font-family: "Open Sans", sans-serif;
   font-size: var(--fz-base);
   line-height: 1.5;
   margin: 0;
