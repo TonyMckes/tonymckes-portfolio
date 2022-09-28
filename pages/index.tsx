@@ -3,7 +3,7 @@ import { IconsCollection } from "components/Icon";
 import { Project } from "components/Project";
 import Section from "components/Section";
 import Skill from "components/Skill";
-import { GetServerSideProps } from "next";
+import { GetStaticProps } from "next";
 import { getProjects } from "services/getProjects";
 import { Projects } from "types/projects-types";
 
@@ -32,7 +32,7 @@ const socials: Socials[] = [
   { name: "Twitter", href: "https://twitter.com" },
 ];
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const { projects } = await getProjects();
 
   return { props: { projects } };
@@ -89,8 +89,8 @@ function Home({ projects }: Projects) {
         <p className="contact__email">
           <span className="contact__at">@</span>
           <a href="mailto:tonymckes@gmail.com">
-          <span className="contact__username">tonymckes</span>
-          <span className="contact__email-domain">@gmail.com</span>
+            <span className="contact__username">tonymckes</span>
+            <span className="contact__email-domain">@gmail.com</span>
           </a>
         </p>
       </Section>
