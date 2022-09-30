@@ -8,7 +8,7 @@
   background-color: white;
 }
 html[data-theme="dark"] .item {
-  box-shadow: 0 0.75rem 2rem -1rem var(--slate-900);
+  box-shadow: 0 0.75rem 2rem -1rem var(--slate-800);
   background-color: var(--slate-800);
 }
 .title {
