@@ -44,24 +44,42 @@ html[data-theme="dark"] .scrolled {
   display: inline-block;
   margin: 0.35rem 0;
 }
-
+.background {
+  visibility: hidden;
+  opacity: 0;
+  height: 100vh;
+  width: 100vw;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background-color: rgb(15 17 22 / 20%);
+  backdrop-filter: blur(4px);
+  transition: opacity 150ms linear;
+}
+.backgroundOpen {
+  visibility: visible;
+  opacity: 100;
+}
 .sidebar {
   background-color: var(--neutral-200);
   box-shadow: 0 0 2rem -1rem var(--neutral-500);
-  height: 100%;
+  border: 1px solid rgb(15 17 22 / 25%);
+  /* height: 100%; */
   position: fixed;
-  right: 0;
-  top: 0;
+  right: 1.5rem;
+  top: 3.5rem;
   transform: translateX(100%);
   transition-property: transform, visibility;
   transition-duration: 150ms;
   transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
-  width: 75%;
+  width: 60%;
   visibility: hidden;
+  padding: 1rem;
+  border-radius: 1rem;
 }
 html[data-theme="dark"] .sidebar {
-  background-color: var(--slate-700);
-  box-shadow: 0 0 2rem -1rem var(--slate-900);
+  background-color: var(--slate-800);
+  box-shadow: 0 0 2rem -1rem var(--slate-800);
 }
 .sidebarOpen {
   transform: translateX(0);
@@ -70,15 +88,25 @@ html[data-theme="dark"] .sidebar {
 .navList {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  padding: 3rem;
-  margin-top: 2rem;
+  /* gap: 2rem; */
+  /* padding: 3rem; */
+  /* margin-top: 2rem; */
+}
+.socials {
+  display: flex;
+  justify-content: end;
+  border-top: 1px solid rgb(115 115 115 / 50%);
+  padding-top: 0.25rem;
+  /* flex-direction: column; */
+  /* padding: 3rem; */
+  /* margin-top: 2rem; */
 }
 .socialsNavList {
-  display: flex;
-  flex-direction: column;
-  padding: 3rem;
-  margin-top: 2rem;
+  composes: socials;
+  display: none;
+  /* flex-direction: column; */
+  /* padding: 3rem; */
+  /* margin-top: 2rem; */
 }
 
 @media (min-width: 768px) {
@@ -88,21 +116,28 @@ html[data-theme="dark"] .sidebar {
     align-items: center;
     justify-content: flex-end;
   }
+
   .list {
     margin: 0;
   }
   .button {
     display: none;
   }
+
+  .backgroundOpen {
+    visibility: hidden;
+  }
   .sidebar {
     display: flex;
     align-items: center;
     background-color: transparent;
     box-shadow: none;
+    border: none;
     height: auto;
     position: static;
     transform: translateX(0);
     width: auto;
+    padding: 0;
     visibility: visible;
   }
   html[data-theme="dark"] .sidebar {
