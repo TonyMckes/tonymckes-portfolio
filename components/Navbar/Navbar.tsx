@@ -75,6 +75,12 @@ function Navbar() {
           {menuOpen ? <Icon name="Close" /> : <Icon name="Menu" />}
         </NavItem>
         <div
+          onClick={handleClick}
+          className={`${styles.background} ${
+            menuOpen ? styles.backgroundOpen : ""
+          }`}
+        ></div>
+        <div
           className={`${styles.sidebar} ${menuOpen ? styles.sidebarOpen : ""}`}
         >
           <nav>
@@ -90,7 +96,7 @@ function Navbar() {
               ))}
             </ul>
           </nav>
-          <nav className={styles.socialsNavList}>
+          <nav className={styles.socials}>
             <ThemeToggler />
             <ul className={styles.socialsNavList}>
               {socials.map(({ href, name }) => (
