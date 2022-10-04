@@ -1,6 +1,7 @@
 .logo > img,
 .logo > svg {
   height: 1.6rem !important;
+  width: 4rem !important;
 }
 
 .button {
@@ -106,6 +107,8 @@ html[data-theme="dark"] .sidebar {
     flex: 1;
     align-items: center;
     justify-content: flex-end;
+    border-top: none;
+    padding: 0 0.25rem;
     border-top: none;
     padding: 0 0.25rem;
   }
