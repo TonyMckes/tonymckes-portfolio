@@ -1,4 +1,4 @@
-import Contact from "components/Contact";
+import ContactsList from "components/ContactsList";
 import { IconsCollection } from "components/Icon";
 import { Project } from "components/Project";
 import Section from "components/Section";
@@ -20,16 +20,6 @@ const skills: IconsCollection[] = [
   { name: "Tailwind CSS" },
   { name: "Typescript" },
   { name: "Next.js" },
-];
-interface Socials extends IconsCollection {
-  href: string;
-}
-
-const socials: Socials[] = [
-  { name: "Github", href: "https://github.com" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in" },
-  { name: "Telegram", href: "https://t.me" },
-  { name: "Twitter", href: "https://twitter.com" },
 ];
 
 export const getStaticProps: GetStaticProps = async () => {
@@ -81,18 +71,7 @@ function Home({ projects }: Projects) {
         <Section.Subtitle>
           You can leave me a message in any of the following platforms
         </Section.Subtitle>
-        <ul className="contact__list">
-          {socials.map(({ name, href }) => (
-            <Contact key={name} name={name} href={href} />
-          ))}
-        </ul>
-        <p className="contact__email">
-          <span className="contact__at">@</span>
-          <a href="mailto:tonymckes@gmail.com">
-            <span className="contact__username">tonymckes</span>
-            <span className="contact__email-domain">@gmail.com</span>
-          </a>
-        </p>
+        <ContactsList />
       </Section>
     </>
   );

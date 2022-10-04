@@ -91,7 +91,7 @@ html[data-theme="dark"] .sidebar {
 }
 .socials {
   display: flex;
-  justify-content: end;
+  justify-content: flex-end;
   border-top: 1px solid rgb(115 115 115 / 50%);
   padding-top: 0.25rem;
 }

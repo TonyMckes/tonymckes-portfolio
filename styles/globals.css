@@ -228,60 +228,6 @@ ul {
   margin: 4rem 0 0 0;
 }
 
-.contact {
-  display: grid;
-  justify-items: center;
-}
-
-.contact__email {
-  display: flex;
-  justify-content: center;
-  font-size: var(--fz-2xl);
-  font-weight: 600;
-  transform: translateX(-0.75rem);
-  text-decoration: underline solid var(--bright-turquoise-600);
-  text-underline-offset: 0.35rem;
-}
-.contact__email > a {
-  text-decoration: inherit;
-}
-.contact__at {
-  opacity: 0.05;
-  transition: opacity 0.25s ease-in-out;
-  user-select: none;
-}
-.contact__at--visible {
-  opacity: 1;
-  user-select: auto;
-}
-.contact__email-domain {
-  opacity: 1;
-  transition: opacity 0.25s ease-in-out;
-}
-.contact__email-domain--invisible {
-  opacity: 0.05;
-}
-
-.contact__list {
-  display: flex;
-  margin: 1.5rem 0 0 0;
-  justify-content: center;
-}
-.contact__list:has([href*="twitter.com"]:hover, [href*="t.me"]:hover)
-  ~ p
-  .contact__at {
-  opacity: 1;
-  user-select: auto;
-}
-
-.contact__list:has(a:hover) ~ .para {
-  opacity: 0;
-  visibility: hidden;
-}
-.contact__list:has(a:hover) ~ .contact__email .contact__email-domain {
-  opacity: 0.05;
-}
-
 @media (min-width: 768px) {
   .hero__title {
     font-size: var(--fz-7xl);
@@ -300,10 +246,6 @@ ul {
   .skills__list {
     grid-template-columns: repeat(4, 1fr);
     gap: 3rem 1rem;
-  }
-
-  .contact__list {
-    gap: 2rem;
   }
 }
 
@@ -336,10 +278,6 @@ html[data-theme="dark"] .hero__title::after,
 html[data-theme="dark"] .hero__subtitle::before,
 html[data-theme="dark"] .hero__subtitle::after {
   color: var(--neutral-100);
-}
-
-html[data-theme="dark"] .contact__email {
-  text-decoration: underline solid var(--bright-turquoise-600);
 }
 
 .sr-only {
