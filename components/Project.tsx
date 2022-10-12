@@ -39,9 +39,9 @@ export function Project({
         />
         Your browser does not support the videos.
       </video>
-      <div className={styles.description}>
-        <p>{description || "No description available."}</p>
-      </div>
+      <p className={styles.description}>
+        {description || "No description available."}
+      </p>
       <ul className={styles.techList}>
         {topics.map(({ id, name }) => (
           <Tag key={id} id={id} name={name} />
