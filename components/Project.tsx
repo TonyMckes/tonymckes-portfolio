@@ -1,3 +1,4 @@
+import { useEffect, useRef } from "react";
 import { ProjectData } from "types/projects-types";
 import styles from "./Project.module.css";
 import Tag from "./Tag";
@@ -10,10 +11,28 @@ export function Project({
   homepageUrl,
   url,
 }: ProjectData) {
+  const videoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (typeof window === "undefined") return;
+
+    const observer = new IntersectionObserver((entries) => {
+      const [{ isIntersecting }] = entries;
+      const videoElement = videoRef.current;
+
+      if (!videoElement || !videoElement.duration) return;
+
+      isIntersecting ? videoElement.play() : videoElement.pause();
+    });
+
+    if (videoRef.current === null) return;
+    observer.observe(videoRef.current);
+  }, [videoRef]);
+
   return (
     <li key={id} className={styles.item}>
       <h3 className={styles.title}>{name.replace(/-/g, " ")}</h3>
-      <video className={styles.media} loop muted>
+      <video ref={videoRef} className={styles.media} loop muted>
         <source
           src={`https://raw.githubusercontent.com/TonyMckes/${name}/assets/${name}.webm`}
           type="video/webm"
