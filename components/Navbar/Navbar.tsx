@@ -1,22 +1,17 @@
 import Icon from "components/Icon";
 import dynamic from "next/dynamic";
+import personalInfo from "personalInfo.json";
 import { useEffect, useState } from "react";
+import type { PersonalInfoTypes } from "types/personal-info-types";
 import styles from "./Navbar.module.css";
-import NavItem, { AnchorProps } from "./NavItem";
+import NavItem from "./NavItem";
 
 const ThemeToggler = dynamic(() => import("./ThemeToggler"), { ssr: false });
 
-const socials: Pick<AnchorProps, "name" | "href">[] = [
-  { name: "Github", href: "https://github.com/TonyMckes" },
-  { name: "LinkedIn", href: "https://www.linkedin.com/in/TonyMckes" },
-];
-
-const listItems: Pick<AnchorProps, "text" | "href">[] = [
-  { text: "Home", href: "#" },
-  { text: "Projects", href: "#projects" },
-  { text: "Skills", href: "#skills" },
-  { text: "Contact me", href: "#contact" },
-];
+const { socialMedia, navLinks } = personalInfo as PersonalInfoTypes;
+const socials = socialMedia.filter(({ name }) =>
+  ["LinkedIn", "Github"].includes(name)
+);
 
 function Navbar() {
   const [isScrolled, setIsScrolled] = useState<boolean>(false);
@@ -85,7 +80,7 @@ function Navbar() {
         >
           <nav>
             <ul className={styles.navList}>
-              {listItems.map(({ href, text }) => (
+              {navLinks.map(({ href, text }) => (
                 <li key={text}>
                   <NavItem
                     href={href}

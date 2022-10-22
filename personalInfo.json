@@ -1,0 +1,56 @@
+{
+  "email": "tonymckes@gmail.com",
+
+  "socialMedia": [
+    {
+      "name": "Github",
+      "href": "https://github.com/tonymckes"
+    },
+    {
+      "name": "LinkedIn",
+      "href": "https://www.linkedin.com/in/tonymckes"
+    },
+    {
+      "name": "Telegram",
+      "href": "https://t.me/tonymckes"
+    },
+    {
+      "name": "Twitter",
+      "href": "https://twitter.com/tonymckes"
+    }
+  ],
+
+  "navLinks": [
+    {
+      "text": "Home",
+      "href": "/#"
+    },
+    {
+      "text": "Projects",
+      "href": "/#projects"
+    },
+    {
+      "text": "Skills",
+      "href": "/#skills"
+    },
+    {
+      "text": "Contact me",
+      "href": "/#contact"
+    }
+  ],
+
+  "skills": [
+    { "name": "CSS" },
+    { "name": "Firebase" },
+    { "name": "Github" },
+    { "name": "HTML" },
+    { "name": "Javascript" },
+    { "name": "MariaDB" },
+    { "name": "Node.js" },
+    { "name": "React" },
+    { "name": "Sequelize" },
+    { "name": "Tailwind CSS" },
+    { "name": "Typescript" },
+    { "name": "Next.js" }
+  ]
+}

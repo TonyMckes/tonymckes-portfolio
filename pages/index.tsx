@@ -1,26 +1,14 @@
 import ContactsList from "components/ContactsList";
-import { IconsCollection } from "components/Icon";
 import { Project } from "components/Project";
 import Section from "components/Section";
 import Skill from "components/Skill";
 import { GetStaticProps } from "next";
+import personalData from "personalInfo.json";
 import { getProjects } from "services/getProjects";
-import { Projects } from "types/projects-types";
+import type { PersonalInfoTypes } from "types/personal-info-types";
+import type { Projects } from "types/projects-types";
 
-const skills: IconsCollection[] = [
-  { name: "CSS" },
-  { name: "Firebase" },
-  { name: "Github" },
-  { name: "HTML" },
-  { name: "Javascript" },
-  { name: "MariaDB" },
-  { name: "Node.js" },
-  { name: "React" },
-  { name: "Sequelize" },
-  { name: "Tailwind CSS" },
-  { name: "Typescript" },
-  { name: "Next.js" },
-];
+const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
 
 export const getStaticProps: GetStaticProps = async () => {
   const { projects } = await getProjects();
