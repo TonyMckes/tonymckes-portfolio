@@ -1,10 +1,9 @@
-# Personal Website
+# Personal portfolio
 
-<!-- [![Twitter: tonymckes](https://img.shields.io/twitter/follow/tonymckes.svg?style=social)](https://twitter.com/tonymckes) -->
-
-<!-- ### 🏠 [Homepage](https://tonymckes.netlify.app/) -->
+Build with Typescript, Next.js and CSS Modules. 
 
 ## Install
+First, you need to install the depencencies
 
 ```sh
 npm install
@@ -12,7 +11,7 @@ npm install
 
 ## Usage
 
-First, run the development server:
+Then, run the development server:
 
 ```bash
 npm run dev
@@ -20,19 +19,8 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000)
 
-## Author
+## Contact Info
 
-👤 **TonyMckes**
-
-- Website: https://tonymckes.netlify.app/
-- Twitter: [@tonymckes](https://twitter.com/tonymckes)
-- Github: [@TonyMckes](https://github.com/TonyMckes)
-- LinkedIn: [@tonymckes](https://linkedin.com/in/tonymckes)
-
-## Show your support
-
-Give a ⭐️ if this project helped you!
-
----
-
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
+- Website: https://tonymckes.vercel.app/
+- [Github](https://github.com/TonyMckes), check out my other repos!
+- [LinkedIn](https://linkedin.com/in/tonymckes), let's connect!
