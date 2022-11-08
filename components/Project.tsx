@@ -34,7 +34,7 @@ export function Project({
       <h3 className={styles.title}>{name.replace(/-/g, " ")}</h3>
       <video ref={videoRef} className={styles.media} loop muted>
         <source
-          src={`https://raw.githubusercontent.com/TonyMckes/${name}/assets/${name}.webm`}
+          src={`videos/${name}.webm`}
           type="video/webm"
         />
         Your browser does not support the videos.
