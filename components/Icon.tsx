@@ -70,6 +70,7 @@ function Icon({ name, size, ...props }: IconImageProps) {
   return (
     <DynamicIcon
       role="img"
+      title={`${name} logo`}
       height={size || "2rem"}
       width={size || "2rem"}
       {...props}
