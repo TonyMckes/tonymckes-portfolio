@@ -59,7 +59,7 @@ export interface IconsCollection {
   name: keyof typeof iconsCollection;
 }
 interface IconImageProps
-  extends Omit<SVGProps<SVGSVGElement>, "name">,
+  extends Omit<SVGProps<SVGSVGElement>, "name" | "role">,
     IconsCollection {
   size?: string | number;
 }
@@ -68,7 +68,12 @@ function Icon({ name, size, ...props }: IconImageProps) {
   const DynamicIcon = iconsCollection[name];
 
   return (
-    <DynamicIcon height={size || "2rem"} width={size || "2rem"} {...props} />
+    <DynamicIcon
+      role="img"
+      height={size || "2rem"}
+      width={size || "2rem"}
+      {...props}
+    />
   );
 }
 
