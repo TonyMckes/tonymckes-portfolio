@@ -113,7 +113,6 @@ body {
   -webkit-font-smoothing: antialiased;
   background-color: var(--neutral-100);
   color: var(--neutral-900);
-  font-family: 'Open Sans', sans-serif;
   font-size: var(--fz-base);
   line-height: 1.5;
   margin: 0;
@@ -202,16 +201,16 @@ ul {
   bottom: -0.75rem;
 }
 .hero__title::before {
-  content: '<h1>';
+  content: "<h1>";
 }
 .hero__title::after {
-  content: '</h1>';
+  content: "</h1>";
 }
 .hero__subtitle::before {
-  content: '<h2>';
+  content: "<h2>";
 }
 .hero__subtitle::after {
-  content: '</h2>';
+  content: "</h2>";
 }
 
 .hero__image {
@@ -254,33 +253,33 @@ ul {
 }
 
 /* Dark Theme Colors */
-html[data-theme='dark'] {
+html[data-theme="dark"] {
   scrollbar-color: var(--slate-700) var(--slate-800);
 }
-html[data-theme='dark'] body::-webkit-scrollbar-track {
+html[data-theme="dark"] body::-webkit-scrollbar-track {
   background-color: var(--slate-800);
 }
-html[data-theme='dark'] body::-webkit-scrollbar-thumb {
+html[data-theme="dark"] body::-webkit-scrollbar-thumb {
   background-color: var(--slate-700);
   border-color: var(--slate-800);
 }
-html[data-theme='dark'] body::-webkit-scrollbar-thumb:hover {
+html[data-theme="dark"] body::-webkit-scrollbar-thumb:hover {
   background-color: var(--slate-600);
   border-color: var(--slate-700);
 }
 
-html[data-theme='dark'] body {
+html[data-theme="dark"] body {
   background-color: var(--slate-900);
   color: var(--neutral-100);
 }
-html[data-theme='dark'] .svg-logo--linkedin > path {
+html[data-theme="dark"] .svg-logo--linkedin > path {
   fill: var(--neutral-100);
 }
 
-html[data-theme='dark'] .hero__title::before,
-html[data-theme='dark'] .hero__title::after,
-html[data-theme='dark'] .hero__subtitle::before,
-html[data-theme='dark'] .hero__subtitle::after {
+html[data-theme="dark"] .hero__title::before,
+html[data-theme="dark"] .hero__title::after,
+html[data-theme="dark"] .hero__subtitle::before,
+html[data-theme="dark"] .hero__subtitle::after {
   color: var(--neutral-100);
 }
 
@@ -296,7 +295,7 @@ html[data-theme='dark'] .hero__subtitle::after {
   border-width: 0;
 }
 .underlineEffect:after {
-  content: '';
+  content: "";
   width: 0;
   height: 0.13rem;
   position: absolute;
