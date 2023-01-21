@@ -1,7 +1,5 @@
 import Icon, { IconsCollection } from "components/Icon";
-import Link from "next/link";
 import { HTMLAttributeAnchorTarget, MouseEvent, ReactNode } from "react";
-import { Url } from "url";
 import styles from "./NavItem.module.css";
 
 export interface BaseProps extends Partial<IconsCollection> {
@@ -11,7 +9,7 @@ export interface BaseProps extends Partial<IconsCollection> {
 }
 export interface AnchorProps extends BaseProps {
   as?: "a";
-  href: Url | string;
+  href: string;
   text?: string;
   target?: HTMLAttributeAnchorTarget;
   rel?: string;
@@ -58,6 +56,6 @@ function NavItem({
     return NavItemComponent;
   }
 
-  return <Link href={href} legacyBehavior>{NavItemComponent}</Link>;
+  return <a href={href}>{NavItemComponent}</a>;
 }
 export default NavItem;
