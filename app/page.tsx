@@ -2,23 +2,18 @@ import ContactsList from "components/ContactsList";
 import { Project } from "components/Project";
 import Section from "components/Section";
 import Skill from "components/Skill";
-import { GetStaticProps } from "next";
 import personalData from "personalInfo.json";
 import { getProjects } from "services/getProjects";
 import type { PersonalInfoTypes } from "types/personal-info-types";
-import type { Projects } from "types/projects-types";
+import styles from "../components/Layout.module.css";
 
 const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
 
-export const getStaticProps: GetStaticProps = async () => {
+async function Home() {
   const { projects } = await getProjects();
 
-  return { props: { projects } };
-};
-
-function Home({ projects }: Projects) {
   return (
-    <>
+    <main className={styles.container}>
       <section className="hero" id="home">
         <div className="hero__content">
           <h1 className="hero__title">
@@ -61,7 +56,7 @@ function Home({ projects }: Projects) {
         </Section.Subtitle>
         <ContactsList />
       </Section>
-    </>
+    </main>
   );
 }
 

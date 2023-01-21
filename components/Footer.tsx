@@ -1,6 +1,8 @@
-import Link from 'next/link'
-import styles from './Footer.module.css'
-import Icon from './Icon'
+"use client";
+
+import Link from "next/link";
+import styles from "./Footer.module.css";
+import Icon from "./Icon";
 
 function Footer() {
   return (
@@ -10,7 +12,7 @@ function Footer() {
         Back to top
       </Link>
     </footer>
-  )
+  );
 }
 
-export default Footer
+export default Footer;

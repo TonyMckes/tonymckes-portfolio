@@ -1,3 +1,5 @@
+"use client";
+
 import { useEffect, useRef } from "react";
 import { ProjectData } from "types/projects-types";
 import styles from "./Project.module.css";
@@ -33,10 +35,7 @@ export function Project({
     <li key={id} className={styles.item}>
       <h3 className={styles.title}>{name.replace(/-/g, " ")}</h3>
       <video ref={videoRef} className={styles.media} loop muted>
-        <source
-          src={`videos/${name}.webm`}
-          type="video/webm"
-        />
+        <source src={`videos/${name}.webm`} type="video/webm" />
         Your browser does not support the videos.
       </video>
       <p className={styles.description}>

@@ -1,3 +1,5 @@
+"use client";
+
 import Icon from "components/Icon";
 import dynamic from "next/dynamic";
 import personalInfo from "personalInfo.json";
