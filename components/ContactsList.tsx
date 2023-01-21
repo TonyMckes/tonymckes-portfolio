@@ -1,12 +1,12 @@
-import Icon from "components/Icon";
-import Link from "next/link";
-import personalInfo from "personalInfo.json";
-import { PersonalInfoTypes } from "types/personal-info-types";
-import styles from "./ContactsList.module.css";
+import Icon from 'components/Icon'
+import Link from 'next/link'
+import personalInfo from 'personalInfo.json'
+import { PersonalInfoTypes } from 'types/personal-info-types'
+import styles from './ContactsList.module.css'
 
-type ContactListProps = Pick<PersonalInfoTypes, "socialMedia" | "email">;
-const { email, socialMedia } = personalInfo as ContactListProps;
-const [emailUsername, emailDomain] = email.split("@");
+type ContactListProps = Pick<PersonalInfoTypes, 'socialMedia' | 'email'>
+const { email, socialMedia } = personalInfo as ContactListProps
+const [emailUsername, emailDomain] = email.split('@')
 
 function ContactsList() {
   return (
@@ -14,11 +14,14 @@ function ContactsList() {
       <ul className={styles.list}>
         {socialMedia.map(({ name, href }) => (
           <li key={name}>
-            <Link href={href}>
-              <a className={styles.link} target="_blank" rel="noreferrer">
-                <Icon name={name} />
-                {name}
-              </a>
+            <Link
+              href={href}
+              className={styles.link}
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Icon name={name} />
+              {name}
             </Link>
           </li>
         ))}
@@ -32,7 +35,7 @@ function ContactsList() {
         </a>
       </div>
     </>
-  );
+  )
 }
 
-export default ContactsList;
+export default ContactsList

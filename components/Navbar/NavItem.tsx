@@ -58,6 +58,6 @@ function NavItem({
     return NavItemComponent;
   }
 
-  return <Link href={href}>{NavItemComponent}</Link>;
+  return <Link href={href} legacyBehavior>{NavItemComponent}</Link>;
 }
 export default NavItem;
