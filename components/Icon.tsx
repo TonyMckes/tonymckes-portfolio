@@ -13,6 +13,7 @@ interface IconImageProps extends IconProps {
 
 function Icon({ exact, icon, size, ...props }: IconImageProps) {
   const logoExists = (iconName: string) => {
+    if (!iconName) return null;
     const name = iconName.toLowerCase().replace(/\.| /g, "");
 
     if (iconExists(`logos:${name}-icon`)) {
@@ -23,8 +24,8 @@ function Icon({ exact, icon, size, ...props }: IconImageProps) {
     }
     return null;
   };
-  const iconName = !exact ? logoExists(icon) : icon;
 
+  const iconName = !exact ? logoExists(icon) : icon;
   if (!iconName) return null;
 
   return (
