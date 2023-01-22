@@ -1,11 +1,12 @@
-import Icon, { IconsCollection } from "components/Icon";
+import Icon from "components/Icon";
 import { HTMLAttributeAnchorTarget, MouseEvent, ReactNode } from "react";
 import styles from "./NavItem.module.css";
 
-export interface BaseProps extends Partial<IconsCollection> {
+export interface BaseProps {
   icon?: boolean;
   children?: ReactNode;
   className?: string;
+  name?: string;
 }
 export interface AnchorProps extends BaseProps {
   as?: "a";
@@ -46,7 +47,7 @@ function NavItem({
       target={target}
       {...props}
     >
-      {icon && name && <Icon name={name} />}
+      {icon && name && <Icon icon={name} />}
       {children}
       {<span className={icon ? "sr-only" : ""}>{name || text}</span>}
     </AsComponent>

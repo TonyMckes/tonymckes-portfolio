@@ -19,7 +19,7 @@ function ContactsList() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icon name={name} />
+              <Icon icon={name} />
               {name}
             </a>
           </li>

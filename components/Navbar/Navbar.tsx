@@ -69,7 +69,7 @@ function Navbar() {
           onClick={handleClick}
           className={styles.button}
         >
-          {menuOpen ? <Icon name="Close" /> : <Icon name="Menu" />}
+          {menuOpen ? <Icon icon="Close" /> : <Icon icon="Menu" />}
         </NavItem>
         <div
           onClick={handleClick}

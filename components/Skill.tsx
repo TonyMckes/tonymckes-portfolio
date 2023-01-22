@@ -1,11 +1,11 @@
-import Icon, { IconsCollection } from "./Icon";
+import Icon from "./Icon";
 import styles from "./Skill.module.css";
 
-function Skill({ name }: IconsCollection) {
+function Skill({ name }: { name: string }) {
   return (
     <li className={styles.item}>
-      <Icon name={name} className={styles.logo} />
-      <Icon name={name} className={styles.logoBackground} aria-hidden />
+      <Icon icon={name} className={styles.logo} />
+      <Icon icon={name} className={styles.logoBackground} aria-hidden />
       <span className={styles.title}>{name}</span>
     </li>
   );
