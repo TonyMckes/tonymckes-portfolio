@@ -224,13 +224,6 @@ ul {
   gap: 2rem;
 }
 
-.skills__list {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.5rem 1rem;
-  margin: 4rem 0 0 0;
-}
-
 @media (min-width: 768px) {
   .hero__title {
     font-size: var(--fz-7xl);
@@ -244,11 +237,6 @@ ul {
   .projects__list {
     display: grid;
     gap: 2rem;
-  }
-
-  .skills__list {
-    grid-template-columns: repeat(4, 1fr);
-    gap: 3rem 1rem;
   }
 }
 
