@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html className={`${openSans.className}`}>
       <head />
-      <body>
+      <body className="bg-neutral-100">
         <Navbar />
         {children}
         <Footer />

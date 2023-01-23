@@ -5,7 +5,6 @@ import Skill from "components/Skill";
 import personalData from "personalInfo.json";
 import { getProjects } from "services/getProjects";
 import type { PersonalInfoTypes } from "types/personal-info-types";
-import styles from "../components/Layout.module.css";
 
 const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
 
@@ -13,13 +12,16 @@ async function Home() {
   const { projects } = await getProjects();
 
   return (
-    <main className={styles.container}>
-      <section className="hero" id="home">
-        <div className="hero__content">
-          <h1 className="hero__title">
-            <span>Hi, Im </span>Anthony Mackensen
+    <main className="space-y-20">
+      <section className="flex items-center justify-center h-screen" id="home">
+        <div className="space-y-8 text-6xl font-light">
+          <h1>
+            <span className="text-6xl">
+              Hi, Im <br />
+            </span>
+            Anthony Mackensen
           </h1>
-          <h2 className="hero__subtitle">Web Developer</h2>
+          <h2 className="text-primary-500">Web Developer</h2>
         </div>
       </section>
 

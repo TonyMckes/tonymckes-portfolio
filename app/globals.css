@@ -108,79 +108,6 @@ body::-webkit-scrollbar-thumb:hover {
   border: 0.15rem solid var(--neutral-200);
 }
 
-body {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-  background-color: var(--neutral-100);
-  color: var(--neutral-900);
-  font-size: var(--fz-base);
-  line-height: 1.5;
-  margin: 0;
-}
-
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-weight: 600;
-  line-height: 1.2;
-  margin: 0 0 0.625rem 0;
-}
-a {
-  color: inherit;
-  display: inline-block;
-  position: relative;
-  text-decoration-skip-ink: auto;
-  text-decoration: none;
-}
-button {
-  border-radius: 0;
-  border: 0;
-  cursor: pointer;
-}
-p {
-  margin: 0;
-}
-ul {
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-.hero {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  flex-direction: column;
-  justify-content: center;
-}
-.hero__content {
-  font-weight: 300;
-  margin: 0 0.5rem 0 1.5rem;
-}
-.hero__title {
-  font-size: var(--fz-6xl);
-  font-weight: 300;
-  margin: 0;
-  position: relative;
-}
-.hero__title > span {
-  display: block;
-  font-size: var(--fz-4xl);
-  font-weight: 300;
-  margin: 0;
-  position: relative;
-}
-.hero__subtitle {
-  color: var(--slate-400);
-  font-size: var(--fz-5xl);
-  font-weight: 400;
-  margin: 1.75rem 0 0 0;
-  position: relative;
-}
-
 .hero__title::before,
 .hero__title::after,
 .hero__subtitle::before,
@@ -213,27 +140,12 @@ ul {
   content: "</h2>";
 }
 
-.hero__image {
-  width: 15rem;
-  height: 15rem;
-  overflow: hidden;
-  border-radius: var(--rounded-full);
-}
 .projects__list {
   display: grid;
   gap: 2rem;
 }
 
 @media (min-width: 768px) {
-  .hero__title {
-    font-size: var(--fz-7xl);
-  }
-  .hero__title > span {
-    font-size: var(--fz-5xl);
-  }
-  .hero__subtitle {
-    font-size: var(--fz-6xl);
-  }
   .projects__list {
     display: grid;
     gap: 2rem;
