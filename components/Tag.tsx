@@ -1,9 +1,8 @@
 import { Topic } from "types/projects-res-types";
-import styles from "./Tag.module.css";
 
-function Tag({ id, name }: Topic) {
+function Tag({ name }: Omit<Topic, "id">) {
   return (
-    <li key={id} className={styles.techListItem}>
+    <li className="inline px-2 py-1 text-xs border rounded-full whitespace-nowrap border-primary-200">
       {name}
     </li>
   );
