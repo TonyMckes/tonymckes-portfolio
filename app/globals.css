@@ -141,11 +141,11 @@ body::-webkit-scrollbar-thumb:hover {
 }
 
 .project__item {
-  grid-template-rows: repeat(5, 0fr);
+  grid-template-rows: repeat(5, auto);
 }
 @media (min-width: 768px) {
   .project__item {
-    grid-template-rows: 0fr 1fr 0fr 0fr;
+    grid-template-rows: auto 1fr auto auto;
   }
   .project__item:nth-child(odd) {
     grid-template-columns: 1fr 45%;
