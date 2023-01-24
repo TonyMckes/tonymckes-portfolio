@@ -2,6 +2,7 @@
 
 import { useEffect, useRef } from "react";
 import { ProjectData } from "types/projects-types";
+import BrowserPlaceholder from "./BrowserPlaceholder";
 import Tag from "./Tag";
 
 export function Project({
@@ -35,14 +36,12 @@ export function Project({
         {name.replace(/-/g, " ")}
       </h3>
 
-      <video
-        className="aspect-video md:self-center md:[grid-area:media]"
-        loop
-        muted
-      >
-        <source src={`videos/${name}.webm`} type="video/webm" />
-        Your browser does not support the videos.
-      </video>
+      <BrowserPlaceholder url={homepageUrl}>
+        <video className="aspect-video" loop muted>
+          <source src={`videos/${name}.webm`} type="video/webm" />
+          Your browser does not support the videos.
+        </video>
+      </BrowserPlaceholder>
 
       <p className="m-2 md:[grid-area:description]">
         {description || "No description available."}
