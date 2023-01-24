@@ -3,7 +3,7 @@ import Icon from "./Icon";
 function Skill({ name }: { name: string }) {
   return (
     <li className="relative text-center">
-      <Icon icon={name} className="w-20 h-20 p-2 mx-auto bg-white/50" />
+      <Icon icon={name} className="w-20 h-20 p-2 mx-auto rounded bg-white/50" />
       <Icon
         style={{ display: "none" /* width: "5rem", height: "5rem" */ }}
         icon={name}
