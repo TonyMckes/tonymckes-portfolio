@@ -143,6 +143,25 @@ body::-webkit-scrollbar-thumb:hover {
 .project__item {
   grid-template-rows: repeat(5, auto);
 }
+
+.contact__list:has([href*="twitter.com"]:hover, [href*="t.me"]:hover)
+  ~ .email
+  .at {
+  opacity: 1;
+  user-select: auto;
+}
+
+.contact__list:has(a:hover) ~ .textContent {
+  opacity: 0;
+  visibility: hidden;
+}
+.contact__list:has(a:hover) ~ .email div {
+  transform: translateX(2rem);
+}
+.contact__list:has(a:hover) ~ .email .emailDomain {
+  opacity: 0.05;
+}
+
 @media (min-width: 768px) {
   .project__item {
     grid-template-rows: auto 1fr auto auto;

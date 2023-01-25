@@ -12,7 +12,7 @@ async function Home() {
   const { projects } = await getProjects();
 
   return (
-    <main className="space-y-20">
+    <main className="space-y-40">
       <section className="flex items-center justify-center h-screen" id="home">
         <div className="space-y-8 text-6xl font-light">
           <h1>
