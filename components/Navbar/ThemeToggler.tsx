@@ -39,7 +39,7 @@ function ThemeToggler() {
       onClick={setTheme}
       className="underlineEffect"
     >
-      {activeTheme === "light" ? <Icon name="Dark" /> : <Icon name="Light" />}
+      {activeTheme === "light" ? <Icon className='w-auto h-5' exact icon="ic:twotone-dark-mode" /> : <Icon className='w-auto h-5' exact icon="ic:twotone-light-mode" />}
     </NavItem>
   );
 }
