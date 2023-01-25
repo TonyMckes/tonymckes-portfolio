@@ -25,7 +25,7 @@ function Icon({ exact, icon, size, ...props }: IconImageProps) {
     return null;
   };
 
-  const iconName = !exact ? logoExists(icon) : icon;
+  const iconName = !exact ? logoExists(icon as string) : icon;
   if (!iconName) return null;
 
   return (
