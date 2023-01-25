@@ -1,6 +1,5 @@
 import Icon from "components/Icon";
 import { HTMLAttributeAnchorTarget, MouseEvent, ReactNode } from "react";
-import styles from "./NavItem.module.css";
 
 export interface BaseProps {
   icon?: boolean;
@@ -42,12 +41,16 @@ function NavItem({
 
   const NavItemComponent = (
     <AsComponent
-      className={`${styles.navLink} ${className || ""}`}
+      className={`rounded text-xl font-semibold p-2 my-1 relative flex bg-transparent border-none hover:bg-neutral-50 md:text-sm duration-300 md:hover:text-slate-400 ${
+        className || ""
+      }`}
       rel={rel}
       target={target}
       {...props}
     >
-      {icon && name && <Icon icon={name} />}
+      {icon && name && (
+        <Icon className="text-neutral-900 md:h-5 md:w-auto" icon={name} />
+      )}
       {children}
       {<span className={icon ? "sr-only" : ""}>{name || text}</span>}
     </AsComponent>
