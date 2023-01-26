@@ -15,3 +15,7 @@ export const sanitizeData = (data: ProjectsResponse): Projects => {
 
   return { projects: repositories };
 };
+
+export function tw(...classes: string[]) {
+  return classes.filter(Boolean).join(" ");
+}

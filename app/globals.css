@@ -80,7 +80,7 @@ html {
 /* Provide basic, default focus styles.*/
 :focus {
   outline: 2px dashed var(--bright-turquoise-500);
-  outline-offset: 3px;
+  outline-offset: 1px;
 }
 /* Remove default focus styles for mouse users if supported */
 :focus:not(:focus-visible) {

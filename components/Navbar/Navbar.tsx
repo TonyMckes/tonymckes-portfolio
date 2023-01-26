@@ -1,12 +1,15 @@
 "use client";
 
 import Icon from "components/Icon";
+import Logo from "components/Logo";
+import TonyMckes from "components/TonyMckes";
+import { tw } from "lib/helpers";
 import dynamic from "next/dynamic";
 import personalInfo from "personalInfo.json";
 import { useEffect, useState } from "react";
 import type { PersonalInfoTypes } from "types/personal-info-types";
-import styles from "./Navbar.module.css";
-import NavItem from "./NavItem";
+import NavButton from "./NavButton";
+import NavLink from "./NavLink";
 
 const ThemeToggler = dynamic(() => import("./ThemeToggler"), { ssr: false });
 
@@ -52,66 +55,98 @@ function Navbar() {
   };
 
   const headerStyles = showNavbar
-    ? styles.hidden
+    ? "shadow-none -translate-y-full "
     : isScrolled
-    ? styles.scrolled
-    : "";
+    ? "shadow-md backdrop-blur bg-neutral-100/90  "
+    : "md:py-4 !duration-500 bg-transparent";
 
   return (
-    <header className={`${styles.header} ${headerStyles}`}>
-      <NavItem className={styles.logo} icon href="#" name="TonyMckes" />
-      <div className={styles.listsContainer}>
-        <NavItem
-          icon
-          as="button"
-          text={menuOpen ? "Close sidebar" : "Open sidebar"}
-          aria-label={menuOpen ? "Close sidebar" : "Open sidebar"}
-          onClick={handleClick}
-          className={styles.button}
-        >
-          {menuOpen ? <Icon icon="Close" /> : <Icon icon="Menu" />}
-        </NavItem>
-        <div
-          onClick={handleClick}
-          className={`${styles.background} ${
-            menuOpen ? styles.backgroundOpen : ""
-          }`}
-        ></div>
-        <div
-          className={`${styles.sidebar} ${menuOpen ? styles.sidebarOpen : ""}`}
-        >
-          <nav>
-            <ul className={styles.navList}>
-              {navLinks.map(({ href, text }) => (
-                <li key={text}>
-                  <NavItem
-                    href={href}
-                    text={text}
-                    className="underlineEffect"
-                  />
-                </li>
-              ))}
-            </ul>
-          </nav>
-          <nav className={styles.socials}>
+    <header
+      className={`w-full md:p-1 fixed duration-300 z-10 top-0 ${headerStyles}`}
+    >
+      <nav className="flex justify-between mx-auto lg:container">
+        <NavLink href="#">
+          <TonyMckes />
+        </NavLink>
+        <div className="flex">
+          <NavButton
+            aria-label={menuOpen ? "Close sidebar" : "Open sidebar"}
+            className="m-2 md:hidden"
+            onClick={handleClick}
+          >
+            <Icon
+              size="1.75rem"
+              icon={menuOpen ? "ic:round-close" : "ic:round-menu"}
+            />
+          </NavButton>
+
+          <div
+            onClick={handleClick}
+            className={tw(
+              "backdrop-blur-sm",
+              "bg-black/20",
+              "fixed",
+              "h-screen w-screen",
+              "inset-0",
+              "transition-[opacity,visibility] ease-linear duration-300",
+              menuOpen
+                ? "opacity-100 visible md:invisible"
+                : "opacity-0 invisible"
+            )}
+          />
+
+          <div
+            className={tw(
+              "bg-neutral-200 md:bg-transparent ",
+              "border md:border-none border-black/25",
+              "divide-y divide-neutral-500/50 md:divide-y-0 ",
+              "fixed md:static",
+              "md:divide-x md:divide-neutral-200",
+              "md:flex",
+              "p-4 md:p-0",
+              "right-6 top-14",
+              "rounded-2xl",
+              "shadow-lg md:shadow-none",
+              "space-y-4 md:space-y-0",
+              "transition-[transform,visibility] duration-300",
+              "w-3/5 md:w-auto",
+              menuOpen
+                ? "translate-x-0"
+                : "translate-x-[110%] md:translate-x-0 invisible md:visible"
+            )}
+          >
+            {/* |> Page navigation*/}
+            <nav>
+              <ul
+                className="h-full grid-flow-col space-y-5 md:space-y-0 md:grid auto-cols-fr md:mr-2"
+              >
+                {navLinks.map(({ href, text }) => (
+                  <li key={text}>
+                    <NavLink href={href} className="w-full h-full">
+                      {text}
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+            {/* |> Social navigation*/}
+            <nav>
+              <ul className="flex h-full mt-4 md:mt-0">
+                {socials.map(({ href, name }) => (
+                  <li key={name}>
+                    <NavLink rel="noreferrer" target="_blank" href={href}>
+                      <Logo height="1.75rem" icon={name} />
+                      <span className="sr-only">{name}</span>
+                    </NavLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+
             <ThemeToggler />
-            <ul className={styles.socialsNavList}>
-              {socials.map(({ href, name }) => (
-                <li key={name}>
-                  <NavItem
-                    rel="noreferrer"
-                    target="_blank"
-                    icon
-                    href={href}
-                    name={name}
-                    className="underlineEffect"
-                  />
-                </li>
-              ))}
-            </ul>
-          </nav>
+          </div>
         </div>
-      </div>
+      </nav>
     </header>
   );
 }

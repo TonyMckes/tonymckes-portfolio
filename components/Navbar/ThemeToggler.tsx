@@ -2,7 +2,7 @@
 
 import Icon from "components/Icon";
 import { useState } from "react";
-import NavItem from "./NavItem";
+import NavButton from "./NavButton";
 
 const initialThemeColor = () => {
   if (window === undefined) return "light";
@@ -32,15 +32,17 @@ function ThemeToggler() {
   };
 
   return (
-    <NavItem
-      icon
-      as="button"
-      text={`Change to ${inactiveTheme} mode`}
-      onClick={setTheme}
-      className="underlineEffect"
-    >
-      {activeTheme === "light" ? <Icon className='w-auto h-5' exact icon="ic:twotone-dark-mode" /> : <Icon className='w-auto h-5' exact icon="ic:twotone-light-mode" />}
-    </NavItem>
+    <NavButton onClick={setTheme}>
+      <Icon
+        size="1.75rem"
+        icon={
+          activeTheme === "light"
+            ? "ic:twotone-dark-mode"
+            : "ic:twotone-light-mode"
+        }
+      />
+      <span className="sr-only">Change to {inactiveTheme} mode</span>
+    </NavButton>
   );
 }
 
