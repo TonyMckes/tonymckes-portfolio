@@ -13,12 +13,14 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@iconify/utils": "^2.0.12",
     "@next/font": "^13.1.4",
     "next": "13.1.4",
     "react": "18.2.0",
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@iconify-json/logos": "^1.1.22",
     "@iconify/react": "^4.0.1",
     "@svgr/webpack": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
