@@ -4,14 +4,12 @@ import Icon from "components/Icon";
 import Logo from "components/Logo";
 import TonyMckes from "components/TonyMckes";
 import { tw } from "lib/helpers";
-import dynamic from "next/dynamic";
 import personalInfo from "personalInfo.json";
 import { useEffect, useState } from "react";
 import type { PersonalInfoTypes } from "types/personal-info-types";
 import NavButton from "./NavButton";
 import NavLink from "./NavLink";
-
-const ThemeToggler = dynamic(() => import("./ThemeToggler"), { ssr: false });
+import ThemeToggler from "./ThemeToggler";
 
 const { socialMedia, navLinks } = personalInfo as PersonalInfoTypes;
 const socials = socialMedia.filter(({ name }) =>
@@ -117,9 +115,7 @@ function Navbar() {
           >
             {/* |> Page navigation*/}
             <nav>
-              <ul
-                className="h-full grid-flow-col space-y-5 md:space-y-0 md:grid auto-cols-fr md:mr-2"
-              >
+              <ul className="h-full grid-flow-col space-y-5 md:space-y-0 md:grid auto-cols-fr md:mr-2">
                 {navLinks.map(({ href, text }) => (
                   <li key={text}>
                     <NavLink href={href} className="w-full h-full">
