@@ -1,6 +1,6 @@
-import Icon from "components/Icon";
 import personalInfo from "personalInfo.json";
 import { PersonalInfoTypes } from "types/personal-info-types";
+import Logo from "./Logo";
 
 type ContactListProps = Pick<PersonalInfoTypes, "socialMedia" | "email">;
 const { email, socialMedia } = personalInfo as ContactListProps;
@@ -18,7 +18,7 @@ function ContactsList() {
               target="_blank"
               rel="noreferrer"
             >
-              <Icon className="w-auto h-8 mx-auto md:h-10" icon={name} />
+              <Logo className="w-auto h-8 mx-auto md:h-10" icon={name} />
               {name}
             </a>
           </li>
