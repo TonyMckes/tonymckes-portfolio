@@ -20,8 +20,8 @@
     "react-dom": "18.2.0"
   },
   "devDependencies": {
+    "@iconify-icon/react": "^1.0.2",
     "@iconify-json/logos": "^1.1.22",
-    "@iconify/react": "^4.0.1",
     "@svgr/webpack": "^6.5.1",
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",

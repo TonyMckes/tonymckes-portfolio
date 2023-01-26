@@ -1,44 +1,26 @@
-"use client";
+import { Icon as IconComponent, IconifyIconProps } from "@iconify-icon/react";
 
-import {
-  Icon as IconComponent,
-  iconExists,
-  type IconProps,
-} from "@iconify/react";
-
-interface IconImageProps extends IconProps {
-  exact?: boolean;
-  size?: string | number;
+type IconPropsWithoutRef = Omit<IconifyIconProps, "ref">;
+interface IconProps extends Omit<IconifyIconProps, "ref" | "size"> {
+  size?: number | string;
 }
 
-function Icon({ exact, icon, size, ...props }: IconImageProps) {
-  const logoExists = (iconName: string) => {
-    if (!iconName) return null;
-    const name = iconName.toLowerCase().replace(/\.| /g, "");
-
-    if (iconExists(`logos:${name}-icon`)) {
-      return `logos:${name}-icon`;
-    }
-    if (iconExists(`logos:${name}`)) {
-      return `logos:${name}`;
-    }
-    return null;
+function Icon({ icon, size, height, width, ...props }: IconProps) {
+  const iconAttributes: IconPropsWithoutRef = {
+    "aria-hidden": true,
+    icon,
+    role: "img",
+    style: {
+      display: "inline-block",
+      height: size || height,
+      width: size || width,
+    },
+    height: size || height,
+    width: size || width,
+    ...props,
   };
 
-  const iconName = !exact ? logoExists(icon as string) : icon;
-  if (!iconName) return null;
-
-  return (
-    <IconComponent
-      aria-hidden
-      role="img"
-      icon={iconName}
-      // title={`${name} logo`}
-      height={size || "2rem"}
-      width={size || "2rem"}
-      {...props}
-    />
-  );
+  return <IconComponent {...iconAttributes} />;
 }
 
 export default Icon;

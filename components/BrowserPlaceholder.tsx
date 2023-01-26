@@ -1,6 +1,5 @@
 import { ReactNode } from "react";
 import Icon from "./Icon";
-import { socialMedia } from "personalInfo.json";
 
 interface Props {
   url: string | undefined;
@@ -11,9 +10,11 @@ const arrowIcons = [
   "material-symbols:arrow-back-ios-new-rounded",
   "material-symbols:arrow-forward-ios-rounded",
 ];
-const defaultUrl = socialMedia.find(({ name }) => name !== "Github");
 
-function BrowserPlaceholder({ children, url = defaultUrl?.href }: Props) {
+function BrowserPlaceholder({
+  children,
+  url = "https://github.com/tonymckes",
+}: Props) {
   return (
     <div className="pb-px rounded bg-neutral-200 media aspect-video md:self-center md:[grid-area:media]">
       <div className="grid grid-cols-5 py-1">
@@ -29,7 +30,7 @@ function BrowserPlaceholder({ children, url = defaultUrl?.href }: Props) {
                 className="flex items-center justify-center w-4 h-4 bg-white rounded text-neutral-500 hover:bg-white/75"
                 key={icon}
               >
-                <Icon exact icon={icon} size=".75rem" />
+                <Icon icon={icon} size=".75rem" />
               </div>
             ))}
           </div>
