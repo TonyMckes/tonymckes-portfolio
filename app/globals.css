@@ -2,110 +2,41 @@
 @tailwind components;
 @tailwind utilities;
 
-/* CSS Variables */
-:root {
-  color-scheme: light dark;
-
-  --fz-xs: 0.75rem;
-  --fz-sm: 0.875rem;
-  --fz-base: 1rem;
-  --fz-lg: 1.125rem;
-  --fz-xl: 1.25rem;
-  --fz-2xl: 1.5rem;
-  --fz-3xl: 1.875rem;
-  --fz-4xl: 2.25rem;
-  --fz-5xl: 3rem;
-  --fz-6xl: 3.75rem;
-  --fz-7xl: 4.5rem;
-  --fz-8xl: 6rem;
-  --fz-9xl: 8rem;
-
-  --rounded-sm: 0.125rem;
-  --rounded: 0.25rem;
-  --rounded-md: 0.375rem;
-  --rounded-lg: 0.5rem;
-  --rounded-xl: 0.75rem;
-  --rounded-2xl: 1rem;
-  --rounded-3xl: 1.5rem;
-  --rounded-full: 9999px;
-
-  --bright-turquoise-50: #eefffc;
-  --bright-turquoise-100: #c6fff8;
-  --bright-turquoise-200: #8efff3;
-  --bright-turquoise-300: #4dfbec;
-  --bright-turquoise-400: #17e6db;
-  --bright-turquoise-500: #00ccc4;
-  --bright-turquoise-600: #00a4a1;
-  --bright-turquoise-700: #038281;
-  --bright-turquoise-800: #086667;
-  --bright-turquoise-900: #0c5555;
-
-  --slate-50: #f8fafc;
-  --slate-100: #f1f5f9;
-  --slate-200: #e2e8f0;
-  --slate-300: #cbd5e1;
-  --slate-400: #94a3b8;
-  --slate-500: #64748b;
-  --slate-600: #475569;
-  --slate-700: #334155;
-  /* --slate-800: #1e293b; */
-  /* --slate-900: #0f172a; */
-  --slate-800: #1f2124;
-  --slate-900: #0f1116;
-
-  --neutral-50: #fafafa;
-  --neutral-100: #f5f5f5;
-  --neutral-200: #e5e5e5;
-  --neutral-300: #d4d4d4;
-  --neutral-400: #a3a3a3;
-  --neutral-500: #737373;
-  --neutral-600: #525252;
-  --neutral-700: #404040;
-  --neutral-800: #262626;
-  --neutral-900: #171717;
+@layer components {
+  .nav-item {
+    @apply relative items-center justify-center p-2 text-xl font-semibold duration-300 bg-transparent border-none rounded focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-offset-1 hover:bg-neutral-50 md:flex md:hover:text-slate-400 md:text-sm whitespace-nowrap transition-[colors,outline];
+  }
 }
 
-html {
-  box-sizing: border-box;
-  width: 100%;
-  scroll-behavior: smooth;
+@layer utilities {
+  .underline-effect:after {
+    @apply content-[''] w-0 left-0 h-0.5 absolute top-[90%] bg-slate-400 duration-300;
+  }
+  .underline-effect:hover:after {
+    @apply w-full;
+  }
+  .underline-effect:not(:hover):after {
+    @apply right-0 left-auto;
+  }
 }
 
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-/* Provide basic, default focus styles.*/
-:focus {
-  outline: 2px dashed var(--bright-turquoise-500);
-  outline-offset: 1px;
-}
-/* Remove default focus styles for mouse users if supported */
-:focus:not(:focus-visible) {
-  outline: none;
-  outline-offset: 0px;
-}
-
-/* Scrollbar Styles */
-html {
-  scrollbar-color: var(--slate-300) var(--neutral-300);
-}
-body::-webkit-scrollbar {
-  width: 0.75rem;
-}
-body::-webkit-scrollbar-track {
-  background-color: var(--neutral-200);
-}
-body::-webkit-scrollbar-thumb {
-  background-color: var(--slate-300);
-  border: 0.15rem solid var(--neutral-100);
-  border-radius: 0.75rem;
-}
-body::-webkit-scrollbar-thumb:hover {
-  background-color: var(--slate-400);
-  border: 0.15rem solid var(--neutral-200);
+@layer base {
+  /* Scrollbar Styles */
+  html {
+    @apply [scrollbar-color:bg-slate-300_bg-neutral-300];
+  }
+  body::-webkit-scrollbar {
+    @apply w-3;
+  }
+  body::-webkit-scrollbar-track {
+    @apply bg-neutral-200;
+  }
+  body::-webkit-scrollbar-thumb {
+    @apply border-2 bg-slate-300 rounded-xl border-neutral-100;
+  }
+  body::-webkit-scrollbar-thumb:hover {
+    @apply border-2 bg-slate-400 border-neutral-200;
+  }
 }
 
 .hero__title::before,
@@ -144,24 +75,6 @@ body::-webkit-scrollbar-thumb:hover {
   grid-template-rows: repeat(5, auto);
 }
 
-.contact__list:has([href*="twitter.com"]:hover, [href*="t.me"]:hover)
-  ~ .email
-  .at {
-  opacity: 1;
-  user-select: auto;
-}
-
-.contact__list:has(a:hover) ~ .textContent {
-  opacity: 0;
-  visibility: hidden;
-}
-.contact__list:has(a:hover) ~ .email div {
-  transform: translateX(2rem);
-}
-.contact__list:has(a:hover) ~ .email .emailDomain {
-  opacity: 0.05;
-}
-
 @media (min-width: 768px) {
   .project__item {
     grid-template-rows: auto 1fr auto auto;
@@ -184,62 +97,20 @@ body::-webkit-scrollbar-thumb:hover {
   }
 }
 
-/* Dark Theme Colors */
-html[data-theme="dark"] {
-  scrollbar-color: var(--slate-700) var(--slate-800);
-}
-html[data-theme="dark"] body::-webkit-scrollbar-track {
-  background-color: var(--slate-800);
-}
-html[data-theme="dark"] body::-webkit-scrollbar-thumb {
-  background-color: var(--slate-700);
-  border-color: var(--slate-800);
-}
-html[data-theme="dark"] body::-webkit-scrollbar-thumb:hover {
-  background-color: var(--slate-600);
-  border-color: var(--slate-700);
+.contact__list:has([href*="twitter.com"]:hover, [href*="t.me"]:hover)
+  ~ .email
+  .at {
+  opacity: 1;
+  user-select: auto;
 }
 
-html[data-theme="dark"] body {
-  background-color: var(--slate-900);
-  color: var(--neutral-100);
+.contact__list:has(a:hover) ~ .textContent {
+  opacity: 0;
+  visibility: hidden;
 }
-html[data-theme="dark"] .svg-logo--linkedin > path {
-  fill: var(--neutral-100);
+.contact__list:has(a:hover) ~ .email div {
+  transform: translateX(2rem);
 }
-
-html[data-theme="dark"] .hero__title::before,
-html[data-theme="dark"] .hero__title::after,
-html[data-theme="dark"] .hero__subtitle::before,
-html[data-theme="dark"] .hero__subtitle::after {
-  color: var(--neutral-100);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border-width: 0;
-}
-.underlineEffect:after {
-  content: "";
-  width: 0;
-  height: 0.13rem;
-  position: absolute;
-  top: 90%;
-  left: 0;
-  background: var(--slate-400);
-  transition: 300ms;
-}
-.underlineEffect:hover:after {
-  width: 100%;
-}
-.underlineEffect:not(:hover):after {
-  right: 0;
-  left: auto;
+.contact__list:has(a:hover) ~ .email .emailDomain {
+  opacity: 0.05;
 }

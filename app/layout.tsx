@@ -16,7 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html className={`${openSans.className}`}>
+    <html className={`scroll-smooth ${openSans.className}`}>
       <head />
       <body className="bg-neutral-100">
         <Navbar />

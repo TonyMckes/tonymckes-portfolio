@@ -31,7 +31,7 @@ export function Project({
   }, [videoRef]);
 
   return (
-    <li className="relative grid bg-white md:bg-transparent lg:bg-white drop-shadow-2xl gap-x-2 rounded-xl project__item">
+    <li className="relative grid overflow-hidden bg-white md:bg-transparent lg:bg-white drop-shadow-2xl gap-x-2 rounded-xl project__item">
       <h3 className="m-2 text-lg font-semibold capitalize md:[grid-area:title]">
         {name.replace(/-/g, " ")}
       </h3>
