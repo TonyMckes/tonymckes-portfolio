@@ -17,11 +17,17 @@ const OPTIONS: RequestInit = {
 };
 
 export const getProjects = async () => {
-  const response = await fetch(API_URL, OPTIONS);
+  try {
+    const response = await fetch(API_URL, OPTIONS);
 
-  if (!response.ok) throw { message: "Fetch error" };
+    if (!response.ok) throw { message: "Fetch error" };
 
-  const { data }: ResponseJSON = await response.json();
+    const { data }: ResponseJSON = await response.json();
 
-  return sanitizeData(data);
+    return sanitizeData(data);
+  } catch (error) {
+    console.log(error);
+
+    return { projects: [] };
+  }
 };
