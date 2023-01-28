@@ -4,13 +4,13 @@
 
 @layer components {
   .nav-item {
-    @apply relative items-center justify-center p-2 text-xl font-semibold duration-300 bg-transparent border-none rounded focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-offset-1 hover:bg-neutral-50 md:flex md:hover:text-slate-400 md:text-sm whitespace-nowrap transition-[colors,outline];
+    @apply relative items-center justify-center p-2 text-xl font-semibold duration-300 bg-transparent border-none rounded focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-offset-1 outline-primary-700 dark:outline-primary-300 hover:bg-neutral-50 md:flex md:hover:text-primary-700 md:text-sm whitespace-nowrap transition-[colors,outline] dark:hover:bg-night-800/50 dark:hover:text-primary-300;
   }
 }
 
 @layer utilities {
   .underline-effect:after {
-    @apply content-[''] w-0 left-0 h-0.5 absolute top-[90%] bg-slate-400 duration-300;
+    @apply content-[''] w-0 left-0 h-0.5 absolute top-[90%] bg-primary-500 duration-300;
   }
   .underline-effect:hover:after {
     @apply w-full;
@@ -23,19 +23,25 @@
 @layer base {
   /* Scrollbar Styles */
   html {
-    @apply [scrollbar-color:bg-slate-300_bg-neutral-300];
+    @apply [scrollbar-color:bg-primary-300_bg-neutral-300] dark:[scrollbar-color:bg-primary-700_bg-primary-800];
   }
   body::-webkit-scrollbar {
     @apply w-3;
   }
   body::-webkit-scrollbar-track {
-    @apply bg-neutral-200;
+    @apply bg-neutral-200 dark:bg-primary-800;
   }
   body::-webkit-scrollbar-thumb {
-    @apply border-2 bg-slate-300 rounded-xl border-neutral-100;
+    @apply border-2 bg-primary-300 rounded-xl border-neutral-100 dark:bg-primary-700 dark:border-primary-800;
   }
   body::-webkit-scrollbar-thumb:hover {
-    @apply border-2 bg-slate-400 border-neutral-200;
+    @apply border-2 bg-primary-400 border-neutral-200 dark:bg-primary-600 dark:border-primary-700;
+  }
+
+  /* Logo color */
+  html.dark a[href*="linkedin.com"] svg > path,
+  html.dark a[href*="github.com"] svg > path {
+    @apply fill-[#E9E9EA];
   }
 }
 

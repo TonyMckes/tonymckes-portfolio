@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html className={`scroll-smooth ${openSans.className}`}>
       <head />
-      <body className="bg-neutral-100">
+      <body className="bg-neutral-100 text-neutral-900 dark:bg-night-900 dark:text-neutral-100">
         <Navbar />
         {children}
         <Footer />

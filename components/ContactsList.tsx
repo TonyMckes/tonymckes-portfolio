@@ -14,7 +14,7 @@ function ContactsList() {
           <li key={name}>
             <a
               href={href}
-              className="grid justify-center w-24 h-auto gap-1 p-2 font-semibold rounded hover:bg-neutral-50 link"
+              className="grid justify-center w-24 h-auto gap-1 p-2 font-medium rounded hover:bg-neutral-50 dark:hover:bg-night-800/50 link"
               target="_blank"
               rel="noreferrer"
             >
@@ -24,11 +24,11 @@ function ContactsList() {
           </li>
         ))}
       </ul>
-      <p className="text-neutral-600 text-xl mt-8 text-center transition-[visibility,opacity] duration-500 opacity-100 textContent">
+      <p className="text-primary-700 dark:text-primary-300 text-xl mt-8 text-center transition-[visibility,opacity] duration-500 opacity-100 textContent">
         Or write me an email
       </p>
-      <div className="text-2xl text-center underline underline-offset-4 -translate-x-[0.5ch] email">
-        <span className="transition-opacity duration-500 opacity-50 select-none at">
+      <div className="text-2xl text-center underline decoration-primary-500 underline-offset-4 -translate-x-[0.5ch] email">
+        <span className="transition-opacity duration-500 opacity-25 select-none at">
           @
         </span>
         <a className="font-semibold" href="mailto:${email}">

@@ -55,7 +55,7 @@ function Navbar() {
   const headerStyles = showNavbar
     ? "shadow-none -translate-y-full "
     : isScrolled
-    ? "shadow-md backdrop-blur bg-neutral-100/90  "
+    ? "shadow-md backdrop-blur bg-neutral-100/90 dark:bg-night-900/90"
     : "md:py-4 !duration-500 bg-transparent";
 
   return (
@@ -95,11 +95,11 @@ function Navbar() {
 
           <div
             className={tw(
-              "bg-neutral-200 md:bg-transparent ",
-              "border md:border-none border-black/25",
-              "divide-y divide-neutral-500/50 md:divide-y-0 ",
+              "bg-neutral-200 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent",
+              "border md:border-none border-black/25 dark:border-white/25",
+              "divide-y divide-black/25 dark:divide-white/25 md:divide-y-0",
               "fixed md:static",
-              "md:divide-x md:divide-neutral-200",
+              "md:divide-x",
               "md:flex",
               "p-4 md:p-0",
               "right-6 top-14",

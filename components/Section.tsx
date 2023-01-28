@@ -16,16 +16,18 @@ function Section({ id, children }: Pick<SectionProps, "id" | "children">) {
 }
 
 export function SectionTitle({ text }: Pick<SectionProps, "text">) {
-  return <h2 className="text-3xl font-semibold text-center">{text}</h2>;
+  return <h2 className="mb-3 text-4xl font-bold text-center">{text}</h2>;
 }
 
-export function SectionSubtitle({ children }: Pick<SectionProps, "children">) {
+export function SectionParagraph({ children }: Pick<SectionProps, "children">) {
   return (
-    <h3 className="mb-10 text-xl text-center text-neutral-600">{children}</h3>
+    <p className="mb-20 text-2xl font-semibold text-center text-primary-700 dark:text-primary-300">
+      {children}
+    </p>
   );
 }
 
 Section.Title = SectionTitle;
-Section.Subtitle = SectionSubtitle;
+Section.Paragraph = SectionParagraph;
 
 export default Section;

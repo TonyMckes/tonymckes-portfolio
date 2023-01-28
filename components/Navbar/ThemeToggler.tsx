@@ -1,46 +1,49 @@
 "use client";
 
 import Icon from "components/Icon";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import NavButton from "./NavButton";
-
-const initialThemeColor = () => {
-  if (window === undefined) return "light";
-
-  const THEME_COLOR = localStorage.getItem("theme-color");
-  const OS_COLOR_SCHEME = window.matchMedia("(prefers-color-scheme: dark)");
-
-  if (THEME_COLOR === "dark" || (!THEME_COLOR && OS_COLOR_SCHEME.matches)) {
-    document.documentElement.dataset.theme = "dark";
-    return "dark";
-  }
-
-  return "light";
-};
+import useThemeToggler from "./useThemeToggler";
 
 function ThemeToggler() {
-  const [activeTheme, setActiveTheme] = useState<string>(initialThemeColor);
-  const inactiveTheme = activeTheme === "light" ? "dark" : "light";
+  const [mounted, setMounted] = useState<boolean>(false);
+  const [{ inactiveTheme, theme }, setTheme] = useThemeToggler();
 
-  const setTheme = () => {
-    setActiveTheme(inactiveTheme);
+  useEffect(() => {
+    setMounted(true);
+  }, []);
 
-    if (window === undefined) return;
+  const switchTheme = () => {
+    setTheme(inactiveTheme);
 
-    document.documentElement.dataset.theme = inactiveTheme;
-    localStorage.setItem("theme-color", inactiveTheme);
+    document.documentElement.classList.toggle("dark");
+
+    if (inactiveTheme) {
+      localStorage.setItem("theme-color", inactiveTheme);
+    } else {
+      localStorage.removeItem("theme-color");
+    }
   };
 
+  if (!mounted) {
+    return (
+      <NavButton>
+        <Icon
+          className="animate-pulse"
+          size="1.75rem"
+          icon="line-md:light-dark-loop"
+        />
+        <span className="sr-only">Toggle the theme color</span>
+      </NavButton>
+    );
+  }
+
+  const iconTheme =
+    theme === "dark" ? "ic:twotone-light-mode" : "ic:twotone-dark-mode";
+
   return (
-    <NavButton onClick={setTheme}>
-      <Icon
-        size="1.75rem"
-        icon={
-          activeTheme === "light"
-            ? "ic:twotone-dark-mode"
-            : "ic:twotone-light-mode"
-        }
-      />
+    <NavButton onClick={switchTheme}>
+      <Icon size="1.75rem" icon={iconTheme} />
       <span className="sr-only">Change to {inactiveTheme} mode</span>
     </NavButton>
   );
