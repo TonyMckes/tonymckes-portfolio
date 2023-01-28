@@ -1,10 +1,8 @@
-"use client";
-
 import { tw } from "lib/helpers";
-import { useEffect, useRef } from "react";
 import { ProjectData } from "types/projects-types";
 import BrowserPlaceholder from "./BrowserPlaceholder";
 import Tag from "./Tag";
+import Video from "./Video";
 
 export function Project({
   name,
@@ -13,24 +11,6 @@ export function Project({
   homepageUrl,
   url,
 }: Omit<ProjectData, "id">) {
-  const videoRef = useRef<HTMLVideoElement>(null);
-
-  useEffect(() => {
-    if (typeof window === "undefined") return;
-
-    const observer = new IntersectionObserver((entries) => {
-      const [{ isIntersecting }] = entries;
-      const videoElement = videoRef.current;
-
-      if (!videoElement || !videoElement.duration) return;
-
-      isIntersecting ? videoElement.play() : videoElement.pause();
-    });
-
-    if (videoRef.current === null) return;
-    observer.observe(videoRef.current);
-  }, [videoRef]);
-
   return (
     <li className="relative grid overflow-hidden bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 drop-shadow-2xl gap-x-2 rounded-xl project__item">
       <h3 className="m-2 text-lg font-bold capitalize md:[grid-area:title]">
@@ -38,10 +18,7 @@ export function Project({
       </h3>
 
       <BrowserPlaceholder url={homepageUrl}>
-        <video className="aspect-video" loop muted>
-          <source src={`videos/${name}.webm`} type="video/webm" />
-          Your browser does not support the videos.
-        </video>
+        <Video name={name} />
       </BrowserPlaceholder>
 
       <p className="m-2 text-neutral-700 font-medium dark:text-neutral-300 md:[grid-area:description]">
