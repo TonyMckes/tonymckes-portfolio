@@ -55,12 +55,12 @@ function Navbar() {
   const headerStyles = showNavbar
     ? "shadow-none -translate-y-full "
     : isScrolled
-    ? "shadow-md backdrop-blur bg-neutral-100/90 dark:bg-night-900/90"
+    ? "shadow-md"
     : "md:py-4 !duration-500 bg-transparent";
 
   return (
     <header
-      className={`w-full md:p-1 fixed duration-300 z-10 top-0 ${headerStyles}`}
+      className={`fixed top-0 z-10 w-full duration-300 md:p-1 bg-neutral-100/95 dark:bg-night-900/95 ${headerStyles}`}
     >
       <nav className="flex justify-between mx-auto lg:container">
         <NavLink href="#">
@@ -115,7 +115,7 @@ function Navbar() {
           >
             {/* |> Page navigation*/}
             <nav>
-              <ul className="h-full grid-flow-col space-y-5 md:space-y-0 md:grid auto-cols-fr md:mr-2">
+              <ul className="h-full grid-flow-col space-y-2 md:space-y-0 md:grid auto-cols-fr md:mr-2">
                 {navLinks.map(({ href, text }) => (
                   <li key={text}>
                     <NavLink href={href} className="w-full h-full">
