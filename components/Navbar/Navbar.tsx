@@ -69,7 +69,7 @@ function Navbar() {
         <div className="flex">
           <NavButton
             aria-label={menuOpen ? "Close sidebar" : "Open sidebar"}
-            className="m-2 md:hidden"
+            className="z-50 m-2 md:hidden"
             onClick={handleClick}
           >
             <Icon
@@ -127,7 +127,7 @@ function Navbar() {
             </nav>
             {/* |> Social navigation*/}
             <nav>
-              <ul className="flex h-full mt-4 md:mt-0">
+              <ul className="flex h-full mt-4 md:ml-2 md:mt-0">
                 {socials.map(({ href, name }) => (
                   <li key={name}>
                     <NavLink rel="noreferrer" target="_blank" href={href}>

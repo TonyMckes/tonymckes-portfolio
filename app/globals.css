@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-item {
-    @apply relative items-center justify-center p-2 text-xl font-semibold duration-300 bg-transparent border-none rounded focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-offset-1 outline-primary-700 dark:outline-primary-300 hover:bg-neutral-50 md:flex md:hover:text-primary-700 md:text-sm whitespace-nowrap transition-[colors,outline] dark:hover:bg-night-800/50 dark:hover:text-primary-300;
+    @apply relative flex items-center md:justify-center p-2 text-xl font-semibold duration-300 bg-transparent border-none rounded focus-visible:outline-2 focus-visible:outline-dashed focus-visible:outline-offset-1 outline-primary-700 dark:outline-primary-300 hover:bg-neutral-50 md:flex md:hover:text-primary-700 md:text-sm whitespace-nowrap transition-[colors,outline] dark:hover:bg-night-800/50 dark:hover:text-primary-300;
   }
 }
 
