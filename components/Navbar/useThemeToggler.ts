@@ -4,7 +4,6 @@ import { useState } from "react";
 
 const initialThemeColor = () => {
   const isServer = typeof window === "undefined";
-  console.log({ isServer });
   if (isServer) return undefined;
 
   const isDarkTheme = document.documentElement.classList.contains("dark");
