@@ -86,7 +86,7 @@ function Navbar() {
               "fixed",
               "h-screen w-screen",
               "inset-0",
-              "transition-[opacity,visibility] ease-linear duration-300",
+              "transition-[opacity,visibility]",
               menuOpen
                 ? "opacity-100 visible md:invisible"
                 : "opacity-0 invisible"
@@ -106,11 +106,8 @@ function Navbar() {
               "rounded-2xl",
               "shadow-lg md:shadow-none",
               "space-y-4 md:space-y-0",
-              "transition-[transform,visibility] duration-300",
               "w-3/5 md:w-auto",
-              menuOpen
-                ? "translate-x-0"
-                : "translate-x-[110%] md:translate-x-0 invisible md:visible"
+              menuOpen ? "" : "invisible md:visible"
             )}
           >
             {/* |> Page navigation*/}
