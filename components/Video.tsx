@@ -22,7 +22,7 @@ function Video({ name }: { name: string }) {
   }, [videoRef]);
 
   return (
-    <video ref={videoRef} className="aspect-video" loop muted>
+    <video ref={videoRef} className="w-full" loop muted>
       <source src={`videos/${name}.webm`} type="video/webm" />
       Your browser does not support the videos.
     </video>
