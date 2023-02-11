@@ -31,7 +31,7 @@ async function Home() {
           <Section.Paragraph>
             A small showcase of some of my projects.
           </Section.Paragraph>
-          <ul className="space-y-8">
+          <ul className="space-y-16 md:space-y-8">
             {projects.map((project) => (
               <Project key={project.id} {...project} />
             ))}
