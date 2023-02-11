@@ -12,7 +12,7 @@ export function Project({
   url,
 }: Omit<ProjectData, "id">) {
   return (
-    <li className="relative grid overflow-hidden bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 drop-shadow-2xl gap-x-2 rounded-xl project__item">
+    <li className="relative grid overflow-hidden shadow-xl dark:shadow-none bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 md:shadow-none dark:drop-shadow-none md:drop-shadow-2xl gap-x-2 rounded-xl project__item">
       <h3 className="m-2 text-lg font-bold capitalize md:[grid-area:title]">
         {name.replace(/-/g, " ")}
       </h3>
