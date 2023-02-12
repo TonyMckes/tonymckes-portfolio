@@ -1,26 +1,65 @@
-# Personal portfolio
+# TonyMckes - Portfolio
 
-Build with Typescript, Next.js and CSS Modules. 
+Personal website/portfolio where I showcase my experience through projects that I've built
 
-## Install
-First, you need to install the depencencies
+## Tech Stack
 
-```sh
+This project was initially built with plain HTML, CSS, and JavaScript and eventually migrated to:
+
+- Language: TypeScript
+- Framework: Next.js
+- Styling: Tailwind CSS
+- Deployment: Vercel
+
+## Features
+
+- Light/dark mode toggle
+- Responsive design
+
+## Getting Started
+
+These instructions will help you run the project on your local machine for development and testing purposes.
+
+### Perquisites
+
+Make sure to have everything that is required before you try to run the project.
+
+- [Node.js v16 or above](https://nodejs.org/en/download/)
+
+### Installation
+
+Install all dependencies required for the project with NPM (Node Package Manager).
+
+```bash
 npm install
 ```
 
-## Usage
+## Running Locally
 
-Then, run the development server:
+Once everything is set up, you can run the project development server or tests locally
+
+### Development Server
+
+To run the development server, run the following command
 
 ```bash
 npm run dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000)
+Open [https://localhost:3000/](https://localhost:3000/) in your browser to see the web page.
+
+### Running Tests
+
+To run tests, run the following command
+
+```bash
+npm run test
+```
+
+## Acknowledgements
+
+- [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
 ## Contact Info
 
-- Website: https://tonymckes.vercel.app/
-- [Github](https://github.com/TonyMckes), check out my other repos!
-- [LinkedIn](https://linkedin.com/in/tonymckes), let's connect!
+Created by [@TonyMckes](https://tonymckes.vercel.app/) - feel free to contact me!
