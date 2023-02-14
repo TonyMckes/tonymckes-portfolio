@@ -20,7 +20,7 @@ This project was initially built with plain HTML, CSS, and JavaScript and eventu
 
 These instructions will help you run the project on your local machine for development and testing purposes.
 
-### Perquisites
+### Prerequisite
 
 Make sure to have everything that is required before you try to run the project.
 
