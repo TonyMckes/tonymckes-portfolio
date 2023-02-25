@@ -27,7 +27,7 @@ Before you run the project, make sure that you have the following tools and soft
 - Text editor/IDE (e.g., VS Code, Sublime Text, Atom)
 - [Git](https://git-scm.com/downloads)
 - [Node.js](https://nodejs.org/en/download/) `v16.16.0+`
-- [NPM](https://www.npmjs.com/) (usually included with Node.js)
+- [PNPM](https://pnpm.io/installation) `v7.x`
 
 ### Installation
 
@@ -73,7 +73,7 @@ To run tests, simply run the following command:
 npm run test
 ```
 
-## Acknowledgements
+## Acknowledgments
 
 - [How to write a Good readme](https://bulldogjob.com/news/449-how-to-write-a-good-readme-for-your-github-project)
 
