@@ -26,12 +26,12 @@ async function Home() {
       </section>
 
       {projects.length > 0 && (
-        <Section id="projects">
-          <Section.Title text="Projects" />
+        <Section id="projects" className="max-w-container">
+          <Section.Title>Projects</Section.Title>
           <Section.Paragraph>
-            A small showcase of some of my projects.
+            A small showcase of some of the projects I’ve worked on.
           </Section.Paragraph>
-          <ul className="space-y-8">
+          <ul className="space-y-8 mb-20">
             {projects.map((project) => (
               <Project key={project.id} {...project} />
             ))}
@@ -39,8 +39,8 @@ async function Home() {
         </Section>
       )}
 
-      <Section id="skills">
-        <Section.Title text="Skills" />
+      <Section id="skills" className="max-w-container">
+        <Section.Title>Skills</Section.Title>
         <Section.Paragraph>
           Here are a few technologies I’ve been working with recently
         </Section.Paragraph>
@@ -51,8 +51,8 @@ async function Home() {
         </ul>
       </Section>
 
-      <Section id="contact">
-        <Section.Title text="Get in touch" />
+      <Section id="contact" className="max-w-container">
+        <Section.Title>Get in touch</Section.Title>
         <Section.Paragraph>
           You can leave me a message in any of the following platforms
         </Section.Paragraph>
