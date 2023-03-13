@@ -3,13 +3,13 @@ import { Project } from "components/Project";
 import Section from "components/Section";
 import Skill from "components/Skill";
 import personalData from "personalInfo.json";
-import { getProjects } from "services/getProjects";
+import { getFeaturedRepos } from "services/getProjects";
 import type { PersonalInfoTypes } from "types/personal-info-types";
 
 const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
 
 async function Home() {
-  const { projects } = await getProjects();
+  const featuredProjects = await getFeaturedRepos();
 
   return (
     <main className="space-y-40">
@@ -25,14 +25,14 @@ async function Home() {
         </div>
       </section>
 
-      {projects.length > 0 && (
+      {featuredProjects.length > 0 && (
         <Section id="projects" className="max-w-container">
           <Section.Title>Projects</Section.Title>
           <Section.Paragraph>
             A small showcase of some of the projects I’ve worked on.
           </Section.Paragraph>
           <ul className="space-y-8 mb-20">
-            {projects.map((project) => (
+            {featuredProjects.map((project) => (
               <Project key={project.id} {...project} />
             ))}
           </ul>
