@@ -1,16 +1,16 @@
 import { tw } from "lib/helpers";
-import { ProjectData } from "types/projects-types";
+import type { Repository } from "types/repositories-types";
 import BrowserPlaceholder from "./BrowserPlaceholder";
 import Tag from "./Tag";
 import Video from "./Video";
 
 export function Project({
   name,
-  topics,
+  repositoryTopics: { topics },
   description,
   homepageUrl,
   url,
-}: Omit<ProjectData, "id">) {
+}: Omit<Repository, "id">) {
   return (
     <li className="relative grid overflow-hidden shadow-xl dark:shadow-none bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 md:shadow-none dark:drop-shadow-none md:drop-shadow-2xl gap-x-2 rounded-xl project__item">
       <h3 className="m-2 text-lg font-bold capitalize md:[grid-area:title]">

@@ -1,6 +1,10 @@
-import { QUERY } from "lib/graphql-query";
-import { sanitizeData } from "lib/helpers";
-import { ResponseJSON } from "types/projects-res-types";
+import { FEATURED_REPOS_QUERY, SHOWCASE_REPOS_QUERY } from "lib/graphql-query";
+import { normalizeData } from "lib/helpers";
+import type {
+  FeaturedReposResponse,
+  Repository,
+  ShowcaseReposResponse,
+} from "types/repositories-types";
 
 const API_URL = "https://api.github.com/graphql";
 const API_TOKEN = process.env.API_TOKEN;
@@ -8,7 +12,6 @@ const API_TOKEN = process.env.API_TOKEN;
 if (!API_TOKEN) throw { message: "Missing API_TOKEN" };
 
 const OPTIONS: RequestInit = {
-  body: QUERY,
   headers: new Headers({
     "Content-Type": "application/json",
     Authorization: API_TOKEN,
@@ -16,18 +19,42 @@ const OPTIONS: RequestInit = {
   method: "POST",
 };
 
-export const getProjects = async () => {
+export const getFeaturedRepos = async (): Promise<Repository[]> => {
   try {
-    const response = await fetch(API_URL, OPTIONS);
+    const response = await fetch(API_URL, {
+      ...OPTIONS,
+      body: FEATURED_REPOS_QUERY,
+    });
 
     if (!response.ok) throw { message: "Fetch error" };
 
-    const { data }: ResponseJSON = await response.json();
+    const { data }: FeaturedReposResponse = await response.json();
+    const { nodes } = data.user.pinnedItems;
 
-    return sanitizeData(data);
+    return normalizeData(nodes);
   } catch (error) {
     console.log(error);
 
-    return { projects: [] };
+    return [];
+  }
+};
+
+export const getShowcaseRepos = async (): Promise<Repository[]> => {
+  try {
+    const response = await fetch(API_URL, {
+      ...OPTIONS,
+      body: SHOWCASE_REPOS_QUERY,
+    });
+
+    if (!response.ok) throw { message: "Fetch error" };
+
+    const { data }: ShowcaseReposResponse = await response.json();
+    const { nodes } = data.search;
+
+    return normalizeData(nodes);
+  } catch (error) {
+    console.log(error);
+
+    return [];
   }
 };
