@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from "next";
-import { getProjects } from "services/getProjects";
+import { getFeaturedRepos } from "services/getProjects";
 
 export default async function handler(
   req: NextApiRequest,
@@ -9,7 +9,7 @@ export default async function handler(
 
   try {
     if (method === "GET") {
-      const { projects } = await getProjects();
+      const projects = await getFeaturedRepos();
 
       res.status(200).json(projects);
     }

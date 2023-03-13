@@ -1,19 +1,26 @@
-import type { ProjectsResponse, Topic } from "types/projects-res-types";
-import type { ProjectData, Projects } from "types/projects-types";
+import type {
+  Repository,
+  RepositoryNode,
+  Topics,
+} from "types/repositories-types";
 
-export const sanitizeData = (data: ProjectsResponse): Projects => {
-  const repositories = data.user.pinnedItems.nodes.map((repository) => {
-    let topics: Topic[] = [];
+export function normalizeTopics({
+  repositoryTopics,
+}: Pick<RepositoryNode, "repositoryTopics">): Topics {
+  const { nodes, totalCount } = repositoryTopics;
+  const topics = nodes.map(({ topic: { id, name } }) => ({ id, name }));
 
-    if (repository.repositoryTopics) {
-      topics = repository.repositoryTopics.nodes.map(({ topic }) => topic);
+  return { totalCount, topics };
+}
 
-      delete repository.repositoryTopics;
-    }
-    return { ...repository, topics } as ProjectData;
+export const normalizeData = (nodes: RepositoryNode[]): Repository[] => {
+  const repositories = nodes.map((repository): Repository => {
+    const repositoryTopics = normalizeTopics(repository);
+
+    return { ...repository, repositoryTopics };
   });
 
-  return { projects: repositories };
+  return repositories;
 };
 
 export function tw(...classes: string[]) {

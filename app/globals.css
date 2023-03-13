@@ -9,6 +9,9 @@
 }
 
 @layer utilities {
+  .max-w-container {
+    @apply max-w-5xl mx-auto px-2;
+  }
   .underline-effect:after {
     @apply content-[''] w-0 left-0 h-0.5 absolute top-[90%] bg-primary-500 duration-300;
   }

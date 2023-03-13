@@ -1,27 +1,16 @@
-import { ReactNode } from "react";
+import { ComponentProps } from "react";
 
-interface SectionProps {
-  id: string;
-  text: string;
-  subtitle: string;
-  children: ReactNode;
+function Section({ children, ...props }: ComponentProps<"section">) {
+  return <section {...props}>{children}</section>;
 }
 
-function Section({ id, children }: Pick<SectionProps, "id" | "children">) {
+function SectionTitle({ children }: ComponentProps<"h2">) {
+  return <h2 className="mb-3 text-4xl font-bold text-center">{children}</h2>;
+}
+
+function SectionParagraph({ children }: ComponentProps<"p">) {
   return (
-    <section className="w-11/12 mx-auto lg:w-2/3" id={id}>
-      {children}
-    </section>
-  );
-}
-
-export function SectionTitle({ text }: Pick<SectionProps, "text">) {
-  return <h2 className="mb-3 text-4xl font-bold text-center">{text}</h2>;
-}
-
-export function SectionParagraph({ children }: Pick<SectionProps, "children">) {
-  return (
-    <p className="mb-20 text-2xl font-semibold text-center text-primary-700 dark:text-primary-300">
+    <p className="mb-10 text-2xl font-semibold text-center text-primary-700 dark:text-primary-300">
       {children}
     </p>
   );

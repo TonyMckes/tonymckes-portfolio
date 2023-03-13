@@ -1,4 +1,4 @@
-import { Topic } from "types/projects-res-types";
+import { Topic } from "types/repositories-types";
 
 function Tag({ name }: Omit<Topic, "id">) {
   return (
