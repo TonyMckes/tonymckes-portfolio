@@ -56,7 +56,7 @@ function Navbar() {
     ? "shadow-none -translate-y-full "
     : isScrolled
     ? "shadow-md"
-    : "md:py-4 !duration-500 bg-transparent";
+    : "md:py-4 !duration-500 !bg-transparent";
 
   return (
     <header
