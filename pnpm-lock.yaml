@@ -4,7 +4,6 @@ specifiers:
   '@iconify-icon/react': ^1.0.7
   '@iconify-json/logos': ^1.1.23
   '@iconify/utils': ^2.1.5
-  '@next/font': ^13.2.4
   '@testing-library/jest-dom': ^5.16.5
   '@testing-library/react': ^14.0.0
   '@types/node': 18.15.3
@@ -29,7 +28,6 @@ specifiers:
 
 dependencies:
   '@iconify/utils': 2.1.5
-  '@next/font': 13.2.4
   next: 13.2.4_biqbaboplfbrettd7655fr4n2y
   react: 18.2.0
   react-dom: 18.2.0_react@18.2.0
@@ -832,10 +830,6 @@ packages:
     dependencies:
       glob: 7.1.7
     dev: true
-
-  /@next/font/13.2.4:
-    resolution: {integrity: sha512-lMAnuOYjv5g22WhD00u0DQ9u2rTMJH0S64PKE4Sy8Y2q+FJTYs6ZHT2z3VRoI8+AOWSLK4FirpnygcjOienQ9A==}
-    dev: false
 
   /@next/swc-android-arm-eabi/13.2.4:
     resolution: {integrity: sha512-DWlalTSkLjDU11MY11jg17O1gGQzpRccM9Oes2yTqj2DpHndajrXHGxj9HGtJ+idq2k7ImUdJVWS2h2l/EDJOw==}
