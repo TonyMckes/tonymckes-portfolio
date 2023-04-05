@@ -47,7 +47,7 @@ export const metadata = {
 };
 
 const openSans = Open_Sans({
-  display: "optional",
+  display: "swap",
   subsets: ["latin"],
   variable: "--font-open-sans",
 });
