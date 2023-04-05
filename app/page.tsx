@@ -14,15 +14,16 @@ async function Home() {
   return (
     <main className="space-y-40">
       <section className="flex items-center justify-center h-screen" id="home">
-        <div className="space-y-8 text-6xl font-light">
-          <h1>
-            <span className="text-6xl">
-              Hi, Im <br />
-            </span>
+        <h1 className="text-3xl md:text-5xl font-light mx-auto px-2">
+          <div className="">Hello, I&apos;m</div>
+          <div className="text-5xl md:text-7xl font-normal mb-4 mt-3">
             Anthony Mackensen
-          </h1>
-          <h2 className="text-primary-500">Web Developer</h2>
-        </div>
+          </div>
+          <div>
+            And I&apos;m a
+            <span className="text-primary-500 font-medium"> Web Developer</span>
+          </div>
+        </h1>
       </section>
 
       {featuredProjects.length > 0 && (
