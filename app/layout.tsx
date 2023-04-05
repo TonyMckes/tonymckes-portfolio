@@ -1,12 +1,12 @@
-import { Open_Sans } from "next/font/google";
 import Footer from "components/Footer";
 import Navbar from "components/Navbar/Navbar";
 import ThemeLoader from "components/ThemeLoader";
+import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
   title: "Anthony Mackensen",
-  description: "Anthony Mackensen’s portfolio",
+  description: "Anthony Mackensen personal portfolio's website",
   manifest: "manifest.json",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
@@ -20,6 +20,29 @@ export const metadata = {
       { type: "image/png", sizes: "32x32", url: "/favicon-32x32.png" },
     ],
     other: { rel: "mask-icon", url: "/safari-pinned-tab.svg" },
+  },
+  openGraph: {
+    siteName: "Anthony Mackensen",
+    title: "Anthony Mackensen",
+    description: "Anthony Mackensen personal portfolio's website",
+    url: "https://tonymckes.vercel.app",
+    images: [
+      {
+        url: "https://tonymckes.vercel.app/api/og",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en-US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    creator: "@TonyMckes",
+    description: "Anthony Mackensen personal portfolio's website",
+    images: ["https://tonymckes.vercel.app/api/og"],
+    site: "https://tonymckes.vercel.app",
+    title: "Anthony Mackensen",
   },
 };
 
