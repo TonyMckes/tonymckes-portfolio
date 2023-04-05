@@ -5,8 +5,8 @@ import { Open_Sans } from "next/font/google";
 import "./globals.css";
 
 export const metadata = {
-  title: "Anthony Mackensen",
-  description: "Anthony Mackensen personal portfolio's website",
+  title: "Anthony Mackensen | TonyMckes",
+  description: "Personal portfolio's website",
   manifest: "manifest.json",
   themeColor: [
     { media: "(prefers-color-scheme: light)", color: "#f5f5f5" },
@@ -23,8 +23,8 @@ export const metadata = {
   },
   openGraph: {
     siteName: "Anthony Mackensen",
-    title: "Anthony Mackensen",
-    description: "Anthony Mackensen personal portfolio's website",
+    title: "Anthony Mackensen | TonyMckes",
+    description: "Personal portfolio's website",
     url: "https://tonymckes.vercel.app",
     images: [
       {
@@ -39,10 +39,10 @@ export const metadata = {
   twitter: {
     card: "summary_large_image",
     creator: "@TonyMckes",
-    description: "Anthony Mackensen personal portfolio's website",
+    description: "Personal portfolio's website",
     images: ["https://tonymckes.vercel.app/api/og"],
     site: "https://tonymckes.vercel.app",
-    title: "Anthony Mackensen",
+    title: "Anthony Mackensen | TonyMckes",
   },
 };
 
