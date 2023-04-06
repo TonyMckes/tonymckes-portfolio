@@ -1,15 +1,19 @@
+import Carousel from "components/Carousel";
 import ContactsList from "components/ContactsList";
 import { Project } from "components/Project";
 import Section from "components/Section";
 import Skill from "components/Skill";
 import personalData from "personalInfo.json";
-import { getFeaturedRepos } from "services/getProjects";
+import { getFeaturedRepos, getShowcaseRepos } from "services/getProjects";
 import type { PersonalInfoTypes } from "types/personal-info-types";
 
 const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
 
 async function Home() {
-  const featuredProjects = await getFeaturedRepos();
+  const [featuredProjects, showcaseProjects] = await Promise.all([
+    await getFeaturedRepos(),
+    await getShowcaseRepos(),
+  ]);
 
   return (
     <main className="space-y-40">
@@ -27,23 +31,30 @@ async function Home() {
       </section>
 
       {featuredProjects.length > 0 && (
-        <Section id="projects" className="max-w-container">
-          <Section.Title>Projects</Section.Title>
+        <Section id="projects">
+          <div className="max-w-container">
+            <Section.Title>Projects</Section.Title>
+            <Section.Paragraph>
+              Showcase of some of the projects I&apos;ve worked on
+            </Section.Paragraph>
+            <ul className="space-y-8 mb-20">
+              {featuredProjects.map((project) => (
+                <Project key={project.id} {...project} />
+              ))}
+            </ul>
+          </div>
+
           <Section.Paragraph>
-            A small showcase of some of the projects I’ve worked on.
+            Swipe right or left to see even more projects!
           </Section.Paragraph>
-          <ul className="space-y-8 mb-20">
-            {featuredProjects.map((project) => (
-              <Project key={project.id} {...project} />
-            ))}
-          </ul>
+          <Carousel repositories={showcaseProjects} />
         </Section>
       )}
 
       <Section id="skills" className="max-w-container">
         <Section.Title>Skills</Section.Title>
         <Section.Paragraph>
-          Here are a few technologies I’ve been working with recently
+          Here are a few technologies I&apos;ve been working with recently.
         </Section.Paragraph>
         <ul className="grid grid-cols-3 gap-x-4 gap-y-16 md:grid-cols-4">
           {skills.map((name) => (

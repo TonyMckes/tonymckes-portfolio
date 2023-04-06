@@ -1,8 +1,13 @@
 import { tw } from "lib/helpers";
+import Image from "next/image";
 import type { Repository } from "types/repositories-types";
 import BrowserPlaceholder from "./BrowserPlaceholder";
 import Tag from "./Tag";
 import Video from "./Video";
+
+interface ProjectProps extends Omit<Repository, "id"> {
+  imgUrl?: string;
+}
 
 export function Project({
   name,
@@ -10,18 +15,23 @@ export function Project({
   description,
   homepageUrl,
   url,
-}: Omit<Repository, "id">) {
+  imgUrl,
+}: ProjectProps) {
   return (
-    <li className="relative grid overflow-hidden shadow-xl dark:shadow-none bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 md:shadow-none dark:drop-shadow-none md:drop-shadow-2xl gap-x-2 rounded-xl project__item">
+    <li className="relative flex flex-col md:grid overflow-hidden shadow-xl dark:shadow-none bg-neutral-50 dark:bg-night-800 md:bg-transparent dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800 md:shadow-none dark:drop-shadow-none md:drop-shadow-2xl gap-x-2 rounded-xl project__item">
       <h3 className="m-2 text-lg font-bold capitalize md:[grid-area:title]">
         {name.replace(/-/g, " ")}
       </h3>
 
       <BrowserPlaceholder url={homepageUrl}>
-        <Video name={name} />
+        {imgUrl ? (
+          <Image src={imgUrl} width={1200} height={600} alt={name} />
+        ) : (
+          <Video name={name} />
+        )}
       </BrowserPlaceholder>
 
-      <p className="m-2 text-neutral-700 font-medium dark:text-neutral-300 md:[grid-area:description]">
+      <p className="m-2 grow text-neutral-700 font-medium dark:text-neutral-300 md:[grid-area:description]">
         {description || "No description available."}
       </p>
 

@@ -16,7 +16,7 @@ function BrowserPlaceholder({
   url = "https://github.com/tonymckes",
 }: Props) {
   return (
-    <div className="pb-px rounded bg-neutral-200 dark:bg-neutral-800 media aspect-video md:self-center md:[grid-area:media]">
+    <div className="relative pb-px rounded bg-neutral-200 dark:bg-neutral-800 media aspect-video md:self-center md:[grid-area:media]">
       <div className="grid grid-cols-5 py-1">
         <div className="flex items-center gap-3 px-2">
           <div className="flex gap-1">
