@@ -1,7 +1,7 @@
-const defaultTheme = require("tailwindcss/defaultTheme");
+import type { Config } from "tailwindcss";
+import { fontFamily } from "tailwindcss/defaultTheme";
 
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+export default {
   content: [
     "./app/**/*.{js,ts,jsx,tsx}",
     "./components/**/*.{js,ts,jsx,tsx}",
@@ -11,7 +11,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        sans: ["var(--font-open-sans)", ...defaultTheme.fontFamily.serif],
+        sans: ["var(--font-open-sans)", ...fontFamily.serif],
       },
       colors: {
         primary: {
@@ -42,4 +42,4 @@ module.exports = {
     },
   },
   plugins: [],
-};
+} satisfies Config;
