@@ -24,7 +24,6 @@ export const getFeaturedRepos = async (): Promise<Repository[]> => {
     const response = await fetch(API_URL, {
       ...OPTIONS,
       body: FEATURED_REPOS_QUERY,
-      next: { revalidate: 5 },
     })
 
     if (!response.ok) throw { message: 'Fetch error' }
@@ -46,7 +45,6 @@ export const getShowcaseRepos = async (): Promise<Repository[]> => {
     const response = await fetch(API_URL, {
       ...OPTIONS,
       body: SHOWCASE_REPOS_QUERY,
-      next: { revalidate: 5 },
     })
 
     if (!response.ok) throw { message: 'Fetch error' }
