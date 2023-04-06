@@ -1,22 +1,22 @@
-import Logo from "./Logo";
+import Logo from './Logo'
 
 function Skill({ name }: { name: string }) {
   return (
     <li className="relative text-center">
       <Logo
         icon={name}
-        className="w-20 h-20 p-2 mx-auto rounded bg-neutral-100/75 dark:bg-neutral-100/25"
+        className="mx-auto h-20 w-20 rounded bg-neutral-100/75 p-2 dark:bg-neutral-100/25"
       />
       <Logo
-        style={{ display: "none" }}
+        style={{ display: 'none' }}
         icon={name}
-        className="-z-10 absolute inset-0 scale-110 blur-2xl !block h-20 w-20 mx-auto"
+        className="absolute inset-0 -z-10 mx-auto !block h-20 w-20 scale-110 blur-2xl"
       />
-      <span className="block mt-2 text-sm font-medium whitespace-nowrap">
+      <span className="mt-2 block whitespace-nowrap text-sm font-medium">
         {name}
       </span>
     </li>
-  );
+  )
 }
 
-export default Skill;
+export default Skill

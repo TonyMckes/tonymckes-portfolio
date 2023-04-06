@@ -1,31 +1,31 @@
-import Carousel from "components/Carousel";
-import ContactsList from "components/ContactsList";
-import { Project } from "components/Project";
-import Section from "components/Section";
-import Skill from "components/Skill";
-import personalData from "personalInfo.json";
-import { getFeaturedRepos, getShowcaseRepos } from "services/getProjects";
-import type { PersonalInfoTypes } from "types/personal-info-types";
+import Carousel from 'components/Carousel'
+import ContactsList from 'components/ContactsList'
+import { Project } from 'components/Project'
+import Section from 'components/Section'
+import Skill from 'components/Skill'
+import personalData from 'personalInfo.json'
+import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
+import type { PersonalInfoTypes } from 'types/personal-info-types'
 
-const { skills } = personalData as Pick<PersonalInfoTypes, "skills">;
+const { skills } = personalData as Pick<PersonalInfoTypes, 'skills'>
 
 async function Home() {
   const [featuredProjects, showcaseProjects] = await Promise.all([
     await getFeaturedRepos(),
     await getShowcaseRepos(),
-  ]);
+  ])
 
   return (
     <main className="space-y-40">
-      <section className="flex items-center justify-center h-screen" id="home">
-        <h1 className="text-3xl md:text-5xl font-light mx-auto px-2">
+      <section className=" flex h-screen items-center justify-center" id="home">
+        <h1 className="mx-auto px-2 text-3xl font-light md:text-5xl">
           <div className="">Hello, I&apos;m</div>
-          <div className="text-5xl md:text-7xl font-normal mb-4 mt-3">
+          <div className="mb-4 mt-3 text-5xl font-normal md:text-7xl">
             Anthony Mackensen
           </div>
           <div>
             And I&apos;m a
-            <span className="text-primary-500 font-medium"> Web Developer</span>
+            <span className="font-medium text-primary-500"> Web Developer</span>
           </div>
         </h1>
       </section>
@@ -37,7 +37,7 @@ async function Home() {
             <Section.Paragraph>
               Showcase of some of the projects I&apos;ve worked on
             </Section.Paragraph>
-            <ul className="space-y-8 mb-20">
+            <ul className="mb-20 space-y-8">
               {featuredProjects.map((project) => (
                 <Project key={project.id} {...project} />
               ))}
@@ -71,7 +71,7 @@ async function Home() {
         <ContactsList />
       </Section>
     </main>
-  );
+  )
 }
 
-export default Home;
+export default Home

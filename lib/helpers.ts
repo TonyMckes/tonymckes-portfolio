@@ -2,27 +2,27 @@ import type {
   Repository,
   RepositoryNode,
   Topics,
-} from "types/repositories-types";
+} from 'types/repositories-types'
 
 export function normalizeTopics({
   repositoryTopics,
-}: Pick<RepositoryNode, "repositoryTopics">): Topics {
-  const { nodes, totalCount } = repositoryTopics;
-  const topics = nodes.map(({ topic: { id, name } }) => ({ id, name }));
+}: Pick<RepositoryNode, 'repositoryTopics'>): Topics {
+  const { nodes, totalCount } = repositoryTopics
+  const topics = nodes.map(({ topic: { id, name } }) => ({ id, name }))
 
-  return { totalCount, topics };
+  return { totalCount, topics }
 }
 
 export const normalizeData = (nodes: RepositoryNode[]): Repository[] => {
   const repositories = nodes.map((repository): Repository => {
-    const repositoryTopics = normalizeTopics(repository);
+    const repositoryTopics = normalizeTopics(repository)
 
-    return { ...repository, repositoryTopics };
-  });
+    return { ...repository, repositoryTopics }
+  })
 
-  return repositories;
-};
+  return repositories
+}
 
 export function tw(...classes: string[]) {
-  return classes.filter(Boolean).join(" ");
+  return classes.filter(Boolean).join(' ')
 }

@@ -1,24 +1,24 @@
-"use client";
+'use client'
 
-import { useState } from "react";
+import { useState } from 'react'
 
 const initialThemeColor = () => {
-  const isServer = typeof window === "undefined";
-  if (isServer) return undefined;
+  const isServer = typeof window === 'undefined'
+  if (isServer) return undefined
 
-  const isDarkTheme = document.documentElement.classList.contains("dark");
+  const isDarkTheme = document.documentElement.classList.contains('dark')
 
-  return isDarkTheme ? "dark" : "light";
-};
-
-function useThemeToggler() {
-  const [theme, setTheme] = useState<"dark" | "light" | undefined>(
-    initialThemeColor
-  );
-
-  const inactiveTheme = theme === "light" ? "dark" : "light";
-
-  return [{ theme, inactiveTheme }, setTheme] as const;
+  return isDarkTheme ? 'dark' : 'light'
 }
 
-export default useThemeToggler;
+function useThemeToggler() {
+  const [theme, setTheme] = useState<'dark' | 'light' | undefined>(
+    initialThemeColor
+  )
+
+  const inactiveTheme = theme === 'light' ? 'dark' : 'light'
+
+  return [{ theme, inactiveTheme }, setTheme] as const
+}
+
+export default useThemeToggler

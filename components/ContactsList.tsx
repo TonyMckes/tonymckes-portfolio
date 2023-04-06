@@ -1,45 +1,45 @@
-import personalInfo from "personalInfo.json";
-import { PersonalInfoTypes } from "types/personal-info-types";
-import Logo from "./Logo";
+import personalInfo from 'personalInfo.json'
+import { PersonalInfoTypes } from 'types/personal-info-types'
+import Logo from './Logo'
 
-type ContactListProps = Pick<PersonalInfoTypes, "socialMedia" | "email">;
-const { email, socialMedia } = personalInfo as ContactListProps;
-const [emailUsername, emailDomain] = email.split("@");
+type ContactListProps = Pick<PersonalInfoTypes, 'socialMedia' | 'email'>
+const { email, socialMedia } = personalInfo as ContactListProps
+const [emailUsername, emailDomain] = email.split('@')
 
 function ContactsList() {
   return (
     <>
-      <ul className="flex justify-center mt-6 md:gap-8 contact__list">
+      <ul className="contact__list mt-6 flex justify-center md:gap-8">
         {socialMedia.map(({ name, href }) => (
           <li key={name}>
             <a
               href={href}
-              className="grid justify-center w-24 h-auto gap-1 p-2 font-medium rounded hover:bg-neutral-50 dark:hover:bg-night-800/50 link"
+              className="link grid h-auto w-24 justify-center gap-1 rounded p-2 font-medium hover:bg-neutral-50 dark:hover:bg-night-800/50"
               target="_blank"
               rel="noreferrer"
             >
-              <Logo className="w-auto h-8 mx-auto md:h-10" icon={name} />
+              <Logo className="mx-auto h-8 w-auto md:h-10" icon={name} />
               {name}
             </a>
           </li>
         ))}
       </ul>
-      <p className="text-primary-700 dark:text-primary-300 text-xl mt-8 text-center transition-[visibility,opacity] duration-500 opacity-100 textContent">
+      <p className="textContent mt-8 text-center text-xl text-primary-700 opacity-100 transition-[visibility,opacity] duration-500 dark:text-primary-300">
         Or write me an email
       </p>
-      <div className="text-2xl text-center underline decoration-primary-500 underline-offset-4 -translate-x-[0.5ch] email">
-        <span className="transition-opacity duration-500 opacity-25 select-none at">
+      <div className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-primary-500 underline-offset-4">
+        <span className="at select-none opacity-25 transition-opacity duration-500">
           @
         </span>
         <a className="font-semibold" href="mailto:${email}">
           <span>{emailUsername}</span>
-          <span className="transition-opacity duration-500 opacity-100 emailDomain">
+          <span className="emailDomain opacity-100 transition-opacity duration-500">
             @{emailDomain}
           </span>
         </a>
       </div>
     </>
-  );
+  )
 }
 
-export default ContactsList;
+export default ContactsList

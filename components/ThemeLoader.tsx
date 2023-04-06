@@ -1,4 +1,4 @@
-import Script from "next/script";
+import Script from 'next/script'
 
 function ThemeLoader() {
   return (
@@ -17,7 +17,7 @@ if (!isServer) {
 }
     `}
     </Script>
-  );
+  )
 }
 
-export default ThemeLoader;
+export default ThemeLoader

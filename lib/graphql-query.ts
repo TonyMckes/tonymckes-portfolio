@@ -26,7 +26,7 @@ export const FEATURED_REPOS_QUERY = JSON.stringify({
       }
     }
   }`,
-});
+})
 
 export const SHOWCASE_REPOS_QUERY = JSON.stringify({
   query: `query Showcase {
@@ -54,4 +54,4 @@ export const SHOWCASE_REPOS_QUERY = JSON.stringify({
       }
     }
   }`,
-});
+})

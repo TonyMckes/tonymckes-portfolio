@@ -1,9 +1,9 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { ImageResponse } from "@vercel/og";
+import { ImageResponse } from '@vercel/og'
 
 export const config = {
-  runtime: "edge",
-};
+  runtime: 'edge',
+}
 
 export default async function () {
   return new ImageResponse(
@@ -24,5 +24,5 @@ export default async function () {
       width: 1200,
       height: 630,
     }
-  );
+  )
 }

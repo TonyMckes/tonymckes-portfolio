@@ -1,4 +1,4 @@
-import { SVGProps } from "react";
+import { SVGProps } from 'react'
 
 function TonyMckes({ height, width, ...props }: SVGProps<SVGSVGElement>) {
   return (
@@ -15,7 +15,7 @@ function TonyMckes({ height, width, ...props }: SVGProps<SVGSVGElement>) {
         fill="currentColor"
       />
     </svg>
-  );
+  )
 }
 
-export default TonyMckes;
+export default TonyMckes

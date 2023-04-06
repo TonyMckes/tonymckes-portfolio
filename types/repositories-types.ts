@@ -1,54 +1,54 @@
 export interface Repositories {
-  nodes: RepositoryNode[];
+  nodes: RepositoryNode[]
 }
 
 //* Featured Query
 export type FeaturedReposResponse = {
-  data: FeaturedRepos;
-};
+  data: FeaturedRepos
+}
 export interface FeaturedRepos {
   user: {
-    pinnedItems: Repositories;
-  };
+    pinnedItems: Repositories
+  }
 }
 
 //* Showcase Query
 export interface ShowcaseReposResponse {
-  data: ShowcaseRepos;
+  data: ShowcaseRepos
 }
 export interface ShowcaseRepos {
-  search: Repositories;
+  search: Repositories
 }
 
 //* Normalized
-export interface Repository extends Omit<RepositoryNode, "repositoryTopics"> {
-  repositoryTopics: Topics;
+export interface Repository extends Omit<RepositoryNode, 'repositoryTopics'> {
+  repositoryTopics: Topics
 }
 export interface Topics {
-  topics: Topic[];
-  totalCount: number;
+  topics: Topic[]
+  totalCount: number
 }
 
 //#region Repository
 export interface RepositoryNode {
-  id: string;
-  name: string;
-  description: string | undefined;
-  homepageUrl: string | undefined;
-  url: string | undefined;
-  isPrivate: boolean;
-  openGraphImageUrl: string | undefined;
-  usesCustomOpenGraphImage: boolean;
-  repositoryTopics: RepositoryTopics;
+  id: string
+  name: string
+  description: string | undefined
+  homepageUrl: string | undefined
+  url: string | undefined
+  isPrivate: boolean
+  openGraphImageUrl: string | undefined
+  usesCustomOpenGraphImage: boolean
+  repositoryTopics: RepositoryTopics
 }
 
 interface RepositoryTopics {
-  nodes: Array<{ topic: Topic }>;
-  totalCount: number;
+  nodes: Array<{ topic: Topic }>
+  totalCount: number
 }
 
 export interface Topic {
-  id: string;
-  name: string;
+  id: string
+  name: string
 }
 //#endregion

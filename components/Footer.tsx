@@ -1,9 +1,9 @@
-import Icon from "./Icon";
+import Icon from './Icon'
 
 function Footer() {
   return (
-    <footer className="mt-32 mb-8">
-      <a href="#home" className="flex flex-col items-center cursor-pointer ">
+    <footer className="mb-8 mt-32">
+      <a href="#home" className="flex cursor-pointer flex-col items-center ">
         <Icon
           size="32"
           className="animate-bounce"
@@ -12,7 +12,7 @@ function Footer() {
         Back to top
       </a>
     </footer>
-  );
+  )
 }
 
-export default Footer;
+export default Footer

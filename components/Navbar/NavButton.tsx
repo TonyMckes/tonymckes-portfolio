@@ -1,18 +1,18 @@
-import { ComponentPropsWithoutRef } from "react";
+import { ComponentPropsWithoutRef } from 'react'
 
 function NavButton({
   children,
   className,
   ...props
-}: ComponentPropsWithoutRef<"button">) {
+}: ComponentPropsWithoutRef<'button'>) {
   return (
     <button
-      className={`nav-item underline-effect ${className || ""}`}
+      className={`nav-item underline-effect ${className || ''}`}
       {...props}
     >
       {children}
     </button>
-  );
+  )
 }
 
-export default NavButton;
+export default NavButton
