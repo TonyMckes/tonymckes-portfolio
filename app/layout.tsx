@@ -1,7 +1,7 @@
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar/Navbar'
 import ThemeLoader from 'components/ThemeLoader'
-import { Open_Sans } from 'next/font/google'
+import { Open_Sans } from '@next/font/google'
 import './globals.css'
 
 export const metadata = {
