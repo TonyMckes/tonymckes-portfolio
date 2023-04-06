@@ -25,7 +25,7 @@ function Carousel({ repositories }: { repositories: Repository[] }) {
       clickable: true,
       bulletClass: 'swiper-pagination-bullet bg-night-900 dark:bg-neutral-100',
     },
-    wrapperClass: 'grid grid-flow-col pb-20',
+    wrapperClass: 'swiper-wrapper !grid grid-flow-col pb-20',
     centeredSlides: true,
     spaceBetween: 50,
     breakpoints: {
@@ -46,7 +46,7 @@ function Carousel({ repositories }: { repositories: Repository[] }) {
     <Swiper className="mx-auto mt-10 px-2" {...swiperOptions}>
       {repositories.map((repo) => {
         return (
-          <SwiperSlide key={repo.id} className="flex">
+          <SwiperSlide key={repo.id} className="!flex">
             <Project imgUrl={repo.openGraphImageUrl} {...repo} />
           </SwiperSlide>
         )
