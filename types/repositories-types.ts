@@ -5,6 +5,7 @@ export interface Repositories {
 //* Featured Query
 export type FeaturedReposResponse = {
   data: FeaturedRepos
+  message?: string
 }
 export interface FeaturedRepos {
   user: {
@@ -15,6 +16,7 @@ export interface FeaturedRepos {
 //* Showcase Query
 export interface ShowcaseReposResponse {
   data: ShowcaseRepos
+  message?: string
 }
 export interface ShowcaseRepos {
   search: Repositories

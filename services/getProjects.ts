@@ -29,7 +29,8 @@ export const getFeaturedRepos = async (): Promise<Repository[]> => {
 
     if (!response.ok) throw { message: 'Fetch error' }
 
-    const { data }: FeaturedReposResponse = await response.json()
+    const { data, message }: FeaturedReposResponse = await response.json()
+    if (message) throw Error(message)
     const { nodes } = data.user.pinnedItems
 
     return normalizeData(nodes)
@@ -50,7 +51,8 @@ export const getShowcaseRepos = async (): Promise<Repository[]> => {
 
     if (!response.ok) throw { message: 'Fetch error' }
 
-    const { data }: ShowcaseReposResponse = await response.json()
+    const { data, message }: ShowcaseReposResponse = await response.json()
+    if (message) throw Error(message)
     const { nodes } = data.search
 
     return normalizeData(nodes)
