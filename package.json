@@ -1,7 +1,9 @@
 {
-  "name": "tonymckes.ext",
+  "name": "tonymckes-portfolio",
   "version": "1.0.0",
   "private": true,
+  "license": "ISC",
+  "author": "Anthony Mackensen",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -9,15 +11,13 @@
     "lint": "next lint",
     "test": "jest --watch"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
   "dependencies": {
     "@iconify/utils": "^2.1.5",
     "@vercel/og": "^0.5.0",
     "next": "13.2.4",
     "react": "18.2.0",
-    "react-dom": "18.2.0"
+    "react-dom": "18.2.0",
+    "swiper": "^9.1.0"
   },
   "devDependencies": {
     "@iconify-icon/react": "^1.0.7",
