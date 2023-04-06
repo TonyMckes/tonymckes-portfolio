@@ -5,7 +5,7 @@ function Footer() {
     <footer className="mt-32 mb-8">
       <a href="#home" className="flex flex-col items-center cursor-pointer ">
         <Icon
-          size="2rem"
+          size="32"
           className="animate-bounce"
           icon="material-symbols:keyboard-arrow-up-rounded"
         />

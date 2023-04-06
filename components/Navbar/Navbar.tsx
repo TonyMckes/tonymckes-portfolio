@@ -73,7 +73,7 @@ function Navbar() {
             onClick={handleClick}
           >
             <Icon
-              size="1.75rem"
+              size="28"
               icon={menuOpen ? "ic:round-close" : "ic:round-menu"}
             />
           </NavButton>
@@ -128,7 +128,7 @@ function Navbar() {
                 {socials.map(({ href, name }) => (
                   <li key={name}>
                     <NavLink rel="noreferrer" target="_blank" href={href}>
-                      <Logo height="1.75rem" icon={name} />
+                      {/* <Logo height="28" icon={name} /> */}
                       <span className="sr-only">{name}</span>
                     </NavLink>
                   </li>

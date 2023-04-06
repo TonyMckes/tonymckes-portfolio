@@ -30,7 +30,7 @@ function ThemeToggler() {
       <NavButton>
         <Icon
           className="animate-pulse"
-          size="1.75rem"
+          size="28"
           icon="line-md:light-dark-loop"
         />
         <span className="sr-only">Toggle the theme color</span>
@@ -43,7 +43,7 @@ function ThemeToggler() {
 
   return (
     <NavButton onClick={switchTheme}>
-      <Icon size="1.75rem" icon={iconTheme} />
+      <Icon size="28" icon={iconTheme} />
       <span className="sr-only">Change to {inactiveTheme} mode</span>
     </NavButton>
   );
