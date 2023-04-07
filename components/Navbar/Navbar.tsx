@@ -128,7 +128,7 @@ function Navbar() {
                 {socials.map(({ href, name }) => (
                   <li key={name}>
                     <NavLink rel="noreferrer" target="_blank" href={href}>
-                      <Logo height="28" icon={name} />
+                      <Logo height={28} icon={name} />
                       <span className="sr-only">{name}</span>
                     </NavLink>
                   </li>

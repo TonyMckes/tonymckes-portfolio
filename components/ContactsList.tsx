@@ -9,7 +9,7 @@ const [emailUsername, emailDomain] = email.split('@')
 function ContactsList() {
   return (
     <>
-      <ul className="contact__list mt-6 grid auto-cols-fr grid-flow-col md:gap-8 mx-auto items-center max-w-md justify-center ">
+      <ul className="contact__list mx-auto mt-6 grid max-w-md auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
         {socialMedia.map(({ name, href }) => (
           <li key={name}>
             <a
@@ -18,7 +18,7 @@ function ContactsList() {
               target="_blank"
               rel="noreferrer"
             >
-              <Logo className="mx-auto h-8 w-auto md:h-10" icon={name} />
+              <Logo height={32} className="mx-auto w-auto md:!h-10" icon={name} />
               {name}
             </a>
           </li>
