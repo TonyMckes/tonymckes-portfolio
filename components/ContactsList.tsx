@@ -9,12 +9,12 @@ const [emailUsername, emailDomain] = email.split('@')
 function ContactsList() {
   return (
     <>
-      <ul className="contact__list mt-6 flex justify-center md:gap-8">
+      <ul className="contact__list mt-6 grid auto-cols-fr grid-flow-col md:gap-8 mx-auto items-center max-w-md justify-center ">
         {socialMedia.map(({ name, href }) => (
           <li key={name}>
             <a
               href={href}
-              className="link grid h-auto w-24 justify-center gap-1 rounded p-2 font-medium hover:bg-neutral-50 dark:hover:bg-night-800/50"
+              className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-night-800/50 md:text-base"
               target="_blank"
               rel="noreferrer"
             >
