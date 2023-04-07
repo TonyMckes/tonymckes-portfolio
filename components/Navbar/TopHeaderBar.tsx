@@ -55,7 +55,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
       className={`fixed top-0 z-10 w-full bg-neutral-100/95 duration-300 dark:bg-night-900/95 md:p-1 ${headerStyles}`}
     >
       <nav className="mx-auto flex justify-between lg:container">
-        <NavLink href="#">
+        <NavLink aria-label="TonyMckes home page" href="#">
           <TonyMckes />
         </NavLink>
         <div className="flex">
