@@ -1,5 +1,5 @@
 /* eslint-disable import/no-anonymous-default-export */
-import { ImageResponse } from '@vercel/og'
+import { ImageResponse } from 'next/server'
 
 export const config = {
   runtime: 'edge',
