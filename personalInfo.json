@@ -40,17 +40,20 @@
   ],
 
   "skills": [
-    "CSS",
-    "Firebase",
-    "Github",
-    "HTML",
-    "Javascript",
-    "MariaDB",
-    "Node.js",
     "React",
-    "Sequelize",
+    "Javascript",
     "Tailwind CSS",
+    "HTML",
     "Typescript",
-    "Next.js"
+    "Firebase",
+    "Next.js",
+    "CSS",
+    "Sanity",
+    "Storybook",
+    "Astro",
+    "PostgreSQL",
+    "Node.js",
+    "Sequelize",
+    "MariaDB"
   ]
 }
