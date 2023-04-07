@@ -56,7 +56,7 @@ async function Home() {
         <Section.Paragraph>
           Here are a few technologies I&apos;ve been working with recently.
         </Section.Paragraph>
-        <ul className="grid grid-cols-3 gap-x-4 gap-y-16 md:grid-cols-4">
+        <ul className="grid grid-cols-3 md:gap-x-4 gap-y-12 md:grid-cols-5 md:gap-y-14">
           {skills.map((name) => (
             <Skill key={name} name={name} />
           ))}
