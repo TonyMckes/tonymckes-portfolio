@@ -1,3 +1,5 @@
+import 'server-only'
+
 import { icons } from '@iconify-json/logos'
 import { getIconData, iconToSVG, replaceIDs } from '@iconify/utils'
 import { SVGProps } from 'react'
