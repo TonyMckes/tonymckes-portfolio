@@ -46,7 +46,7 @@ devDependencies:
     specifier: ^5.57.1
     version: 5.57.1(eslint@8.32.0)(typescript@5.0.3)
   autoprefixer:
-    specifier: ^10.4.13
+    specifier: ^10.4.14
     version: 10.4.14(postcss@8.4.21)
   eslint:
     specifier: 8.32.0
@@ -55,7 +55,7 @@ devDependencies:
     specifier: 13.3.0
     version: 13.3.0(eslint@8.32.0)(typescript@5.0.3)
   eslint-config-prettier:
-    specifier: ^8.6.0
+    specifier: ^8.8.0
     version: 8.8.0(eslint@8.32.0)
   jest:
     specifier: ^29.4.1
@@ -73,7 +73,7 @@ devDependencies:
     specifier: ^0.2.7
     version: 0.2.7(prettier@2.8.7)
   tailwindcss:
-    specifier: ^3.2.4
+    specifier: ^3.3.1
     version: 3.3.1(postcss@8.4.21)(ts-node@10.9.1)
   ts-node:
     specifier: ^10.9.1
