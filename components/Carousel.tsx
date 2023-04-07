@@ -43,7 +43,7 @@ function Carousel({ repositories }: { repositories: Repository[] }) {
   }
 
   return (
-    <Swiper className="mx-auto mt-10 px-2" {...swiperOptions}>
+    <Swiper className="mx-auto !px-2" {...swiperOptions}>
       {repositories.map((repo) => {
         return (
           <SwiperSlide key={repo.id} className="!flex">
