@@ -65,7 +65,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
             onClick={handleClick}
           >
             <Icon
-              size="28"
+              size="28px"
               icon={menuOpen ? 'ic:round-close' : 'ic:round-menu'}
             />
           </NavButton>

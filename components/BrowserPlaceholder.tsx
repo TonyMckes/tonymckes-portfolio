@@ -30,7 +30,7 @@ function BrowserPlaceholder({
                 className="flex h-4 w-4 items-center justify-center rounded bg-neutral-100 text-neutral-500 hover:bg-white dark:bg-neutral-900 dark:hover:bg-black"
                 key={icon}
               >
-                <Icon icon={icon} size="12" />
+                <Icon icon={icon} size="12px" />
               </div>
             ))}
           </div>
