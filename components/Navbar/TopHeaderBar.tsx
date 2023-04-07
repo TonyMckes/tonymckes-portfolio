@@ -1,22 +1,14 @@
 'use client'
 
 import Icon from 'components/Icon'
-import Logo from 'components/Logo'
 import TonyMckes from 'components/TonyMckes'
 import { tw } from 'lib/helpers'
-import personalInfo from 'personalInfo.json'
-import { useEffect, useState } from 'react'
-import type { PersonalInfoTypes } from 'types/personal-info-types'
+import { ReactNode, useEffect, useState } from 'react'
 import NavButton from './NavButton'
 import NavLink from './NavLink'
 import ThemeToggler from './ThemeToggler'
 
-const { socialMedia, navLinks } = personalInfo as PersonalInfoTypes
-const socials = socialMedia.filter(({ name }) =>
-  ['LinkedIn', 'Github'].includes(name)
-)
-
-function Navbar() {
+function TopHeaderBar({ children }: { children: ReactNode }) {
   const [isScrolled, setIsScrolled] = useState<boolean>(false)
   const [lastScrollY, setLastScrollY] = useState<number>(0)
   const [menuOpen, setMenuOpen] = useState<boolean>(false)
@@ -110,31 +102,8 @@ function Navbar() {
               menuOpen ? '' : 'invisible md:visible'
             )}
           >
-            {/* |> Page navigation*/}
-            <nav>
-              <ul className="h-full auto-cols-fr grid-flow-col space-y-2 md:mr-2 md:grid md:space-y-0">
-                {navLinks.map(({ href, text }) => (
-                  <li key={text}>
-                    <NavLink href={href} className="h-full w-full">
-                      {text}
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
-            {/* |> Social navigation*/}
-            <nav>
-              <ul className="mt-4 flex h-full md:ml-2 md:mt-0">
-                {socials.map(({ href, name }) => (
-                  <li key={name}>
-                    <NavLink rel="noreferrer" target="_blank" href={href}>
-                      <Logo height={28} icon={name} />
-                      <span className="sr-only">{name}</span>
-                    </NavLink>
-                  </li>
-                ))}
-              </ul>
-            </nav>
+            {/* Navigation links */}
+            {children}
 
             <ThemeToggler />
           </div>
@@ -144,4 +113,4 @@ function Navbar() {
   )
 }
 
-export default Navbar
+export default TopHeaderBar

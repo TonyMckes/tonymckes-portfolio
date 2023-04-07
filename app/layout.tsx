@@ -1,5 +1,5 @@
 import Footer from 'components/Footer'
-import Navbar from 'components/Navbar/Navbar'
+import Navbar from 'components/Navbar'
 import ThemeLoader from 'components/ThemeLoader'
 import { Open_Sans } from 'next/font/google'
 import './globals.css'
