@@ -1,11 +1,11 @@
-/* eslint-disable import/no-anonymous-default-export */
+import { PageConfig } from 'next'
 import { ImageResponse } from 'next/server'
 
-export const config = {
+export const config: PageConfig = {
   runtime: 'edge',
 }
 
-export default async function () {
+export async function GET() {
   return new ImageResponse(
     (
       <div tw="h-screen w-screen flex flex-col items-center justify-center bg-[#0F1116] text-neutral-100/90">
