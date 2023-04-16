@@ -1,31 +1,27 @@
 'use client'
 
 import Icon from 'components/Icon'
-import { useEffect, useState } from 'react'
+import { useTheme } from 'next-themes'
 import NavButton from './NavButton'
-import useThemeToggler from './useThemeToggler'
 
-function ThemeToggler() {
-  const [mounted, setMounted] = useState<boolean>(false)
-  const [{ inactiveTheme, theme }, setTheme] = useThemeToggler()
+const ThemeToggler = () => {
+  const { theme, systemTheme, setTheme } = useTheme()
+  const isLight = theme === 'light' || systemTheme === 'light'
 
-  useEffect(() => {
-    setMounted(true)
-  }, [])
+  const iconTheme =
+    !theme || theme === 'system'
+      ? 'line-md:light-dark-loop'
+      : isLight
+      ? 'ic:twotone-dark-mode'
+      : 'ic:twotone-light-mode'
+
+  const opositeColorTheme = isLight ? 'dark' : 'light'
 
   const switchTheme = () => {
-    setTheme(inactiveTheme)
-
-    document.documentElement.classList.toggle('dark')
-
-    if (inactiveTheme) {
-      localStorage.setItem('theme-color', inactiveTheme)
-    } else {
-      localStorage.removeItem('theme-color')
-    }
+    setTheme(opositeColorTheme)
   }
 
-  if (!mounted) {
+  if (!theme) {
     return (
       <NavButton>
         <Icon
@@ -33,18 +29,15 @@ function ThemeToggler() {
           size="28px"
           icon="line-md:light-dark-loop"
         />
-        <span className="sr-only">Toggle the theme color</span>
+        <span className="sr-only">Loading theme setting</span>
       </NavButton>
     )
   }
 
-  const iconTheme =
-    theme === 'dark' ? 'ic:twotone-light-mode' : 'ic:twotone-dark-mode'
-
   return (
     <NavButton onClick={switchTheme}>
       <Icon size="28px" icon={iconTheme} />
-      <span className="sr-only">Change to {inactiveTheme} mode</span>
+      <span className="sr-only">{`Change to ${opositeColorTheme} mode`}</span>
     </NavButton>
   )
 }

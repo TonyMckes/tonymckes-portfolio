@@ -1,7 +1,8 @@
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
-import ThemeLoader from 'components/ThemeLoader'
+import { ServerThemeProvider } from 'next-themes'
 import { Open_Sans } from 'next/font/google'
+import ClientThemeProvider from 'provider/ClientThemeProvider'
 import './globals.css'
 
 export const metadata = {
@@ -57,14 +58,16 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={`scroll-smooth ${openSans.className}`}>
-      <head />
-      <body className="bg-neutral-100 text-neutral-900 dark:bg-night-900 dark:text-neutral-100">
-        <Navbar />
-        {children}
-        <Footer />
-        <ThemeLoader />
-      </body>
-    </html>
+    <ServerThemeProvider attribute="class">
+      <html lang="en" className={`scroll-smooth ${openSans.className}`}>
+        <ClientThemeProvider>
+          <body className="bg-neutral-100 text-neutral-900 dark:bg-night-900 dark:text-neutral-100">
+            <Navbar />
+            {children}
+            <Footer />
+          </body>
+        </ClientThemeProvider>
+      </html>
+    </ServerThemeProvider>
   )
 }
