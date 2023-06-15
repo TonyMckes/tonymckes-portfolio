@@ -1,9 +1,6 @@
-import { PageConfig } from 'next'
 import { ImageResponse } from 'next/server'
 
-export const config: PageConfig = {
-  runtime: 'edge',
-}
+export const runtime = 'edge'
 
 export async function GET() {
   return new ImageResponse(
