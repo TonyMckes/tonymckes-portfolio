@@ -39,7 +39,7 @@ export interface RepositoryNode {
   homepageUrl: string | undefined
   url: string | undefined
   isPrivate: boolean
-  openGraphImageUrl: string | undefined
+  openGraphImageUrl: string
   usesCustomOpenGraphImage: boolean
   repositoryTopics: RepositoryTopics
 }

@@ -1,8 +1,12 @@
 'use client'
 
-import { useEffect, useRef } from 'react'
+import { type ComponentProps, useEffect, useRef } from 'react'
 
-function Video({ name }: { name: string }) {
+interface Props extends ComponentProps<'video'> {
+  name: string
+}
+
+function Video({ name, ...props }: Props) {
   const videoRef = useRef<HTMLVideoElement>(null)
 
   useEffect(() => {
@@ -27,6 +31,7 @@ function Video({ name }: { name: string }) {
       className="h-full w-full object-cover object-center"
       loop
       muted
+      {...props}
     >
       <source src={`videos/${name}.webm`} type="video/webm" />
       Your browser does not support the videos.

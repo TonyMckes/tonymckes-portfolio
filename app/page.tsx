@@ -39,7 +39,7 @@ async function Home() {
             </Section.Paragraph>
             <ul className="mb-20 space-y-8">
               {featuredProjects.map((project) => (
-                <Project key={project.id} {...project} />
+                <Project key={project.id} {...project} featured />
               ))}
             </ul>
           </div>
@@ -56,7 +56,7 @@ async function Home() {
         <Section.Paragraph>
           Here are a few technologies I&apos;ve been working with recently.
         </Section.Paragraph>
-        <ul className="grid grid-cols-3 md:gap-x-4 gap-y-12 md:grid-cols-5 md:gap-y-14">
+        <ul className="grid grid-cols-3 gap-y-12 md:grid-cols-5 md:gap-x-4 md:gap-y-14">
           {skills.map((name) => (
             <Skill key={name} name={name} />
           ))}

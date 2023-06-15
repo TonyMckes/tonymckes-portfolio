@@ -6,7 +6,7 @@ import Tag from './Tag'
 import Video from './Video'
 
 interface ProjectProps extends Omit<Repository, 'id'> {
-  imgUrl?: string
+  featured?: boolean
 }
 
 export function Project({
@@ -15,7 +15,8 @@ export function Project({
   description,
   homepageUrl,
   url,
-  imgUrl,
+  openGraphImageUrl,
+  featured,
 }: ProjectProps) {
   return (
     <li className="project__item relative flex flex-col gap-x-2 overflow-hidden rounded-xl bg-neutral-50 shadow-xl dark:bg-night-800 dark:shadow-none dark:drop-shadow-none md:grid md:bg-transparent md:shadow-none md:drop-shadow-2xl dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800">
@@ -24,16 +25,16 @@ export function Project({
       </h3>
 
       <BrowserPlaceholder url={homepageUrl}>
-        {imgUrl ? (
+        {featured ? (
+          <Video name={name} poster={openGraphImageUrl} />
+        ) : (
           <Image
             className="h-full object-cover"
-            src={imgUrl}
+            src={openGraphImageUrl}
             width={1280}
             height={720}
             alt={name}
           />
-        ) : (
-          <Video name={name} />
         )}
       </BrowserPlaceholder>
 
