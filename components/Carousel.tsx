@@ -56,7 +56,7 @@ function Carousel({ repositories }: { repositories: Repository[] }) {
             key={repo.id}
             className="!flex !h-auto overflow-hidden rounded-xl md:overflow-visible lg:overflow-hidden"
           >
-            <Project imgUrl={repo.openGraphImageUrl} {...repo} />
+            <Project {...repo} />
           </SwiperSlide>
         )
       })}
