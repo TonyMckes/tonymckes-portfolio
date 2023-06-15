@@ -16,7 +16,7 @@ function BrowserPlaceholder({
   url = 'https://github.com/tonymckes',
 }: Props) {
   return (
-    <div className="media relative aspect-video rounded bg-neutral-200 pb-px dark:bg-neutral-800 md:self-center md:[grid-area:media]">
+    <div className="media relative rounded bg-neutral-200 pb-px dark:bg-neutral-800 md:self-center md:[grid-area:media]">
       <div className="grid grid-cols-5 py-1">
         <div className="flex items-center gap-3 px-2">
           <div className="flex gap-1">
@@ -44,7 +44,7 @@ function BrowserPlaceholder({
 
         <div className="col-start-5"></div>
       </div>
-      {children}
+      <div className="relative aspect-video overflow-hidden">{children}</div>
     </div>
   )
 }

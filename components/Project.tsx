@@ -25,7 +25,13 @@ export function Project({
 
       <BrowserPlaceholder url={homepageUrl}>
         {imgUrl ? (
-          <Image src={imgUrl} width={1200} height={600} alt={name} />
+          <Image
+            className="h-full object-cover"
+            src={imgUrl}
+            width={1280}
+            height={720}
+            alt={name}
+          />
         ) : (
           <Video name={name} />
         )}
