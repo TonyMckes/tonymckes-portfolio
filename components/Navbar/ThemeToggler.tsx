@@ -2,11 +2,30 @@
 
 import Icon from 'components/Icon'
 import { useTheme } from 'next-themes'
+import { useEffect, useState } from 'react'
 import NavButton from './NavButton'
 
 const ThemeToggler = () => {
+  const [mounted, setMounted] = useState(false)
   const { theme, systemTheme, setTheme } = useTheme()
   const isLight = theme === 'light' || systemTheme === 'light'
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) {
+    return (
+      <NavButton>
+        <Icon
+          className="animate-pulse"
+          size="28px"
+          icon="line-md:light-dark-loop"
+        />
+        <span className="sr-only">Loading theme setting</span>
+      </NavButton>
+    )
+  }
 
   const iconTheme =
     !theme || theme === 'system'
@@ -19,19 +38,6 @@ const ThemeToggler = () => {
 
   const switchTheme = () => {
     setTheme(opositeColorTheme)
-  }
-
-  if (!theme) {
-    return (
-      <NavButton>
-        <Icon
-          className="animate-pulse"
-          size="28px"
-          icon="line-md:light-dark-loop"
-        />
-        <span className="sr-only">Loading theme setting</span>
-      </NavButton>
-    )
   }
 
   return (
