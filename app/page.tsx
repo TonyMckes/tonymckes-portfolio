@@ -47,7 +47,11 @@ async function Home() {
           <Section.Paragraph>
             Swipe right or left to see even more projects!
           </Section.Paragraph>
-          <Carousel repositories={showcaseProjects} />
+          <Carousel>
+            {showcaseProjects.map((repo) => (
+              <Project key={repo.id} {...repo} />
+            ))}
+          </Carousel>
         </Section>
       )}
 

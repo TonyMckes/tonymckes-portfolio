@@ -1,5 +1,6 @@
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
+import { TailwindIndicator } from 'components/TailwindIndicator'
 import { ServerThemeProvider } from 'next-themes'
 import { Open_Sans } from 'next/font/google'
 import './globals.css'
@@ -63,6 +64,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <TailwindIndicator />
         </body>
       </html>
     </ServerThemeProvider>
