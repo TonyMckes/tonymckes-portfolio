@@ -4,7 +4,7 @@
 
 @layer components {
   .nav-item {
-    @apply relative flex items-center whitespace-nowrap rounded border-none bg-transparent p-2 text-xl font-semibold outline-primary-700 transition-[colors,outline] duration-300 hover:bg-neutral-50 focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1 dark:outline-primary-300 dark:hover:bg-night-800/50 dark:hover:text-primary-300 md:flex md:justify-center md:text-sm md:hover:text-primary-700;
+    @apply relative flex items-center whitespace-nowrap rounded border-none bg-transparent p-2 text-xl font-semibold  outline-primary-700 transition-[colors,outline] duration-300 focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1 dark:outline-primary-300 md:flex md:justify-center md:text-sm;
   }
 }
 
@@ -32,13 +32,13 @@
     @apply w-3;
   }
   *::-webkit-scrollbar-track {
-    @apply bg-neutral-200 dark:bg-primary-800;
+    @apply bg-neutral-200 dark:bg-night-800/25;
   }
   *::-webkit-scrollbar-thumb {
-    @apply rounded-xl border-2 border-neutral-100 bg-primary-300 dark:border-primary-800 dark:bg-primary-700;
+    @apply rounded-xl border-2 border-neutral-100 bg-primary-500 dark:border-night-200 dark:bg-night-800;
   }
   *::-webkit-scrollbar-thumb:hover {
-    @apply border-2 border-neutral-200 bg-primary-400 dark:border-primary-700 dark:bg-primary-600;
+    @apply border-2 border-neutral-200 bg-primary-400 dark:border-night-700 dark:bg-night-600;
   }
 
   /* Logo color */
@@ -49,35 +49,25 @@
 }
 
 .hero__title::before,
-.hero__title::after,
-.hero__subtitle::before,
-.hero__subtitle::after {
-  color: var(--neutral-900);
+.hero__title::after {
+  color: var(--primary-900);
   font-size: 1.125rem;
   font-weight: 400;
   left: -1.5rem;
   opacity: 0.25;
   position: absolute;
 }
-.hero__title::before,
-.hero__subtitle::before {
-  margin-top: -0.75rem;
+.hero__title::before {
+  margin-top: -1.25rem;
 }
-.hero__title::after,
-.hero__subtitle::after {
-  bottom: -0.75rem;
+.hero__title::after {
+  bottom: -1.25rem;
 }
 .hero__title::before {
   content: '<h1>';
 }
 .hero__title::after {
   content: '</h1>';
-}
-.hero__subtitle::before {
-  content: '<h2>';
-}
-.hero__subtitle::after {
-  content: '</h2>';
 }
 
 .project__item {

@@ -40,21 +40,28 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
     }
   })
 
+  useEffect(() => {
+    if (window !== undefined) controlNavbar()
+  }, []) // eslint-disable-line react-hooks/exhaustive-deps
+
   const handleClick = () => {
     setMenuOpen(!menuOpen)
   }
 
   const headerStyles = showNavbar
-    ? 'shadow-none -translate-y-full '
+    ? 'shadow-none -translate-y-full'
     : isScrolled
-    ? 'shadow-md'
-    : 'md:py-4 !duration-500 !bg-transparent'
+    ? 'shadow-md dark:shadow-night-700 backdrop-blur'
+    : 'md:py-4 duration-500 bg-transparent'
 
   return (
     <header
-      className={`fixed top-0 z-10 w-full bg-neutral-100/95 duration-300 dark:bg-night-900/95 md:p-1 ${headerStyles}`}
+      className={tw(
+        'fixed top-0 z-10 w-full bg-neutral-100/80 duration-300 dark:bg-night-900/80 md:p-1',
+        headerStyles
+      )}
     >
-      <nav className="mx-auto flex justify-between lg:container">
+      <nav className="mx-auto flex max-w-screen-xl justify-between">
         <NavLink aria-label="TonyMckes home page" href="#">
           <TonyMckes />
         </NavLink>

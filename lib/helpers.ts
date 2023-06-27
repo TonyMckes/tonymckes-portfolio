@@ -1,3 +1,4 @@
+import { twMerge, type ClassNameValue } from 'tailwind-merge'
 import type {
   Repository,
   RepositoryNode,
@@ -23,6 +24,6 @@ export const normalizeData = (nodes: RepositoryNode[]): Repository[] => {
   return repositories
 }
 
-export function tw(...classes: string[]) {
-  return classes.filter(Boolean).join(' ')
+export function tw(...classes: ClassNameValue[]) {
+  return twMerge(classes)
 }

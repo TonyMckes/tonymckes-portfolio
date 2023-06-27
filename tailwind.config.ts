@@ -11,6 +11,16 @@ export default {
   ],
   darkMode: 'class',
   theme: {
+    container: {
+      center: true,
+      screens: {
+        md: '1024px',
+      },
+      padding: {
+        DEFAULT: '0.5rem',
+        md: '0',
+      },
+    },
     extend: {
       fontFamily: {
         sans: ['var(--font-open-sans)', ...fontFamily.serif],

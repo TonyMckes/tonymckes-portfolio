@@ -5,18 +5,27 @@ function Section({ children, ...props }: ComponentProps<'section'>) {
 }
 
 function SectionTitle({ children }: ComponentProps<'h2'>) {
-  return <h2 className="mb-3 text-center text-4xl font-bold">{children}</h2>
-}
-
-function SectionParagraph({ children }: ComponentProps<'p'>) {
   return (
-    <p className="mb-10 text-center text-2xl font-semibold text-primary-700 dark:text-primary-300">
+    <h2 className="mb-3 text-center text-5xl font-bold text-primary-700 dark:invert">
       {children}
-    </p>
+    </h2>
   )
 }
 
+function SectionSubTitle({ children }: ComponentProps<'h2'>) {
+  return (
+    <h3 className="mb-3 text-center text-4xl font-bold text-primary-700 dark:invert">
+      {children}
+    </h3>
+  )
+}
+
+function SectionParagraph({ children }: ComponentProps<'p'>) {
+  return <p className="mb-10 text-center text-2xl font-semibold">{children}</p>
+}
+
 Section.Title = SectionTitle
+Section.SubTitle = SectionSubTitle
 Section.Paragraph = SectionParagraph
 
 export default Section

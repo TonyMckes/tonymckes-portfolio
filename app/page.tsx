@@ -17,22 +17,15 @@ async function Home() {
 
   return (
     <main className="space-y-40">
-      <section className=" flex h-screen items-center justify-center" id="home">
-        <h1 className="mx-auto px-2 text-3xl font-light md:text-5xl">
-          <div className="">Hello, I&apos;m</div>
-          <div className="mb-4 mt-3 text-5xl font-normal md:text-7xl">
-            Anthony Mackensen
-          </div>
-          <div>
-            And I&apos;m a
-            <span className="font-medium text-primary-500"> Web Developer</span>
-          </div>
-        </h1>
+      <section
+        className="grid min-h-screen place-items-center overflow-hidden"
+        id="home"
+      >
       </section>
 
       {featuredProjects.length > 0 && (
-        <Section id="projects">
-          <div className="max-w-container">
+        <Section id="projects" className="overflow-hidden">
+          <div className="container">
             <Section.Title>Projects</Section.Title>
             <Section.Paragraph>
               Showcase of some of the projects I&apos;ve worked on
@@ -44,6 +37,7 @@ async function Home() {
             </ul>
           </div>
 
+          <Section.SubTitle>There&apos;s more!</Section.SubTitle>
           <Section.Paragraph>
             Swipe right or left to see even more projects!
           </Section.Paragraph>
@@ -55,7 +49,7 @@ async function Home() {
         </Section>
       )}
 
-      <Section id="skills" className="max-w-container">
+      <Section id="skills" className="container">
         <Section.Title>Skills</Section.Title>
         <Section.Paragraph>
           Here are a few technologies I&apos;ve been working with recently.
@@ -67,7 +61,7 @@ async function Home() {
         </ul>
       </Section>
 
-      <Section id="contact" className="max-w-container">
+      <Section id="contact" className="container">
         <Section.Title>Get in touch</Section.Title>
         <Section.Paragraph>
           You can leave me a message in any of the following platforms

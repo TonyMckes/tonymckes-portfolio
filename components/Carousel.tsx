@@ -1,5 +1,6 @@
 'use client'
 
+import { tw } from 'lib/helpers'
 import { Children, useState, type ReactNode } from 'react'
 import {
   A11y,
@@ -40,9 +41,7 @@ function Carousel({ children }: { children: ReactNode }) {
       // dynamicMainBullets: 3,
     },
     breakpoints: {
-      768: { slidesPerView: 1 },
-      1440: { slidesPerView: 1.4 },
-      2560: { slidesPerView: 2.5 },
+      1024: { slidesPerView: 'auto' },
     },
     autoplay: {
       delay: 4000,
@@ -61,11 +60,11 @@ function Carousel({ children }: { children: ReactNode }) {
       {Children.map(children, (child, index) => (
         <SwiperSlide
           key={index}
-          className={`!flex !h-auto overflow-hidden rounded-xl md:overflow-visible lg:overflow-hidden ${
-            initialized
-              ? 'px-2 xl:px-0'
-              : 'max-w-container snap-center first:lg:!ml-[64rem] last:lg:!mr-[64rem]'
-          }`}
+          className={tw(
+            'container !flex !h-auto overflow-hidden rounded-xl md:overflow-visible lg:overflow-hidden',
+            initialized &&
+              'snap-center first:lg:!ml-[64rem] last:lg:!mr-[64rem]'
+          )}
         >
           {child}
         </SwiperSlide>

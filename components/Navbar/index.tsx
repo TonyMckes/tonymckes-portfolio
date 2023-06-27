@@ -16,7 +16,9 @@ function Navbar() {
           {navLinks.map(({ href, text }) => (
             <li key={text}>
               <NavLink href={href} className="h-full w-full">
-                {text}
+                <span className="text-primary-700 dark:invert md:hover:text-primary-500">
+                  {text}
+                </span>
               </NavLink>
             </li>
           ))}

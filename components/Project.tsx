@@ -54,7 +54,7 @@ export function Project({
             'inline-block rounded-lg px-4 py-2 transition',
             'bg-neutral-50 dark:bg-night-800',
             'hover:text-primary-700 dark:hover:text-primary-300',
-            'ring-1 ring-primary-300 hover:ring-primary-700 dark:ring-night-700 dark:hover:ring-night-300'
+            'ring-1 ring-primary-300 hover:ring-primary-500 dark:ring-night-500 dark:hover:ring-night-400'
           )}
           href={url}
           rel="noreferrer"
