@@ -1,5 +1,6 @@
 import personalInfo from 'personalInfo.json'
 import { PersonalInfoTypes } from 'types/personal-info-types'
+import Animate from './Animate'
 import Logo from './Logo'
 
 type ContactListProps = Pick<PersonalInfoTypes, 'socialMedia' | 'email'>
@@ -9,19 +10,25 @@ const [emailUsername, emailDomain] = email.split('@')
 function ContactsList() {
   return (
     <>
-      <ul className="contact__list mx-auto mt-6 grid max-w-md auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
+      <ul className="contact__list container mx-auto mt-6 grid max-w-md auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
         {socialMedia.map(({ name, href }) => (
-          <li key={name}>
-            <a
-              href={href}
-              className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-night-800/50 md:text-base"
-              target="_blank"
-              rel="noreferrer"
-            >
-              <Logo height={32} className="mx-auto w-auto md:!h-10" icon={name} />
-              {name}
-            </a>
-          </li>
+          <Animate key={name} className="animate-in fade-in duration-700">
+            <li>
+              <a
+                href={href}
+                className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-night-800/20 md:text-base"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <Logo
+                  height={32}
+                  className="mx-auto w-auto md:!h-10"
+                  icon={name}
+                />
+                {name}
+              </a>
+            </li>
+          </Animate>
         ))}
       </ul>
       <p className="textContent mt-8 text-center text-xl text-primary-700 opacity-100 transition-[visibility,opacity] duration-500 dark:text-primary-300">
@@ -31,7 +38,7 @@ function ContactsList() {
         <span className="at select-none opacity-25 transition-opacity duration-500">
           @
         </span>
-        <a className="font-semibold" href="mailto:${email}">
+        <a className="font-semibold" href={`mailto:${email}`}>
           <span>{emailUsername}</span>
           <span className="emailDomain opacity-100 transition-opacity duration-500">
             @{emailDomain}

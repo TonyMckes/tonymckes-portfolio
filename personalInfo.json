@@ -9,14 +9,6 @@
     {
       "name": "LinkedIn",
       "href": "https://www.linkedin.com/in/tonymckes"
-    },
-    {
-      "name": "Telegram",
-      "href": "https://t.me/tonymckes"
-    },
-    {
-      "name": "Twitter",
-      "href": "https://twitter.com/tonymckes"
     }
   ],
 
@@ -54,6 +46,6 @@
     "PostgreSQL",
     "Node.js",
     "Sequelize",
-    "MariaDB"
+    "Jest"
   ]
 }

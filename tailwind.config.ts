@@ -22,6 +22,22 @@ export default {
       },
     },
     extend: {
+      animation: {
+        blob: 'blob infinite alternate',
+      },
+      keyframes: {
+        blob: {
+          '0%, 100%': {
+            transform: 'translate(0, 0) scale(1.1)',
+          },
+          '33%': {
+            transform: 'translate(4rem, 2.845rem) scale(0.9)',
+          },
+          '66%': {
+            transform: 'translate(-6rem, 1.25rem) scale(1)',
+          },
+        },
+      },
       fontFamily: {
         sans: ['var(--font-open-sans)', ...fontFamily.serif],
       },
