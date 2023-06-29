@@ -29,12 +29,18 @@ async function Home() {
           <Blob className="inset-x-0 -top-16 mx-auto h-48 w-48 bg-amber-600 [animation-duration:3500ms] [animation-delay:5000ms] md:-top-40 md:h-56 md:w-56 lg:h-64 lg:w-64" />
           <h1 className="hero__title px-2 text-3xl font-light md:text-5xl xl:text-6xl">
             <div className="isolate">Hello, I&apos;m</div>
-            <div className="mb-4 mt-3 text-6xl font-normal md:text-7xl xl:text-8xl">
+            <div
+              className="mb-4 mt-3 text-6xl font-normal md:text-7xl xl:text-8xl"
+              translate="no"
+            >
               Anthony Mackensen
             </div>
             <div>
               <span className="isolate">And I&apos;m a</span>{' '}
-              <span className="font-medium text-primary-700 dark:invert">
+              <span
+                className="font-medium text-primary-700 dark:invert"
+                translate="no"
+              >
                 Web Developer
               </span>
             </div>

@@ -34,7 +34,10 @@ function ContactsList() {
       <p className="textContent mt-8 text-center text-xl text-primary-700 opacity-100 transition-[visibility,opacity] duration-500 dark:text-primary-300">
         Or write me an email
       </p>
-      <div className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-primary-500 underline-offset-4">
+      <div
+        className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-primary-500 underline-offset-4"
+        translate="no"
+      >
         <span className="at select-none opacity-25 transition-opacity duration-500">
           @
         </span>

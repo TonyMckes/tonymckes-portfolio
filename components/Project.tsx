@@ -20,7 +20,10 @@ export function Project({
 }: ProjectProps) {
   return (
     <li className="project__item relative flex flex-col gap-x-2 overflow-hidden rounded-xl bg-neutral-50 shadow-xl dark:bg-night-800 dark:shadow-none dark:drop-shadow-none md:grid md:bg-transparent md:shadow-none md:drop-shadow-2xl dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800">
-      <h3 className="m-2 text-lg font-bold capitalize md:[grid-area:title]">
+      <h3
+        className="m-2 text-lg font-bold capitalize md:[grid-area:title]"
+        translate="no"
+      >
         {name.replace(/-/g, ' ')}
       </h3>
 

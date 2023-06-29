@@ -14,7 +14,10 @@ function Skill({ name }: { name: string }) {
         size="64px"
         className="absolute inset-0 -z-10 mx-auto !block scale-110 blur-2xl md:!h-20 md:!w-20"
       />
-      <span className="mt-2 block whitespace-nowrap text-sm font-medium">
+      <span
+        className="mt-2 block whitespace-nowrap text-sm font-medium"
+        translate="no"
+      >
         {name}
       </span>
     </li>
