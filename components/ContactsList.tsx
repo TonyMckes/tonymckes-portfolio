@@ -16,7 +16,7 @@ function ContactsList() {
             <li>
               <a
                 href={href}
-                className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50 dark:hover:bg-night-800/20 md:text-base"
+                className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50/20 dark:hover:bg-night-800/20 md:text-base"
                 target="_blank"
                 rel="noreferrer"
               >

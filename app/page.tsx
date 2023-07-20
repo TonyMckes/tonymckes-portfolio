@@ -5,6 +5,7 @@ import ContactsList from 'components/ContactsList'
 import { Project } from 'components/Project'
 import Section from 'components/Section'
 import Skill from 'components/Skill'
+import Steps from 'components/Steps'
 import personalData from 'personalInfo.json'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
 import type { PersonalInfoTypes } from 'types/personal-info-types'
@@ -20,7 +21,7 @@ async function Home() {
   return (
     <main className="space-y-40">
       <section
-        className="grid min-h-screen place-items-center overflow-hidden"
+        className="relative grid min-h-screen place-items-center overflow-hidden bg-night-100 dark:bg-night-950"
         id="home"
       >
         <div className="relative">
@@ -47,6 +48,8 @@ async function Home() {
           </h1>
         </div>
       </section>
+
+      <Steps className="absolute -bottom-28 h-40 w-full lg:h-60 2xl:h-80" />
 
       {featuredProjects.length > 0 && (
         <Section id="projects" className="overflow-hidden">

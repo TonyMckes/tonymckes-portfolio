@@ -12,7 +12,7 @@ function Skill({ name }: { name: string }) {
         style={{ display: 'none' }}
         icon={name}
         size="64px"
-        className="absolute inset-0 -z-10 mx-auto !block scale-110 blur-2xl md:!h-20 md:!w-20"
+        className="absolute inset-0 -z-10 mx-auto !block scale-110 blur-xl md:!h-20 md:!w-20 md:blur-2xl"
       />
       <span
         className="mt-2 block whitespace-nowrap text-sm font-semibold"

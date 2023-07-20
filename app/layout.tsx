@@ -59,7 +59,7 @@ export default function RootLayout({
   return (
     <ServerThemeProvider attribute="class">
       <html lang="en" className={`scroll-smooth ${openSans.className}`}>
-        <body className="bg-neutral-100 text-gray-600 dark:bg-night-900 dark:text-neutral-50">
+        <body className="bg-neutral-100 bg-gradient-to-b from-neutral-100 to-night-100 bg-fixed text-gray-600 dark:bg-night-900 dark:from-night-800 dark:to-night-950 dark:text-night-50 md:isolate">
           <Navbar />
           {children}
           <Footer />

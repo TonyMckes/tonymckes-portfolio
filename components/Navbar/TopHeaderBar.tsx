@@ -55,7 +55,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
   return (
     <header
       className={tw(
-        'fixed top-0 z-10 w-full bg-neutral-100/80 duration-300 dark:bg-night-900/80 md:p-1',
+        'fixed top-0 z-50 w-full bg-neutral-100/80 duration-300 dark:bg-night-950/80 md:p-1',
         headerStyles
       )}
     >
