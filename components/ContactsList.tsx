@@ -31,14 +31,14 @@ function ContactsList() {
           </Animate>
         ))}
       </ul>
-      <p className="textContent mt-8 text-center text-xl text-primary-700 opacity-100 transition-[visibility,opacity] duration-500 dark:text-primary-300">
-        Or write me an email
+      <p className="textContent mt-8 text-center text-xl opacity-100 transition-[visibility,opacity] duration-500">
+        Or write me an email at
       </p>
       <div
-        className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-primary-500 underline-offset-4"
+        className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-night-500 underline-offset-4 dark:decoration-night-400"
         translate="no"
       >
-        <span className="at select-none opacity-25 transition-opacity duration-500">
+        <span className="at select-none opacity-5 transition-opacity duration-500">
           @
         </span>
         <a className="font-semibold" href={`mailto:${email}`}>

@@ -36,7 +36,7 @@ function Carousel({ children }: { children: ReactNode }) {
     },
     pagination: {
       clickable: true,
-      bulletClass: 'swiper-pagination-bullet bg-night-900 dark:bg-neutral-100',
+      bulletClass: 'swiper-pagination-bullet bg-night-950 dark:bg-neutral-100',
       // dynamicBullets: true,
       // dynamicMainBullets: 3,
     },

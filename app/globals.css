@@ -2,9 +2,31 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Scrollbar Styles */
+  * {
+    @apply [scrollbar-color:bg-night-500_bg-night-200] dark:[scrollbar-color:bg-night-500_bg-night-200];
+  }
+  *::-webkit-scrollbar {
+    @apply w-3;
+  }
+  *::-webkit-scrollbar-track {
+    @apply bg-night-500/10 dark:bg-night-400/10;
+  }
+  *::-webkit-scrollbar-thumb {
+    @apply rounded-xl bg-night-500 hover:bg-night-200;
+  }
+
+  /* Logo color */
+  a[href*='linkedin.com'] svg > path,
+  a[href*='github.com'] svg > path {
+    @apply dark:fill-neutral-50;
+  }
+}
+
 @layer components {
   .nav-item {
-    @apply relative flex items-center whitespace-nowrap rounded border-none bg-transparent p-2 text-xl font-semibold  outline-primary-700 transition-[colors,outline] duration-300 focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1 dark:outline-primary-300 md:flex md:justify-center md:text-sm;
+    @apply relative flex items-center whitespace-nowrap rounded border-none bg-transparent p-2 text-xl font-semibold md:flex md:justify-center md:text-sm;
   }
 }
 
@@ -13,7 +35,7 @@
     @apply mx-auto max-w-5xl px-2;
   }
   .underline-effect:after {
-    @apply absolute left-0 top-[90%] h-0.5 w-0 bg-primary-500 content-[''] duration-300;
+    @apply absolute left-0 top-[90%] h-0.5 w-0 bg-night-500 content-[''] duration-300 dark:bg-night-400;
   }
   .underline-effect:hover:after {
     @apply w-full;
@@ -21,36 +43,14 @@
   .underline-effect:not(:hover):after {
     @apply left-auto right-0;
   }
-}
-
-@layer base {
-  /* Scrollbar Styles */
-  * {
-    @apply [scrollbar-color:bg-primary-300_bg-neutral-300] dark:[scrollbar-color:bg-primary-700_bg-primary-800];
-  }
-  *::-webkit-scrollbar {
-    @apply w-3;
-  }
-  *::-webkit-scrollbar-track {
-    @apply bg-neutral-200 dark:bg-night-800/25;
-  }
-  *::-webkit-scrollbar-thumb {
-    @apply rounded-xl border-2 border-neutral-100 bg-primary-500 dark:border-night-200 dark:bg-night-800;
-  }
-  *::-webkit-scrollbar-thumb:hover {
-    @apply border-2 border-neutral-200 bg-primary-400 dark:border-night-700 dark:bg-night-600;
-  }
-
-  /* Logo color */
-  html.dark a[href*='linkedin.com'] svg > path,
-  html.dark a[href*='github.com'] svg > path {
-    @apply fill-[#E9E9EA];
+  :focus {
+    @apply outline-night-500 transition-[colors,outline] focus-visible:outline-dashed focus-visible:outline-2 focus-visible:outline-offset-1 dark:outline-night-400;
   }
 }
 
 .hero__title::before,
 .hero__title::after {
-  color: var(--primary-900);
+  color: var(--night-500);
   font-size: 1.125rem;
   font-weight: 400;
   left: 0;

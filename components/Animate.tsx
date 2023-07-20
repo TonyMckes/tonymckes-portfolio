@@ -28,10 +28,10 @@ function Animate({ children, className, ...props }: Props) {
 
   return (
     <div
-      className={`${
+      className={`transition-none ${
         inViewport
-          ? 'running before:running after:running '
-          : 'paused before:paused after:paused '
+          ? 'running before:running after:running'
+          : 'paused before:paused after:paused'
       } ${className}`}
       ref={elementRef}
       {...props}

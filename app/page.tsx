@@ -27,7 +27,7 @@ async function Home() {
           <Blob className="-left-4 top-0 h-48 w-48 bg-purple-600 [animation-duration:5000ms] md:left-4 lg:h-80 lg:w-80" />
           <Blob className="right-10 top-10 h-44 w-44 bg-fuchsia-500 [animation-delay:1000ms] [animation-duration:3500ms] md:-top-4 md:right-0 md:h-60 md:w-60 lg:-right-10 lg:h-80 lg:w-80" />
           <Blob className="inset-x-0 -top-16 mx-auto h-48 w-48 bg-amber-600 [animation-duration:3500ms] [animation-delay:5000ms] md:-top-40 md:h-56 md:w-56 lg:h-64 lg:w-64" />
-          <h1 className="hero__title px-2 text-3xl font-light md:text-5xl xl:text-6xl">
+          <h1 className="hero__title px-2 text-3xl font-light text-night-950 dark:text-night-50 md:text-5xl xl:text-6xl">
             <div className="isolate">Hello, I&apos;m</div>
             <div
               className="mb-4 mt-3 text-6xl font-normal md:text-7xl xl:text-8xl"
@@ -38,7 +38,7 @@ async function Home() {
             <div>
               <span className="isolate">And I&apos;m a</span>{' '}
               <span
-                className="font-medium text-primary-700 dark:invert"
+                className="font-medium text-night-500 dark:text-night-400 "
                 translate="no"
               >
                 Web Developer

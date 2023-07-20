@@ -21,7 +21,7 @@ export function Project({
   return (
     <li className="project__item relative flex flex-col gap-x-2 overflow-hidden rounded-xl bg-neutral-50 shadow-xl dark:bg-night-800 dark:shadow-none dark:drop-shadow-none md:grid md:bg-transparent md:shadow-none md:drop-shadow-2xl dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800">
       <h3
-        className="m-2 text-lg font-bold capitalize md:[grid-area:title]"
+        className="m-2 text-lg font-bold capitalize text-night-500 dark:text-night-400  md:[grid-area:title]"
         translate="no"
       >
         {name.replace(/-/g, ' ')}
@@ -41,7 +41,7 @@ export function Project({
         )}
       </BrowserPlaceholder>
 
-      <p className="m-2 grow font-medium text-neutral-700 dark:text-neutral-300 md:[grid-area:description]">
+      <p className="m-2 grow font-medium md:[grid-area:description]">
         {description || 'No description available.'}
       </p>
 
@@ -54,10 +54,9 @@ export function Project({
       <div className="m-2 space-x-2 place-self-end font-semibold md:[grid-area:links]">
         <a
           className={tw(
-            'inline-block rounded-lg px-4 py-2 transition',
-            'bg-neutral-50 dark:bg-night-800',
-            'hover:text-primary-700 dark:hover:text-primary-300',
-            'ring-1 ring-primary-300 hover:ring-primary-500 dark:ring-night-500 dark:hover:ring-night-400'
+            'inline-block rounded-lg px-4 py-2 transition-colors',
+            'text-sm text-night-500',
+            'bg-white hover:bg-night-100 hover:text-night-600'
           )}
           href={url}
           rel="noreferrer"
@@ -68,8 +67,8 @@ export function Project({
         <a
           className={tw(
             'inline-block rounded-lg px-4 py-2 transition-colors',
-            'text-neutral-100 dark:text-neutral-900',
-            'bg-primary-700 hover:bg-primary-600 dark:bg-primary-300 dark:hover:bg-primary-400'
+            'text-sm text-white',
+            'bg-night-500 hover:bg-night-100 hover:text-night-600'
           )}
           href={homepageUrl}
           rel="noreferrer"

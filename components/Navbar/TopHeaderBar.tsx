@@ -4,8 +4,6 @@ import Icon from 'components/Icon'
 import TonyMckes from 'components/TonyMckes'
 import { tw } from 'lib/helpers'
 import { ReactNode, useEffect, useState } from 'react'
-import NavButton from './NavButton'
-import NavLink from './NavLink'
 import ThemeToggler from './ThemeToggler'
 
 function TopHeaderBar({ children }: { children: ReactNode }) {
@@ -52,7 +50,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
     ? 'shadow-none -translate-y-full'
     : isScrolled
     ? 'shadow-md dark:shadow-night-700 backdrop-blur'
-    : 'md:py-4 duration-500 bg-transparent'
+    : 'md:py-4 duration-500 bg-transparent dark:bg-transparent'
 
   return (
     <header
@@ -62,20 +60,25 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
       )}
     >
       <nav className="mx-auto flex max-w-screen-xl justify-between">
-        <NavLink aria-label="TonyMckes home page" href="#">
+        <a
+          className="nav-item underline-effect"
+          aria-label="TonyMckes home page"
+          href="/"
+        >
           <TonyMckes />
-        </NavLink>
+        </a>
         <div className="flex">
-          <NavButton
+          <button
+            type="button"
             aria-label={menuOpen ? 'Close sidebar' : 'Open sidebar'}
-            className="z-50 m-2 md:hidden"
+            className="nav-item underline-effect z-50 m-2 md:hidden"
             onClick={handleClick}
           >
             <Icon
               size="28px"
               icon={menuOpen ? 'ic:round-close' : 'ic:round-menu'}
             />
-          </NavButton>
+          </button>
 
           <div
             onClick={handleClick}
