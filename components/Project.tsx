@@ -19,7 +19,12 @@ export function Project({
   featured,
 }: ProjectProps) {
   return (
-    <li className="project__item relative flex flex-col gap-x-2 overflow-hidden rounded-xl bg-neutral-50 shadow-xl dark:bg-night-800 dark:shadow-none dark:drop-shadow-none md:grid md:bg-transparent md:shadow-none md:drop-shadow-2xl dark:md:bg-transparent lg:bg-neutral-50 dark:lg:bg-night-800">
+    <li
+      className={tw(
+        'project__item relative flex flex-col gap-x-2 overflow-hidden rounded-lg p-2 ring-1 ring-night-500/25 transition-shadow duration-300 hover:shadow-lg hover:ring-1 dark:ring-night-400/25 md:grid md:ring-0',
+        'after:absolute after:inset-0 after:-z-10 after:m-auto after:aspect-square after:h-auto after:w-full after:scale-0 after:rounded-full after:bg-cyan-400 after:opacity-0 after:blur-2xl after:transition-all after:duration-500 after:delay-150 after:ease-out hover:after:scale-110 hover:after:opacity-10'
+      )}
+    >
       <h3
         className="m-2 text-lg font-bold capitalize text-night-500 dark:text-night-400  md:[grid-area:title]"
         translate="no"

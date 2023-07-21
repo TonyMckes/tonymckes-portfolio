@@ -57,7 +57,7 @@ async function Home() {
           <Section.Paragraph>
             Showcase of some of the projects I&apos;ve worked on
           </Section.Paragraph>
-          <ul className="projects container mb-20 space-y-8">
+          <ul className="projects container mb-20 space-y-10">
             {featuredProjects.map((project) => (
               <Animate
                 className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
