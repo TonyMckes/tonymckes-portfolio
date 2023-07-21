@@ -24,7 +24,7 @@ async function Home() {
         className="relative grid min-h-screen place-items-center overflow-hidden bg-night-100 dark:bg-night-950"
         id="home"
       >
-        <div className="relative">
+        <header className="relative">
           <Blob className="-left-4 top-0 h-48 w-48 bg-purple-600 [animation-duration:5000ms] md:left-4 lg:h-80 lg:w-80" />
           <Blob className="right-10 top-10 h-44 w-44 bg-fuchsia-500 [animation-delay:1000ms] [animation-duration:3500ms] md:-top-4 md:right-0 md:h-60 md:w-60 lg:-right-10 lg:h-80 lg:w-80" />
           <Blob className="inset-x-0 -top-16 mx-auto h-48 w-48 bg-amber-600 [animation-duration:3500ms] [animation-delay:5000ms] md:-top-40 md:h-56 md:w-56 lg:h-64 lg:w-64" />
@@ -46,7 +46,7 @@ async function Home() {
               </span>
             </div>
           </h1>
-        </div>
+        </header>
       </section>
 
       <Steps className="absolute -bottom-28 h-40 w-full lg:h-60 2xl:h-80" />
@@ -60,8 +60,9 @@ async function Home() {
           <ul className="projects container mb-20 space-y-10">
             {featuredProjects.map((project) => (
               <Animate
-                className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
+                as="li"
                 key={project.id}
+                className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
               >
                 <ProjectCard {...project} featured />
               </Animate>
@@ -87,7 +88,11 @@ async function Home() {
         </Section.Paragraph>
         <ul className="container grid grid-cols-3 gap-y-12 md:grid-cols-5 md:gap-x-4 md:gap-y-14">
           {skills.map((name) => (
-            <Animate key={name} className="animate-in fade-in duration-700">
+            <Animate
+              as="li"
+              key={name}
+              className="animate-in fade-in duration-700"
+            >
               <Skill name={name} />
             </Animate>
           ))}

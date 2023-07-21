@@ -30,23 +30,22 @@ function Navbar() {
           ))}
         </ul>
       </nav>
-      <nav>
-        <ul className="mt-4 flex h-full md:ml-2 md:mt-0">
-          {socials.map(({ href, name }) => (
-            <li key={name}>
-              <a
-                className="nav-item underline-effect"
-                rel="noreferrer"
-                target="_blank"
-                href={href}
-              >
-                <Logo height={28} icon={name} />
-                <span className="sr-only">{name}</span>
-              </a>
-            </li>
-          ))}
-        </ul>
-      </nav>
+
+      <ul className="mt-4 flex h-full md:ml-2 md:mt-0">
+        {socials.map(({ href, name }) => (
+          <li key={name}>
+            <a
+              className="nav-item underline-effect"
+              rel="noreferrer"
+              target="_blank"
+              href={href}
+            >
+              <Logo height={28} icon={name} />
+              <span className="sr-only">{name}</span>
+            </a>
+          </li>
+        ))}
+      </ul>
     </TopHeaderBar>
   )
 }

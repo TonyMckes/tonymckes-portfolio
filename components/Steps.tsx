@@ -5,6 +5,7 @@ import type { SVGProps } from 'react'
 function Steps({ ...props }: SVGProps<SVGSVGElement>) {
   return (
     <svg
+      aria-hidden
       viewBox="0 0 960 310"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"

@@ -4,7 +4,7 @@ import Logo from 'components/SVG/Logo'
 
 function Skill({ name }: { name: string }) {
   return (
-    <li className="relative text-center">
+    <div className="relative text-center">
       <Logo
         icon={name}
         size="64px"
@@ -22,7 +22,7 @@ function Skill({ name }: { name: string }) {
       >
         {name}
       </span>
-    </li>
+    </div>
   )
 }
 

@@ -14,22 +14,24 @@ function ContactsList() {
     <>
       <ul className="contact__list container mx-auto mt-6 grid max-w-md auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
         {socialMedia.map(({ name, href }) => (
-          <Animate key={name} className="animate-in fade-in duration-700">
-            <li>
-              <a
-                href={href}
-                className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50/20 dark:hover:bg-night-800/20 md:text-base"
-                target="_blank"
-                rel="noreferrer"
-              >
-                <Logo
-                  height={32}
-                  className="mx-auto w-auto md:!h-10"
-                  icon={name}
-                />
-                {name}
-              </a>
-            </li>
+          <Animate
+            as="li"
+            key={name}
+            className="animate-in fade-in duration-700"
+          >
+            <a
+              href={href}
+              className="link grid justify-center gap-1 rounded p-2 text-sm font-medium hover:bg-neutral-50/20 dark:hover:bg-night-800/20 md:text-base"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <Logo
+                height={32}
+                className="mx-auto w-auto md:!h-10"
+                icon={name}
+              />
+              {name}
+            </a>
           </Animate>
         ))}
       </ul>
@@ -40,7 +42,10 @@ function ContactsList() {
         className="email -translate-x-[0.5ch] text-center text-2xl underline decoration-night-500 underline-offset-4 dark:decoration-night-400"
         translate="no"
       >
-        <span className="at select-none opacity-5 transition-opacity duration-500">
+        <span
+          className="at select-none opacity-5 transition-opacity duration-500"
+          aria-hidden
+        >
           @
         </span>
         <a className="font-semibold" href={`mailto:${email}`}>

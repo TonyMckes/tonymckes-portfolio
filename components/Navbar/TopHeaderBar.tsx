@@ -59,14 +59,16 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
         headerStyles
       )}
     >
-      <nav className="mx-auto flex max-w-screen-xl justify-between">
-        <a
-          className="nav-item underline-effect"
-          aria-label="TonyMckes home page"
-          href="/"
-        >
-          <TonyMckes />
-        </a>
+      <div className="mx-auto flex max-w-screen-xl justify-between">
+        <nav>
+          <a
+            className="nav-item underline-effect"
+            aria-label="TonyMckes home page"
+            href="/"
+          >
+            <TonyMckes />
+          </a>
+        </nav>
         <div className="flex">
           <button
             type="button"
@@ -118,7 +120,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
             <ThemeToggler />
           </div>
         </div>
-      </nav>
+      </div>
     </header>
   )
 }
