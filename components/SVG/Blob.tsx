@@ -1,3 +1,5 @@
+import 'server-only'
+
 import { tw } from 'lib/helpers'
 
 function Blob({ className }: { className: string }) {

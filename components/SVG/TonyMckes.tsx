@@ -1,4 +1,4 @@
-import { SVGProps } from 'react'
+import type { SVGProps } from 'react'
 
 function TonyMckes({ height, width, ...props }: SVGProps<SVGSVGElement>) {
   return (

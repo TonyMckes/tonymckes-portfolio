@@ -1,4 +1,6 @@
-import Logo from './Logo'
+import 'server-only'
+
+import Logo from 'components/SVG/Logo'
 
 function Skill({ name }: { name: string }) {
   return (

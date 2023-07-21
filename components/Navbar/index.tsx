@@ -1,4 +1,6 @@
-import Logo from 'components/Logo'
+import 'server-only'
+
+import Logo from 'components/SVG/Logo'
 import { tw } from 'lib/helpers'
 import personalInfo from 'personalInfo.json'
 import TopHeaderBar from './TopHeaderBar'

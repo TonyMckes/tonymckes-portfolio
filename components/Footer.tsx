@@ -1,4 +1,6 @@
-import Icon from './Icon'
+import 'server-only'
+
+import Icon from 'components/SVG/Icon'
 
 function Footer() {
   return (

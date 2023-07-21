@@ -1,6 +1,6 @@
 'use client'
 
-import Icon from 'components/Icon'
+import Icon from 'components/SVG/Icon'
 import { useTheme } from 'next-themes'
 import { useEffect, useState } from 'react'
 

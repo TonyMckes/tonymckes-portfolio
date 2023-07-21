@@ -1,7 +1,7 @@
 'use client'
 
-import Icon from 'components/Icon'
-import TonyMckes from 'components/TonyMckes'
+import Icon from 'components/SVG/Icon'
+import TonyMckes from 'components/SVG/TonyMckes'
 import { tw } from 'lib/helpers'
 import { ReactNode, useEffect, useState } from 'react'
 import ThemeToggler from './ThemeToggler'

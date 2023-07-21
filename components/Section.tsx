@@ -1,5 +1,7 @@
+import 'server-only'
+
 import { tw } from 'lib/helpers'
-import { ComponentProps } from 'react'
+import type { ComponentProps } from 'react'
 import Animate from './Animate'
 
 function Section({ className, children, ...props }: ComponentProps<'section'>) {

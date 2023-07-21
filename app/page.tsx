@@ -1,8 +1,8 @@
 import Animate from 'components/Animate'
-import Blob from 'components/Blob'
 import Carousel from 'components/Carousel'
 import ContactsList from 'components/ContactsList'
-import { Project } from 'components/Project'
+import { ProjectCard } from 'components/ProjectCard'
+import Blob from 'components/SVG/Blob'
 import Section from 'components/Section'
 import Skill from 'components/Skill'
 import Steps from 'components/Steps'
@@ -63,7 +63,7 @@ async function Home() {
                 className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
                 key={project.id}
               >
-                <Project {...project} featured />
+                <ProjectCard {...project} featured />
               </Animate>
             ))}
           </ul>
@@ -74,7 +74,7 @@ async function Home() {
           </Section.Paragraph>
           <Carousel>
             {showcaseProjects.map((repo) => (
-              <Project key={repo.id} {...repo} />
+              <ProjectCard key={repo.id} {...repo} />
             ))}
           </Carousel>
         </Section>

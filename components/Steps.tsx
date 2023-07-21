@@ -1,3 +1,5 @@
+import 'server-only'
+
 import type { SVGProps } from 'react'
 
 function Steps({ ...props }: SVGProps<SVGSVGElement>) {

@@ -1,3 +1,5 @@
+import 'server-only'
+
 import { tw } from 'lib/helpers'
 import Image from 'next/image'
 import type { Repository } from 'types/repositories-types'
@@ -9,7 +11,7 @@ interface ProjectProps extends Omit<Repository, 'id'> {
   featured?: boolean
 }
 
-export function Project({
+export function ProjectCard({
   name,
   repositoryTopics: { topics },
   description,

@@ -1,7 +1,9 @@
+import 'server-only'
+
+import Animate from 'components/Animate'
+import Logo from 'components/SVG/Logo'
 import personalInfo from 'personalInfo.json'
-import { PersonalInfoTypes } from 'types/personal-info-types'
-import Animate from './Animate'
-import Logo from './Logo'
+import type { PersonalInfoTypes } from 'types/personal-info-types'
 
 type ContactListProps = Pick<PersonalInfoTypes, 'socialMedia' | 'email'>
 const { email, socialMedia } = personalInfo as ContactListProps
