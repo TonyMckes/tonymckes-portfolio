@@ -2,13 +2,16 @@ import Animate from 'components/Animate'
 import Carousel from 'components/Carousel'
 import ContactsList from 'components/ContactsList'
 import { ProjectCard } from 'components/ProjectCard'
+import Atom from 'components/SVG/Atom'
 import Blob from 'components/SVG/Blob'
+import Steps from 'components/SVG/Steps'
 import Section from 'components/Section'
 import Skill from 'components/Skill'
-import Steps from 'components/Steps'
+import Image from 'next/image'
 import personalData from 'personalInfo.json'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
 import type { PersonalInfoTypes } from 'types/personal-info-types'
+import codeGif from '../public/code.gif'
 
 const { skills } = personalData as Pick<PersonalInfoTypes, 'skills'>
 
@@ -31,7 +34,7 @@ async function Home() {
           <h1 className="hero__title px-2 text-3xl font-light text-night-950 dark:text-night-50 md:text-5xl xl:text-6xl">
             <div className="isolate">Hello, I&apos;m</div>
             <div
-              className="mb-4 mt-3 text-6xl font-normal md:text-7xl xl:text-8xl"
+              className="mb-4 mt-3 text-6xl font-normal text-night-800 dark:text-night-200 md:text-7xl xl:text-8xl"
               translate="no"
             >
               Anthony Mackensen
@@ -39,17 +42,29 @@ async function Home() {
             <div>
               <span className="isolate">And I&apos;m a</span>{' '}
               <span
-                className="font-medium text-night-500 dark:text-night-400 "
+                className="font-medium text-night-500 dark:text-night-400"
                 translate="no"
               >
                 Web Developer
               </span>
             </div>
           </h1>
+
+          <div
+            className="absolute -bottom-1/2 -right-16 z-10 md:-bottom-2/3 md:right-8 xl:-bottom-1/2 xl:right-24"
+            aria-hidden
+          >
+            <Atom className="opacity-90" />
+            <Image
+              className="absolute left-24 top-24 h-32 w-auto opacity-50 invert"
+              src={codeGif}
+              alt="Code image"
+            />
+          </div>
         </header>
       </section>
 
-      <Steps className="absolute -bottom-28 h-40 w-full lg:h-60 2xl:h-80" />
+      <Steps className="absolute -bottom-28 z-10 h-40 w-full lg:h-60 2xl:h-80" />
 
       {featuredProjects.length > 0 && (
         <Section id="projects" className="overflow-hidden">
@@ -68,7 +83,6 @@ async function Home() {
               </Animate>
             ))}
           </ul>
-
           <Section.SubTitle>There&apos;s more!</Section.SubTitle>
           <Section.Paragraph>
             Swipe right or left to see even more projects!
