@@ -59,7 +59,8 @@ function Carousel({ children }: { children: ReactNode }) {
     >
       {Children.map(children, (child, index) => (
         <SwiperSlide
-          key={index}
+          tag="li"
+          key={child?.toString() || index}
           className={tw(
             'container !flex !h-auto overflow-hidden rounded-xl md:overflow-visible lg:overflow-hidden',
             initialized &&

@@ -1,4 +1,6 @@
-import Logo from 'components/Logo'
+import 'server-only'
+
+import Logo from 'components/SVG/Logo'
 import { tw } from 'lib/helpers'
 import personalInfo from 'personalInfo.json'
 import TopHeaderBar from './TopHeaderBar'
@@ -12,7 +14,7 @@ function Navbar() {
   return (
     <TopHeaderBar>
       <nav>
-        <ul className="h-full auto-cols-fr grid-flow-col space-y-2 md:mr-2 md:grid md:space-y-0">
+        <ul className="h-full auto-cols-fr grid-flow-col space-y-1 before:mx-2 before:text-sm before:text-night-500 before:content-['Navigate_to'] before:dark:text-night-400 md:grid md:space-y-0 md:px-2 md:before:hidden">
           {navLinks.map(({ href, text }) => (
             <li key={text}>
               <a
@@ -28,8 +30,9 @@ function Navbar() {
           ))}
         </ul>
       </nav>
-      <nav>
-        <ul className="mt-4 flex h-full md:ml-2 md:mt-0">
+
+      <div className="before:mx-2 before:text-sm before:text-night-500 before:content-['Socials'] before:dark:text-night-400 md:px-2 md:before:hidden">
+        <ul className="flex h-full">
           {socials.map(({ href, name }) => (
             <li key={name}>
               <a
@@ -44,7 +47,7 @@ function Navbar() {
             </li>
           ))}
         </ul>
-      </nav>
+      </div>
     </TopHeaderBar>
   )
 }

@@ -1,12 +1,24 @@
 'use client'
 
-import { useEffect, useRef, useState } from 'react'
+import {
+  type ComponentPropsWithoutRef,
+  type ElementType,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 
-interface Props extends React.ComponentProps<'div'> {
+interface Props<T extends ElementType> {
   children?: React.ReactNode
+  as?: T
 }
 
-function Animate({ children, className, ...props }: Props) {
+function Animate<T extends ElementType>({
+  as,
+  children,
+  className,
+  ...props
+}: Props<T> & Omit<ComponentPropsWithoutRef<T>, keyof Props<T>>) {
   const [inViewport, setInViewport] = useState<boolean>(false)
   const elementRef = useRef<HTMLDivElement>(null)
 
@@ -26,8 +38,10 @@ function Animate({ children, className, ...props }: Props) {
     return () => observer.disconnect()
   }, [inViewport])
 
+  const Component = as || 'div'
+
   return (
-    <div
+    <Component
       className={`transition-none ${
         inViewport
           ? 'running before:running after:running'
@@ -37,7 +51,7 @@ function Animate({ children, className, ...props }: Props) {
       {...props}
     >
       {children}
-    </div>
+    </Component>
   )
 }
 
