@@ -56,7 +56,7 @@ export function Project({
           className={tw(
             'inline-block rounded-lg px-4 py-2 transition-colors',
             'text-sm text-night-500',
-            'bg-white hover:bg-night-100 hover:text-night-600'
+            'bg-white ring-night-500/25 hover:bg-night-100 hover:text-night-600 hover:ring-1'
           )}
           href={url}
           rel="noreferrer"
@@ -68,7 +68,7 @@ export function Project({
           className={tw(
             'inline-block rounded-lg px-4 py-2 transition-colors',
             'text-sm text-white',
-            'bg-night-500 hover:bg-night-100 hover:text-night-600'
+            'bg-night-500 ring-night-500/25 hover:bg-night-100 hover:text-night-600 hover:ring-1'
           )}
           href={homepageUrl}
           rel="noreferrer"

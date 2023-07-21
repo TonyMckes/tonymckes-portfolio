@@ -8,7 +8,7 @@
     @apply [scrollbar-color:bg-night-500_bg-night-200] dark:[scrollbar-color:bg-night-500_bg-night-200];
   }
   *::-webkit-scrollbar {
-    @apply w-3;
+    @apply md:w-3;
   }
   *::-webkit-scrollbar-track {
     @apply bg-night-500/10 dark:bg-night-400/10;

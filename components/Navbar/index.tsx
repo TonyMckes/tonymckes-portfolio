@@ -6,7 +6,7 @@ import TopHeaderBar from './TopHeaderBar'
 function Navbar() {
   const { socialMedia, navLinks } = personalInfo
   const socials = socialMedia.filter(({ name }) =>
-    ['LinkedIn', 'Github'].includes(name)
+    ['LinkedIn', 'GitHub'].includes(name)
   )
 
   return (
