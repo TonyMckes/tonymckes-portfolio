@@ -12,13 +12,18 @@ import Image from 'next/image'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
 import codeGif from '../public/code.gif'
 
-const { skills } = siteConfig
+const { skills, links } = siteConfig
 
 async function Home() {
   const [featuredProjects, showcaseProjects] = await Promise.all([
     await getFeaturedRepos(),
     await getShowcaseRepos(),
   ])
+
+  const GHProfileUrl = links.find(({ label }) => label === 'GitHub')?.url
+
+  const styles =
+    'box-content aspect-square h-[14rem] w-[14rem] inset-x-0 mx-auto rounded border-[1rem] border-b-[4rem] border-gray-100 ring-1 ring-black/10'
 
   return (
     <main className="space-y-40">
@@ -64,6 +69,46 @@ async function Home() {
       </section>
 
       <Steps className="absolute -bottom-28 z-10 h-40 w-full lg:h-60 2xl:h-80" />
+
+      <Section>
+        <Section.Title>About Me</Section.Title>
+        <div className="container mt-10 grid items-center gap-8 md:grid-cols-[auto,1fr]">
+          <div className="relative my-5 md:mx-7">
+            <div
+              className={`${styles} absolute rotate-3 bg-night-800/50`}
+              aria-hidden
+            />
+            <div
+              className={`${styles} absolute -rotate-6 bg-neutral-300`}
+              aria-hidden
+            />
+            <Image
+              className={`${styles} -rotate-3 bg-gray-100 transition-transform duration-700  ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-110`}
+              src={`${GHProfileUrl}.png?size=320`}
+              alt="Anthony Mackensen avatar"
+              width={320}
+              height={320}
+            />
+          </div>
+          <div className="max-w-prose space-y-4 px-2">
+            <p>
+              I&apos;ve been building websites and web applications for the past
+              two years, mainly focusing on front-end development. However,
+              along the way, I&apos;ve also gained experience with back-end
+              development. During this time, I&apos;ve had the opportunity to
+              volunteer with nonprofit organizations and contribute to IT
+              communities, where I get to share my knowledge and learn from
+              others.
+            </p>
+            <p>
+              Always striving to provide an exceptional user experience for both
+              my peer developers and end-users. I have a keen eye for small
+              details, am persistent when it comes to solving challenging
+              problems, and excel both independently and as part of a team.
+            </p>
+          </div>
+        </div>
+      </Section>
 
       {featuredProjects.length > 0 && (
         <Section id="projects" className="overflow-hidden">
