@@ -106,6 +106,31 @@ async function Home() {
               details, am persistent when it comes to solving challenging
               problems, and excel both independently and as part of a team.
             </p>
+            <div className="space-y-4 rounded-lg bg-yellow-50 px-4 py-2 text-neutral-800 dark:bg-yellow-50/90">
+              <p>
+                Currently, I&apos;m searching for a full-time career opportunity
+                as a front-end developer. Given my expertise, I&apos;m confident
+                in my ability to create innovative and engaging web experiences
+                that exceed expectations.
+              </p>
+              <p>
+                Feel free to{' '}
+                <a
+                  className="rounded-lg font-semibold underline decoration-cyan-500 decoration-2 underline-offset-2 hover:text-night-600"
+                  href="https://drive.google.com/uc?id=1-wp4i-Z_E8zYra0cnJilf-HPmbsoKTe8&export=download"
+                >
+                  check out my resume
+                </a>{' '}
+                or{' '}
+                <a
+                  className="rounded-lg font-semibold underline decoration-cyan-500 decoration-2 underline-offset-2 hover:text-night-600"
+                  href="#contact"
+                >
+                  contact me
+                </a>{' '}
+                directly!
+              </p>
+            </div>
           </div>
         </div>
       </Section>
