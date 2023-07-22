@@ -36,7 +36,7 @@ async function Home() {
           <Blob className="right-10 top-10 h-44 w-44 bg-fuchsia-500 [animation-delay:1000ms] [animation-duration:3500ms] md:-top-4 md:right-0 md:h-60 md:w-60 lg:-right-10 lg:h-80 lg:w-80" />
           <Blob className="inset-x-0 -top-16 mx-auto h-48 w-48 bg-amber-600 [animation-duration:3500ms] [animation-delay:5000ms] md:-top-40 md:h-56 md:w-56 lg:h-64 lg:w-64" />
           <h1 className="hero__title px-2 text-3xl font-light text-night-950 dark:text-night-50 md:text-5xl xl:text-6xl">
-            <div className="isolate">Hello, I&apos;m</div>
+            <div className="isolate">Hi there, I&apos;m</div>
             <div
               className="mb-4 mt-3 text-6xl font-normal text-night-800 dark:text-night-200 md:text-7xl xl:text-8xl"
               translate="no"
@@ -114,7 +114,7 @@ async function Home() {
         <Section id="projects" className="overflow-hidden">
           <Section.Title>Projects</Section.Title>
           <Section.Paragraph>
-            Showcase of some of the projects I&apos;ve worked on
+            Check out some of the projects I&apos;ve worked on
           </Section.Paragraph>
           <ul className="projects container mb-20 space-y-10">
             {featuredProjects.map((project) => (
@@ -158,9 +158,9 @@ async function Home() {
       </Section>
 
       <Section id="contact">
-        <Section.Title>Get in touch</Section.Title>
+        <Section.Title>Get in Touch</Section.Title>
         <Section.Paragraph>
-          You can leave me a message in any of the following platforms
+          Please feel free to contact me via any of the following platforms
         </Section.Paragraph>
         <ContactsList />
       </Section>
