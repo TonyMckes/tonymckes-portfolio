@@ -7,19 +7,23 @@ import Blob from 'components/SVG/Blob'
 import Steps from 'components/SVG/Steps'
 import Section from 'components/Section'
 import Skill from 'components/Skill'
+import { siteConfig } from 'config/site'
 import Image from 'next/image'
-import personalData from 'personalInfo.json'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
-import type { PersonalInfoTypes } from 'types/personal-info-types'
 import codeGif from '../public/code.gif'
 
-const { skills } = personalData as Pick<PersonalInfoTypes, 'skills'>
+const { skills, links } = siteConfig
 
 async function Home() {
   const [featuredProjects, showcaseProjects] = await Promise.all([
     await getFeaturedRepos(),
     await getShowcaseRepos(),
   ])
+
+  const GHProfileUrl = links.find(({ label }) => label === 'GitHub')?.url
+
+  const styles =
+    'box-content aspect-square h-[14rem] w-[14rem] inset-x-0 mx-auto rounded border-[1rem] border-b-[4rem] border-gray-100 ring-1 ring-black/10'
 
   return (
     <main className="space-y-40">
@@ -32,7 +36,7 @@ async function Home() {
           <Blob className="right-10 top-10 h-44 w-44 bg-fuchsia-500 [animation-delay:1000ms] [animation-duration:3500ms] md:-top-4 md:right-0 md:h-60 md:w-60 lg:-right-10 lg:h-80 lg:w-80" />
           <Blob className="inset-x-0 -top-16 mx-auto h-48 w-48 bg-amber-600 [animation-duration:3500ms] [animation-delay:5000ms] md:-top-40 md:h-56 md:w-56 lg:h-64 lg:w-64" />
           <h1 className="hero__title px-2 text-3xl font-light text-night-950 dark:text-night-50 md:text-5xl xl:text-6xl">
-            <div className="isolate">Hello, I&apos;m</div>
+            <div className="isolate">Hi there, I&apos;m</div>
             <div
               className="mb-4 mt-3 text-6xl font-normal text-night-800 dark:text-night-200 md:text-7xl xl:text-8xl"
               translate="no"
@@ -66,11 +70,51 @@ async function Home() {
 
       <Steps className="absolute -bottom-28 z-10 h-40 w-full lg:h-60 2xl:h-80" />
 
+      <Section>
+        <Section.Title>About Me</Section.Title>
+        <div className="container mt-10 grid items-center gap-8 md:grid-cols-[auto,1fr]">
+          <div className="relative my-5 md:mx-7">
+            <div
+              className={`${styles} absolute rotate-3 bg-night-800/50`}
+              aria-hidden
+            />
+            <div
+              className={`${styles} absolute -rotate-6 bg-neutral-300`}
+              aria-hidden
+            />
+            <Image
+              className={`${styles} -rotate-3 bg-gray-100 transition-transform duration-700  ease-out hover:-translate-y-2 hover:rotate-0 hover:scale-110`}
+              src={`${GHProfileUrl}.png?size=320`}
+              alt="Anthony Mackensen avatar"
+              width={320}
+              height={320}
+            />
+          </div>
+          <div className="max-w-prose space-y-4 px-2">
+            <p>
+              I&apos;ve been building websites and web applications for the past
+              two years, mainly focusing on front-end development. However,
+              along the way, I&apos;ve also gained experience with back-end
+              development. During this time, I&apos;ve had the opportunity to
+              volunteer with nonprofit organizations and contribute to IT
+              communities, where I get to share my knowledge and learn from
+              others.
+            </p>
+            <p>
+              Always striving to provide an exceptional user experience for both
+              my peer developers and end-users. I have a keen eye for small
+              details, am persistent when it comes to solving challenging
+              problems, and excel both independently and as part of a team.
+            </p>
+          </div>
+        </div>
+      </Section>
+
       {featuredProjects.length > 0 && (
         <Section id="projects" className="overflow-hidden">
           <Section.Title>Projects</Section.Title>
           <Section.Paragraph>
-            Showcase of some of the projects I&apos;ve worked on
+            Check out some of the projects I&apos;ve worked on
           </Section.Paragraph>
           <ul className="projects container mb-20 space-y-10">
             {featuredProjects.map((project) => (
@@ -114,9 +158,9 @@ async function Home() {
       </Section>
 
       <Section id="contact">
-        <Section.Title>Get in touch</Section.Title>
+        <Section.Title>Get in Touch</Section.Title>
         <Section.Paragraph>
-          You can leave me a message in any of the following platforms
+          Please feel free to contact me via any of the following platforms
         </Section.Paragraph>
         <ContactsList />
       </Section>

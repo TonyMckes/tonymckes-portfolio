@@ -3,20 +3,15 @@ const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
   images: {
-    remotePatterns: [
-      {
-        hostname: "opengraph.githubassets.com",
-        protocol: "https",
-      },
-      {
-        hostname: "repository-images.githubusercontent.com",
-        protocol: "https",
-      },
+    domains: [
+      'opengraph.githubassets.com',
+      'repository-images.githubusercontent.com',
+      'github.com',
     ],
   },
   experimental: {
     appDir: true,
   },
-};
+}
 
-module.exports = nextConfig;
+module.exports = nextConfig

@@ -1,30 +1,30 @@
 import 'server-only'
 
 import Logo from 'components/SVG/Logo'
+import { siteConfig } from 'config/site'
 import { tw } from 'lib/helpers'
-import personalInfo from 'personalInfo.json'
 import TopHeaderBar from './TopHeaderBar'
 
 function Navbar() {
-  const { socialMedia, navLinks } = personalInfo
-  const socials = socialMedia.filter(({ name }) =>
-    ['LinkedIn', 'GitHub'].includes(name)
+  const { links, mainNav } = siteConfig
+  const socials = links.filter(({ label }) =>
+    ['LinkedIn', 'GitHub'].includes(label)
   )
 
   return (
     <TopHeaderBar>
       <nav>
         <ul className="h-full auto-cols-fr grid-flow-col space-y-1 before:mx-2 before:text-sm before:text-night-500 before:content-['Navigate_to'] before:dark:text-night-400 md:grid md:space-y-0 md:px-2 md:before:hidden">
-          {navLinks.map(({ href, text }) => (
-            <li key={text}>
+          {mainNav.map(({ label, url }) => (
+            <li key={label}>
               <a
                 className={tw(
                   'nav-item underline-effect',
                   'h-full w-full md:font-bold'
                 )}
-                href={href}
+                href={url}
               >
-                {text}
+                {label}
               </a>
             </li>
           ))}
@@ -33,16 +33,16 @@ function Navbar() {
 
       <div className="before:mx-2 before:text-sm before:text-night-500 before:content-['Socials'] before:dark:text-night-400 md:px-2 md:before:hidden">
         <ul className="flex h-full">
-          {socials.map(({ href, name }) => (
-            <li key={name}>
+          {socials.map(({ label, url }) => (
+            <li key={label}>
               <a
                 className="nav-item underline-effect"
                 rel="noreferrer"
                 target="_blank"
-                href={href}
+                href={url}
               >
-                <Logo height={28} icon={name} />
-                <span className="sr-only">{name}</span>
+                <Logo height={28} icon={label} />
+                <span className="sr-only">{label}</span>
               </a>
             </li>
           ))}
