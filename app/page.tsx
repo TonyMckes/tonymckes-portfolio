@@ -7,13 +7,12 @@ import Blob from 'components/SVG/Blob'
 import Steps from 'components/SVG/Steps'
 import Section from 'components/Section'
 import Skill from 'components/Skill'
+import { siteConfig } from 'config/site'
 import Image from 'next/image'
-import personalData from 'personalInfo.json'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
-import type { PersonalInfoTypes } from 'types/personal-info-types'
 import codeGif from '../public/code.gif'
 
-const { skills } = personalData as Pick<PersonalInfoTypes, 'skills'>
+const { skills } = siteConfig
 
 async function Home() {
   const [featuredProjects, showcaseProjects] = await Promise.all([
