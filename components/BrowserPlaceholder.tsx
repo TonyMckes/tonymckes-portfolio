@@ -18,7 +18,7 @@ function BrowserPlaceholder({
   url = 'https://github.com/tonymckes',
 }: Props) {
   return (
-    <div className="media relative overflow-hidden rounded bg-neutral-200 pb-px ring-1 ring-black/10 dark:bg-neutral-800 md:self-center md:[grid-area:media]">
+    <div className="media relative overflow-hidden rounded bg-neutral-200 pb-px ring-1 ring-black/10 dark:bg-neutral-800 md:m-2 md:self-center md:[grid-area:media]">
       <div aria-hidden className="grid grid-cols-5 py-1">
         <div className="flex items-center gap-3 px-2">
           <div className="flex gap-1">

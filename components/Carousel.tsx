@@ -62,7 +62,7 @@ function Carousel({ children }: { children: ReactNode }) {
           tag="li"
           key={child?.toString() || index}
           className={tw(
-            'container !flex !h-auto overflow-hidden rounded-xl md:overflow-visible lg:overflow-hidden',
+            'container !flex !h-auto overflow-hidden !rounded-xl p-2 md:p-0',
             initialized &&
               'snap-center first:lg:!ml-[64rem] last:lg:!mr-[64rem]'
           )}

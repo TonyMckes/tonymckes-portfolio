@@ -23,12 +23,12 @@ export function ProjectCard({
   return (
     <div
       className={tw(
-        'project__item relative flex flex-col gap-x-2 overflow-hidden rounded-lg p-2 ring-1 ring-night-500/25 transition-shadow duration-300 hover:shadow-lg hover:ring-1 dark:ring-night-400/25 md:grid md:ring-0',
+        'project__item relative flex flex-col gap-x-2 overflow-hidden rounded-lg ring-1 ring-night-500/25 transition-shadow duration-300 hover:shadow-lg hover:ring-1 dark:ring-night-400/25 md:grid md:ring-0',
         'after:absolute after:inset-0 after:-z-10 after:m-auto after:h-full after:w-auto after:scale-0 after:rounded-full after:bg-cyan-400 after:opacity-0 after:blur-2xl after:transition-all after:duration-500 after:delay-150 after:ease-out hover:after:scale-150 hover:after:opacity-10 md:after:aspect-square md:after:h-auto md:after:w-full md:hover:after:scale-110'
       )}
     >
       <h3
-        className="mx-2 text-lg font-bold capitalize text-night-500 dark:text-night-400  md:[grid-area:title]"
+        className="m-2 text-lg font-bold capitalize text-night-500 dark:text-night-400 md:mb-0  md:[grid-area:title]"
         translate="no"
       >
         {name.replace(/-/g, ' ')}
@@ -48,11 +48,11 @@ export function ProjectCard({
         )}
       </BrowserPlaceholder>
 
-      <p className="mx-2 grow font-medium md:[grid-area:description]">
+      <p className="m-2 grow font-medium md:[grid-area:description]">
         {description || 'No description available.'}
       </p>
 
-      <ul className="m-2 flex items-center gap-x-2 gap-y-1 overflow-x-auto overflow-y-hidden py-3 md:flex-wrap md:overflow-visible md:p-0 md:[grid-area:tech-list]">
+      <ul className="flex items-center gap-y-1 overflow-x-auto overflow-y-hidden pb-3 md:mx-2 md:flex-wrap md:gap-x-2 md:overflow-visible md:p-0 md:[grid-area:tech-list]">
         {topics.map(({ id, name }) => (
           <li key={id}>
             <Tag name={name} />
@@ -60,7 +60,7 @@ export function ProjectCard({
         ))}
       </ul>
 
-      <ul className="m-2 space-x-2 place-self-end font-semibold md:[grid-area:links]">
+      <ul className="m-2 space-x-2 place-self-end font-semibold md:mt-4 md:[grid-area:links]">
         <li className="inline">
           <a
             className={tw(

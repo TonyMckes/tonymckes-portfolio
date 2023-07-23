@@ -60,7 +60,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
       )}
     >
       <div className="mx-auto flex max-w-screen-xl justify-between">
-        <nav>
+        <nav className="flex items-center">
           <a
             className="nav-item underline-effect"
             aria-label="TonyMckes home page"
