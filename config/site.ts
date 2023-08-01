@@ -11,15 +11,19 @@ export const siteConfig = {
       url: '#',
     },
     {
-      label: 'Projects',
-      url: '#projects',
+      label: 'About',
+      url: '#about',
     },
     {
       label: 'Skills',
       url: '#skills',
     },
     {
-      label: 'Contact me',
+      label: 'Portfolio',
+      url: '#portfolio',
+    },
+    {
+      label: 'Contact',
       url: '#contact',
     },
   ],

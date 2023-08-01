@@ -70,7 +70,7 @@ async function Home() {
 
       <Steps className="absolute -bottom-28 z-10 h-40 w-full lg:h-60 2xl:h-80" />
 
-      <Section>
+      <Section id="about">
         <Section.Title>About Me</Section.Title>
         <div className="container mt-10 grid items-center gap-8 md:grid-cols-[auto,1fr]">
           <div className="relative my-5 md:mx-7">
@@ -135,35 +135,6 @@ async function Home() {
         </div>
       </Section>
 
-      {featuredProjects.length > 0 && (
-        <Section id="projects" className="overflow-hidden">
-          <Section.Title>Projects</Section.Title>
-          <Section.Paragraph>
-            Check out some of the projects I&apos;ve worked on
-          </Section.Paragraph>
-          <ul className="projects container mb-20 space-y-10">
-            {featuredProjects.map((project) => (
-              <Animate
-                as="li"
-                key={project.id}
-                className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
-              >
-                <ProjectCard {...project} featured />
-              </Animate>
-            ))}
-          </ul>
-          <Section.SubTitle>There&apos;s more!</Section.SubTitle>
-          <Section.Paragraph>
-            Swipe right or left to see even more projects!
-          </Section.Paragraph>
-          <Carousel>
-            {showcaseProjects.map((repo) => (
-              <ProjectCard key={repo.id} {...repo} />
-            ))}
-          </Carousel>
-        </Section>
-      )}
-
       <Section id="skills">
         <Section.Title>Skills</Section.Title>
         <Section.Paragraph>
@@ -181,6 +152,37 @@ async function Home() {
           ))}
         </ul>
       </Section>
+
+      {featuredProjects.length > 0 && (
+        <Section id="portfolio">
+          <Section.Title>Portfolio</Section.Title>
+          <Section.Paragraph>
+            Check out some of the projects I&apos;ve worked on
+          </Section.Paragraph>
+          <div className="overflow-hidden">
+            <ul className="projects container mb-20 space-y-10">
+              {featuredProjects.map((project) => (
+                <Animate
+                  as="li"
+                  key={project.id}
+                  className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
+                >
+                  <ProjectCard {...project} featured />
+                </Animate>
+              ))}
+            </ul>
+          </div>
+          <Section.SubTitle>There&apos;s more!</Section.SubTitle>
+          <Section.Paragraph>
+            Swipe right or left to see even more projects!
+          </Section.Paragraph>
+          <Carousel>
+            {showcaseProjects.map((repo) => (
+              <ProjectCard key={repo.id} {...repo} />
+            ))}
+          </Carousel>
+        </Section>
+      )}
 
       <Section id="contact">
         <Section.Title>Get in Touch</Section.Title>
