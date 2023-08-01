@@ -10,7 +10,7 @@ const [emailUsername, emailDomain] = email.split('@')
 function ContactsList() {
   return (
     <>
-      <ul className="contact__list container mx-auto mt-6 grid max-w-md auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
+      <ul className="contact__list container mx-auto mt-6 grid max-w-max auto-cols-fr grid-flow-col items-center justify-center md:gap-8 ">
         {links.map(({ label, url }) => (
           <Animate
             as="li"
