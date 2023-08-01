@@ -6,10 +6,10 @@ import Animate from './Animate'
 
 function Section({ className, children, ...props }: ComponentProps<'section'>) {
   return (
-    <section className={tw('relative', className)} {...props}>
+    <section className={tw('relative scroll-mt-20', className)} {...props}>
       <Animate
         aria-hidden
-        className='after: after:absolute after:left-0 after:top-10 after:block after:h-1 after:w-full  after:bg-gradient-to-l after:from-night-500 after:opacity-0 after:content-[""] after:animate-in after:fade-out-50 after:slide-in-from-left-full after:[animation-duration:2000ms] dark:after:from-night-400 after:lg:top-14'
+        className='after:absolute after:left-0 after:top-10 after:block after:h-1 after:w-full  after:bg-gradient-to-l after:from-night-500 after:opacity-0 after:content-[""] after:animate-in after:fade-out-50 after:slide-in-from-left-full after:[animation-duration:2000ms] dark:after:from-night-400 after:lg:top-14'
       />
       {children}
     </section>

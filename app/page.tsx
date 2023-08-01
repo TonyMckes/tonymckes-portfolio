@@ -70,7 +70,7 @@ async function Home() {
 
       <Steps className="absolute -bottom-28 z-10 h-40 w-full lg:h-60 2xl:h-80" />
 
-      <Section>
+      <Section id="about">
         <Section.Title>About Me</Section.Title>
         <div className="container mt-10 grid items-center gap-8 md:grid-cols-[auto,1fr]">
           <div className="relative my-5 md:mx-7">
@@ -93,25 +93,23 @@ async function Home() {
           <div className="max-w-prose space-y-4 px-2">
             <p>
               I&apos;ve been building websites and web applications for the past
-              two years, mainly focusing on front-end development. However,
-              along the way, I&apos;ve also gained experience with back-end
-              development. During this time, I&apos;ve had the opportunity to
-              volunteer with nonprofit organizations and contribute to IT
-              communities, where I get to share my knowledge and learn from
-              others.
+              two years, mainly focused on the front end, creating elegant and
+              accessible experiences. Along the way, I have also gained
+              experience with back-end development, which includes building and
+              integrating APIs, databases, and other services
             </p>
             <p>
-              Always striving to provide an exceptional user experience for both
-              my peer developers and end-users. I have a keen eye for small
-              details, am persistent when it comes to solving challenging
-              problems, and excel both independently and as part of a team.
+              Always striving to provide an exceptional user experience. With a
+              keen eye for details that make a big difference, am persistent
+              when it comes to solving challenging problems, and excel both
+              independently and as part of a team.
             </p>
             <div className="space-y-4 rounded-lg bg-yellow-50 px-4 py-2 text-neutral-800 dark:bg-yellow-50/90">
               <p>
-                Currently, I&apos;m searching for a full-time career opportunity
-                as a front-end developer. Given my expertise, I&apos;m confident
-                in my ability to create innovative and engaging web experiences
-                that exceed expectations.
+                Currently, I&apos;m searching for a full-time job as a front-end
+                developer. Given my expertise, I&apos;m confident in my ability
+                to create innovative and engaging web experiences that exceed
+                expectations.
               </p>
               <p>
                 Feel free to{' '}
@@ -135,35 +133,6 @@ async function Home() {
         </div>
       </Section>
 
-      {featuredProjects.length > 0 && (
-        <Section id="projects" className="overflow-hidden">
-          <Section.Title>Projects</Section.Title>
-          <Section.Paragraph>
-            Check out some of the projects I&apos;ve worked on
-          </Section.Paragraph>
-          <ul className="projects container mb-20 space-y-10">
-            {featuredProjects.map((project) => (
-              <Animate
-                as="li"
-                key={project.id}
-                className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
-              >
-                <ProjectCard {...project} featured />
-              </Animate>
-            ))}
-          </ul>
-          <Section.SubTitle>There&apos;s more!</Section.SubTitle>
-          <Section.Paragraph>
-            Swipe right or left to see even more projects!
-          </Section.Paragraph>
-          <Carousel>
-            {showcaseProjects.map((repo) => (
-              <ProjectCard key={repo.id} {...repo} />
-            ))}
-          </Carousel>
-        </Section>
-      )}
-
       <Section id="skills">
         <Section.Title>Skills</Section.Title>
         <Section.Paragraph>
@@ -181,6 +150,37 @@ async function Home() {
           ))}
         </ul>
       </Section>
+
+      {featuredProjects.length > 0 && (
+        <Section id="portfolio">
+          <Section.Title>Portfolio</Section.Title>
+          <Section.Paragraph>
+            Check out some of the projects I&apos;ve worked on
+          </Section.Paragraph>
+          <div className="overflow-hidden">
+            <ul className="projects container mb-20 space-y-10">
+              {featuredProjects.map((project) => (
+                <Animate
+                  as="li"
+                  key={project.id}
+                  className="will-change-transform animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
+                >
+                  <ProjectCard {...project} featured />
+                </Animate>
+              ))}
+            </ul>
+          </div>
+          <Section.SubTitle>There&apos;s more!</Section.SubTitle>
+          <Section.Paragraph>
+            Swipe right or left to see even more projects!
+          </Section.Paragraph>
+          <Carousel>
+            {showcaseProjects.map((repo) => (
+              <ProjectCard key={repo.id} {...repo} />
+            ))}
+          </Carousel>
+        </Section>
+      )}
 
       <Section id="contact">
         <Section.Title>Get in Touch</Section.Title>
