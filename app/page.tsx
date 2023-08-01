@@ -165,7 +165,7 @@ async function Home() {
                 <Animate
                   as="li"
                   key={project.id}
-                  className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
+                  className="will-change-transform animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/3 motion-safe:even:slide-in-from-left-1/3"
                 >
                   <ProjectCard {...project} featured />
                 </Animate>
