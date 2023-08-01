@@ -7,7 +7,9 @@ import { useEffect, useState } from 'react'
 const ThemeToggler = () => {
   const [mounted, setMounted] = useState(false)
   const { theme, systemTheme, setTheme } = useTheme()
-  const isLight = theme === 'light' || systemTheme === 'light'
+  const systemColorSchema = !theme || theme === 'system'
+  const colorSchema = systemColorSchema ? systemTheme : theme
+  const isLight = colorSchema === 'light'
 
   useEffect(() => {
     setMounted(true)
@@ -26,12 +28,11 @@ const ThemeToggler = () => {
     )
   }
 
-  const iconTheme =
-    !theme || theme === 'system'
-      ? 'line-md:light-dark-loop'
-      : isLight
-      ? 'ic:twotone-dark-mode'
-      : 'ic:twotone-light-mode'
+  const iconTheme = systemColorSchema
+    ? 'line-md:light-dark-loop'
+    : isLight
+    ? 'ic:twotone-dark-mode'
+    : 'ic:twotone-light-mode'
 
   const opositeColorTheme = isLight ? 'dark' : 'light'
 
