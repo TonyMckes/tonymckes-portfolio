@@ -93,25 +93,23 @@ async function Home() {
           <div className="max-w-prose space-y-4 px-2">
             <p>
               I&apos;ve been building websites and web applications for the past
-              two years, mainly focusing on front-end development. However,
-              along the way, I&apos;ve also gained experience with back-end
-              development. During this time, I&apos;ve had the opportunity to
-              volunteer with nonprofit organizations and contribute to IT
-              communities, where I get to share my knowledge and learn from
-              others.
+              two years, mainly focused on the front end, creating elegant and
+              accessible experiences. Along the way, I have also gained
+              experience with back-end development, which includes building and
+              integrating APIs, databases, and other services
             </p>
             <p>
-              Always striving to provide an exceptional user experience for both
-              my peer developers and end-users. I have a keen eye for small
-              details, am persistent when it comes to solving challenging
-              problems, and excel both independently and as part of a team.
+              Always striving to provide an exceptional user experience. With a
+              keen eye for details that make a big difference, am persistent
+              when it comes to solving challenging problems, and excel both
+              independently and as part of a team.
             </p>
             <div className="space-y-4 rounded-lg bg-yellow-50 px-4 py-2 text-neutral-800 dark:bg-yellow-50/90">
               <p>
-                Currently, I&apos;m searching for a full-time career opportunity
-                as a front-end developer. Given my expertise, I&apos;m confident
-                in my ability to create innovative and engaging web experiences
-                that exceed expectations.
+                Currently, I&apos;m searching for a full-time job as a front-end
+                developer. Given my expertise, I&apos;m confident in my ability
+                to create innovative and engaging web experiences that exceed
+                expectations.
               </p>
               <p>
                 Feel free to{' '}
