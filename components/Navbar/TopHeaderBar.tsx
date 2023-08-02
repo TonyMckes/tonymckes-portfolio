@@ -49,14 +49,15 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
   const headerStyles = showNavbar
     ? 'shadow-none -translate-y-full'
     : isScrolled
-    ? 'shadow-md dark:shadow-night-900 backdrop-blur'
+    ? `shadow-md dark:shadow-night-900 ${menuOpen? '' : 'backdrop-blur'} `
     : 'md:py-4 duration-500 bg-transparent dark:bg-transparent'
 
   return (
     <header
       className={tw(
-        'fixed top-0 z-50 w-full bg-neutral-100/80 duration-300 dark:bg-night-950/80 md:p-1',
-        headerStyles
+        'fixed top-0 z-50 w-full bg-neutral-100/80 dark:bg-night-950/80 md:p-1',
+        headerStyles,
+        menuOpen ? '' : 'duration-300'
       )}
     >
       <div className="mx-auto flex max-w-screen-xl justify-between">
@@ -87,7 +88,7 @@ function TopHeaderBar({ children }: { children: ReactNode }) {
           <div
             onClick={handleClick}
             className={tw(
-              'backdrop-blur-sm',
+              'backdrop-blur-sm transition-none',
               'bg-black/20',
               'fixed',
               'h-screen w-screen',
