@@ -22,6 +22,9 @@ export default {
       },
     },
     extend: {
+      boxShadow: {
+        grow: '0 0 150px 35rem rgba(34, 211, 238, 0.10)',
+      },
       animation: {
         blob: 'blob infinite alternate',
       },

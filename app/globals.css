@@ -16,7 +16,10 @@
   *::-webkit-scrollbar-thumb {
     @apply rounded-xl bg-night-500 hover:bg-night-200;
   }
-
+  body {
+    scrollbar-gutter: stable;
+  }
+  
   /* Logo color */
   a[href*='linkedin.com'] svg > path,
   a[href*='github.com'] svg > path {
