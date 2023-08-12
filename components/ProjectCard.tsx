@@ -24,7 +24,7 @@ export function ProjectCard({
     <div
       className={tw(
         'project__item relative flex flex-col gap-x-2 overflow-hidden rounded-lg ring-1 ring-night-500/25 transition-shadow duration-300 hover:shadow-lg hover:ring-1 dark:ring-night-400/25 md:grid md:ring-0',
-        'after:absolute after:inset-0 after:-z-10 after:m-auto after:h-full after:w-auto after:scale-0 after:rounded-full after:bg-cyan-400 after:opacity-0 after:blur-2xl after:transition-all after:duration-500 after:delay-150 after:ease-out hover:after:scale-150 hover:after:opacity-10 md:after:aspect-square md:after:h-auto md:after:w-full md:hover:after:scale-110'
+        'after:hover:shadow-grow after:absolute after:inset-0 after:-z-10 after:m-auto after:h-0 after:w-0 after:rounded-full after:transition-all after:duration-700 after:delay-150 after:ease-out md:after:aspect-square'
       )}
     >
       <h3
