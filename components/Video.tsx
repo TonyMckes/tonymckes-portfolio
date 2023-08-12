@@ -31,6 +31,10 @@ function Video({ name, ...props }: Props) {
       className="h-full w-full object-cover object-center"
       loop
       muted
+      disablePictureInPicture
+      disableRemotePlayback
+      controlsList="nodownload nofullscreen noremoteplayback"
+      x-webkit-airplay="deny"
       {...props}
     >
       <source src={`videos/${name}.webm`} type="video/webm" />
