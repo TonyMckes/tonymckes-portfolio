@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react'
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
 import { ServerThemeProvider } from 'next-themes'
@@ -23,6 +24,7 @@ export default function RootLayout({
           <Navbar />
           {children}
           <Footer />
+          <Analytics />
         </body>
       </html>
     </ServerThemeProvider>
