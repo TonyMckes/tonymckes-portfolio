@@ -13,6 +13,7 @@
   },
   "dependencies": {
     "@iconify/utils": "^2.1.0",
+    "@vercel/analytics": "^1.0.2",
     "next": "13.4.2",
     "next-themes": "npm:@wits/next-themes@^0.2.16",
     "react": "18.2.0",
