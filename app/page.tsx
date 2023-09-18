@@ -115,7 +115,7 @@ async function Home() {
                 Feel free to{' '}
                 <a
                   className="rounded-lg font-semibold underline decoration-cyan-500 decoration-2 underline-offset-2 hover:text-night-600"
-                  href="https://drive.google.com/uc?id=1-wp4i-Z_E8zYra0cnJilf-HPmbsoKTe8&export=download"
+                  href="https://drive.google.com/uc?id=1TNqNpzrh83rB0bM9LdVRCDypg_m-d-h6&export=download"
                 >
                   check out my resume
                 </a>{' '}
