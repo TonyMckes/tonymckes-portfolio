@@ -160,13 +160,9 @@ async function Home() {
           <div className="overflow-hidden">
             <ul className="projects container mb-20 space-y-10">
               {featuredProjects.map((project) => (
-                <Animate
-                  as="li"
-                  key={project.id}
-                  className="animate-in duration-700 motion-safe:fade-in motion-safe:odd:slide-in-from-right-1/4 motion-safe:even:slide-in-from-left-1/4"
-                >
+                <li key={project.id}>
                   <ProjectCard {...project} featured />
-                </Animate>
+                </li>
               ))}
             </ul>
           </div>
