@@ -1,5 +1,3 @@
-import 'server-only'
-
 import type { ReactNode } from 'react'
 import Icon from 'components/SVG/Icon'
 

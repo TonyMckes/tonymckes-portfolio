@@ -1,5 +1,3 @@
-import 'server-only'
-
 import type { Topic } from 'types/repositories-types'
 
 function Tag({ name }: Omit<Topic, 'id'>) {

@@ -1,5 +1,3 @@
-import 'server-only'
-
 import { tw } from 'lib/helpers'
 import Image from 'next/image'
 import type { Repository } from 'types/repositories-types'

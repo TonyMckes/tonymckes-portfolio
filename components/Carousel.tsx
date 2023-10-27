@@ -1,28 +1,28 @@
 'use client'
 
+import { ProjectCard } from 'components/ProjectCard'
 import { tw } from 'lib/helpers'
-import { Children, useState, type ReactNode } from 'react'
+import { useState } from 'react'
 import {
   A11y,
   Autoplay,
   EffectCoverflow,
   Keyboard,
   Pagination,
-  type SwiperOptions,
-} from 'swiper'
-import 'swiper/css/pagination'
-import { Swiper, SwiperSlide } from 'swiper/react'
-import 'swiper/swiper.min.css'
+} from 'swiper/modules'
+import { Swiper, SwiperSlide, type SwiperProps } from 'swiper/react'
+import type { Repository } from 'types/repositories-types'
 
-function Carousel({ children }: { children: ReactNode }) {
+import 'swiper/css'
+import 'swiper/css/pagination'
+
+function Carousel({ projects }: { projects: Repository[] }) {
   const [initialized, setInitialized] = useState(false)
 
-  const swiperOptions: SwiperOptions = {
+  const swiperOptions: SwiperProps = {
     modules: [Pagination, A11y, EffectCoverflow, Autoplay, Keyboard],
 
-    wrapperClass: `swiper-wrapper pb-20 ${
-      initialized ? '' : 'snap-x overflow-x-auto snap-mandatory '
-    } `,
+    wrapperClass: `swiper-wrapper pb-20 `,
     centeredSlides: true,
     spaceBetween: 50,
     effect: 'coverflow',
@@ -57,17 +57,17 @@ function Carousel({ children }: { children: ReactNode }) {
       onInit={(swiper) => setInitialized(!swiper.destroyed)}
       {...swiperOptions}
     >
-      {Children.map(children, (child, index) => (
+      {projects.map((repo) => (
         <SwiperSlide
+          key={repo.id}
           tag="li"
-          key={child?.toString() || index}
           className={tw(
             'container !flex !h-auto overflow-hidden !rounded-xl p-2 md:p-0',
             initialized &&
-              'snap-center first:lg:!ml-[64rem] last:lg:!mr-[64rem]'
+              'snap-center first:lg:!ml-[64rem] last:lg:!mr-[64rem]',
           )}
         >
-          {child}
+          <ProjectCard {...repo} />
         </SwiperSlide>
       ))}
     </Swiper>

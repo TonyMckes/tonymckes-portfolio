@@ -9,6 +9,7 @@ import Section from 'components/Section'
 import Skill from 'components/Skill'
 import { siteConfig } from 'config/site'
 import Image from 'next/image'
+import { Suspense } from 'react'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
 import codeGif from '../public/code.gif'
 
@@ -143,7 +144,7 @@ async function Home() {
             <Animate
               as="li"
               key={name}
-              className="animate-in fade-in duration-700"
+              className="duration-700 animate-in fade-in"
             >
               <Skill name={name} />
             </Animate>
@@ -170,11 +171,7 @@ async function Home() {
           <Section.Paragraph>
             Swipe right or left to see even more projects!
           </Section.Paragraph>
-          <Carousel>
-            {showcaseProjects.map((repo) => (
-              <ProjectCard key={repo.id} {...repo} />
-            ))}
-          </Carousel>
+          <Carousel projects={showcaseProjects} />
         </Section>
       )}
 
