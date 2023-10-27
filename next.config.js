@@ -9,9 +9,6 @@ const nextConfig = {
       'github.com',
     ],
   },
-  experimental: {
-    appDir: true,
-  },
 }
 
 module.exports = nextConfig
