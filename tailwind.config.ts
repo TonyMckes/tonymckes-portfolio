@@ -1,5 +1,4 @@
 import type { Config } from 'tailwindcss'
-// @ts-expect-error Types
 import tailwindcssAnimate from 'tailwindcss-animate'
 import { fontFamily } from 'tailwindcss/defaultTheme'
 

@@ -1,11 +1,18 @@
 import { Analytics } from '@vercel/analytics/react'
 import Footer from 'components/Footer'
 import Navbar from 'components/Navbar'
+import type { Viewport } from 'next'
 import { ServerThemeProvider } from 'next-themes'
 import { Open_Sans } from 'next/font/google'
 import './globals.css'
 
 export { metadata } from 'config/metadata'
+export const viewport: Viewport = {
+  themeColor: [
+    { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
+    { media: '(prefers-color-scheme: dark)', color: '#0f1116' },
+  ],
+}
 
 const openSans = Open_Sans({
   subsets: ['latin'],

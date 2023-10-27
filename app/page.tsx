@@ -9,7 +9,6 @@ import Section from 'components/Section'
 import Skill from 'components/Skill'
 import { siteConfig } from 'config/site'
 import Image from 'next/image'
-import { Suspense } from 'react'
 import { getFeaturedRepos, getShowcaseRepos } from 'services/getProjects'
 import codeGif from '../public/code.gif'
 
