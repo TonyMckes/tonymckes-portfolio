@@ -1,7 +1,8 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { siteConfig } from './site'
 
 export const metadata = {
+  metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
     template: `%s - ${siteConfig.title}`,
@@ -14,10 +15,6 @@ export const metadata = {
   },
   creator: siteConfig.title,
   manifest: 'manifest.json',
-  themeColor: [
-    { media: '(prefers-color-scheme: light)', color: '#f5f5f5' },
-    { media: '(prefers-color-scheme: dark)', color: '#0f1116' },
-  ],
   icons: {
     apple: '/apple-touch-icon.png',
     icon: [
